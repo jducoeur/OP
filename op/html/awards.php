@@ -7,7 +7,7 @@ if (isset($printable) && $printable == 1)
    $pagewidth = 650;
 }
 ?>
-<p class="title2" align="center">The Awards of the Kingdom of Atlantia</p>
+<p class="title2" align="center">The Awards of the Kingdom of the East</p>
 
 <p align="center">
 <a href="awards.php">Atlantian Award Descriptions</a> | <a href="award_table_only.php">Atlantian Awards by Precedence</a> | <a href="award_discipline.php">Atlantian Awards by Discipline</a>
