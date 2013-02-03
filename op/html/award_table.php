@@ -1,5 +1,5 @@
 <p align="center">
-<a href="awards.php">Atlantian Award Descriptions</a> | <a href="award_table_only.php">Atlantian Awards by Precedence</a> | <a href="award_discipline.php">Atlantian Awards by Discipline</a>
+<a href="awards.php">Eastern Award Descriptions</a> | <a href="award_table_only.php">Eastern Awards by Precedence</a> | <a href="award_discipline.php">Eastern Awards by Discipline</a>
 </p>
 <table width="<?php echo $pagewidth; ?>" align="center" cellpadding="5" cellspacing="0" border="1" summary="Table for layout">
    <tr>
@@ -22,8 +22,8 @@
             <td class="datacenter" width="33%" valign="top">
             <img src="<?php echo $AWARD_IMAGE_DIR; ?>viscounty.gif" width="65" height="30" alt="Viscounts/Viscountesses" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $VISCOUNTY_ID; ?>">Vicounts/Vicountesses</a>
             <br/>
-            Royal Peer: One becomes a Viscount or Viscountess after ruling a principality once. These are from foreign principalities, or from the time when Atlantia was a principality of the East Kingdom. 
-            Atlantia has no principalities at this time.
+            Royal Peer: One becomes a Viscount or Viscountess after ruling a principality once. These are from foreign principalities, or from the time when East was a principality of the East Kingdom. 
+            East has no principalities at this time.
             </td>
          </tr>
       </table>
@@ -181,12 +181,12 @@
          </tr>
          <tr>
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>coral_branch.gif" width="40" height="40" alt="Order of the Coral Branch" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $CORAL_BRANCH_ID; ?>">Coral Branch</a>
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>coral_branch.gif" width="40" height="40" alt="Order of the Maunche" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $MAUNCHE_ID; ?>">Maunche</a>
             <br/>
             AoA Level: Non-polling order given to those who excel in the arts and sciences in the kingdom.
             </td>
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>opal.gif" width="40" height="40" alt="Order of the Opal" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $OPAL_ID; ?>">Opal</a>
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>opal.gif" width="40" height="40" alt="Order of the Silver Crescent" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $CRESCENT_ID; ?>">Silver Crescent</a>
             <br/>
             AoA Level: Non-polling order given to those who excel in service to the kingdom.
             </td>
@@ -263,7 +263,7 @@
             <td class="datacenter" width="50%" valign="top">
             <img src="<?php echo $AWARD_IMAGE_DIR; ?>nonpareil.gif" width="40" height="40" alt="Order of the Nonpareil" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $NONPAREIL_ID; ?>">Order of the Nonpareil</a>
             <br/>
-            One is awarded the Nonpareil for personifying what it is to be an Atlantian. This award may only be given once per reign.
+            One is awarded the Nonpareil for personifying what it is to be an Eastern. This award may only be given once per reign.
             </td>
          </tr>
       </table>
@@ -311,9 +311,9 @@
          </tr>
          <tr>
             <td class="datacenter" width="33%" valign="top" colspan="3">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>vexillum_atlantiae.gif" width="40" height="40" alt="Award of the Vexillum Atlantiae" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $VEXILLUM_ID; ?>">Vexillum Atlantiae</a>
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>vexillum_easte.gif" width="40" height="40" alt="Award of the Vexillum Easte" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $VEXILLUM_ID; ?>">Vexillum Easte</a>
             <br/>
-            A group is awarded the Vexillum Atlantiae for an act of bravery on the field.
+            A group is awarded the Vexillum Easte for an act of bravery on the field.
             </td>
          </tr>
       </table>
@@ -339,7 +339,7 @@
             <td class="datacenter" width="33%" valign="top">
             <img src="<?php echo $AWARD_IMAGE_DIR; ?>royal_aug.gif" width="40" height="40" alt="Royal Augmentation of Arms" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $AUG; ?>">Royal Augmentation of Arms</a>
             <br/>
-            Children of Atlantia's Monarchs may be awarded a royal augmentation.
+            Children of East's Monarchs may be awarded a royal augmentation.
             </td>
          </tr>
       </table>
