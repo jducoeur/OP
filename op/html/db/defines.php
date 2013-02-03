@@ -3,6 +3,7 @@ include_once('host_defines.php');
 include_once('admin_defines.php');
 
 $OP_EMAIL = "arbradley@gmail.com";
+$COURT_REP_EMAIL = "arbradley@gmail.com";  
 $IMAGES_DIR = $HOME_DIR . "images/";
 $BRANCH_IMAGE_DIR = $IMAGES_DIR . "branches/";
 $DEVICE_IMAGE_DIR = $IMAGES_DIR . "devices/";
@@ -135,6 +136,9 @@ $RETIRED_BARONAGE_GROUP = 9;
 
 // Kingdoms
 $ATLANTIA_NAME = 'East';
+$KINGDOM_NAME = 'East';
+$KINGDOM_ADJ = 'Eastern';
+$KINGDOM_RES = 'Easterner';
 
 $WEST = 1;
 $EAST = 2;

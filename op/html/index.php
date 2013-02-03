@@ -6,24 +6,19 @@ if (isset($printable) && $printable == 1)
    $pagewidth = 650;
 }
 ?>
-<p class="title2" align="center">Welcome to the Atlantian Order of Precedence!</p>
+<p class="title2" align="center">Welcome to the <?php echo $KINGDOM_ADJ; ?> Order of Precedence!</p>
 <p align="center">
-The Atlantian Order of Precedence includes all the accolades bestowed upon the populace of Atlantia that have been reported to the Clerk of Precedence.
+The <?php echo $KINGDOM_ADJ; ?> Order of Precedence includes all the accolades bestowed upon the populace of <?php echo $KINGDOM_NAME; ?> that have been reported to the Clerk of Precedence.
 <br/><br/>
-Please send all <b>Royal</b> <a href="court_reports.php">court reports</a> to <b>royalcourtreport AT atlantia.sca.org</b>: This alias emails the Clerk of Precedence, the Triton Principal Herald, 
+Please send all <b>Royal</b> <a href="court_reports.php">court reports</a> to <b><?php echo $COURT_REP_EMAIL; ?></b>: This alias emails the Clerk of Precedence, the Principal Herald, 
 the Clerk Signet, the Backlog Deputy and the presiding Crowns.
 <br/><br/>
-Please send all <b>Baronial</b> <a href="court_reports.php">court reports</a> to <b>courtreport AT atlantia.sca.org</b>: This alias emails the Clerk of Precedence, the Triton Principal Herald, 
+Please send all <b>Baronial</b> <a href="court_reports.php">court reports</a> to <b><?php echo $COURT_REP_EMAIL; ?></b>: This alias emails the Clerk of Precedence, the Principal Herald, 
 the Clerk Signet and the Backlog Deputy.  Baronial court reports should also be reported to the presiding coronets and the baronial herald (if not the one conducting court).
 <br/><br/>
 For updates and corrections, please use the <a href="corrections.php">Corrections form</a>. 
 </p>
-<!-- Begin blurb -->
-<p align="center">
-Lady Glynis Gwynedd<br/>
-Clerk of Precedence<br/>
-op AT atlantia.sca.org
-</p>
+
 <br/>
 
 <!-- End blurb -->
