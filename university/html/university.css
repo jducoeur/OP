@@ -1,0 +1,386 @@
+.maintable {
+	border: medium ridge white;
+	width:99%;
+	background-color:white;
+	/*padding:1.5pt 1.5pt 1.5pt 1.5pt;
+	border-spacing: 1.5pt;*/
+	margin: 5px 5px 5px 5px;
+}
+
+.leftnav  {
+   color: white;
+	background-color: #cc0000;
+	width: 150pt;
+	padding: 7.5pt 7.5pt 7.5pt 7.5pt;
+	vertical-align: top;
+}
+
+.leftnavtitle  {
+	font-weight: bold;
+   text-decoration: underline;
+}
+
+.mainpage {
+	vertical-align: top;
+	padding:7.5pt 7.5pt 7.5pt 7.5pt;
+}
+
+A {
+	font-weight: bold;
+	color : #cc0000;
+}
+
+A:ACTIVE {
+	font-weight: bold;
+	color : #006633;
+}
+
+.menuoff {
+   color:white;
+   background-color:#cc0000;
+   text-align:center;
+   font-weight:bold;
+   width:131.25pt;
+   padding: 5px 5px 5px 5px;
+   margin: 5px 5px 5px 5px;
+}
+
+.menuon {
+   color:#CC0000;
+   background-color:white;
+   text-align:center;
+   font-weight:bold;
+   width:131.25pt;
+   padding: 5px 5px 5px 5px;
+   margin: 5px 5px 5px 5px;
+}
+
+.amenuoff {
+   color:white;
+   background-color:#cc0000;
+   text-align:center;
+   text-decoration:underline;
+   font-weight:bold;
+}
+
+.amenuon {
+   color:#CC0000;
+   background-color:white;
+   text-decoration:underline;
+   text-align:center;
+   font-weight:bold;
+}
+
+Body {
+	background-color : #cc0000;
+	color: Black;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+H1 {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 16px;
+   color: #cc0000;
+}
+
+H2 {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 14px;
+   color: #cc0000;
+}
+
+H3 {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left : 6px;
+   color: #cc0000;
+}
+
+H4 {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+   color: #cc0000;
+}
+
+.title1 {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	margin-left: 0px;
+   color: #cc0000;
+}
+
+.title2 {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin-left: 0px;
+   color: #cc0000;
+}
+
+.title3 {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left : 6px;
+   color: #cc0000;
+}
+
+.title4 {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+	margin-left: 0px;
+   color: #cc0000;
+}
+
+.title1black {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	margin-left: 0px;
+   color: black;
+}
+
+.title2black {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin-left: 0px;
+   color: black;
+}
+
+.title3black {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left : 6px;
+   color: black;
+}
+
+.title4black {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+	margin-left: 0px;
+   color: black;
+}
+
+.t_menu {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left: 6px;
+   color: #cc0000;
+}
+
+.t_menu_header {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 0px;
+   color: #cc0000;
+}
+
+A.submenu {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+   font-style: italic;
+	margin-left: 0px;
+	color : #cc0000;
+}
+
+A.submenu:ACTIVE {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+   font-style: italic;
+	margin-left: 0px;
+	color : #cc0000;
+}
+
+A.submenu:HOVER {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+   font-style: italic;
+	margin-left: 0px;
+	color : Blue;
+}
+
+P {
+	font-family: Verdana, Arial, Geneva,Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left : 6px;
+	margin-right : 6px;
+}
+
+LI {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+DT {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+   margin-top: 3px;
+   margin-left: 3px;
+}
+
+DD {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.copy {
+	font-size: 10px;
+	text-align: center;
+	color:#cc0000;
+}
+
+.copyleft {
+	font-size: 10px;
+	text-align: left;
+	color:#cc0000;
+}
+
+.blurb {
+	font-size: 10px;
+	text-align: justify
+}
+
+.blurb1 {
+	font-size: 10px;
+}
+
+.normal {
+	font-size: 16px;
+	color : Black;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+}
+
+.caption {
+	font-size: small;
+	font-weight: normal;
+	text-align: center;
+}
+
+.office {
+	font-weight : bold;
+	text-align : left;
+}
+
+.title {
+   color: #CC0000;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : bold;
+	text-align: center;
+	font-size: 12px;
+}
+
+.titleleft {
+   color: #CC0000;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : bold;
+	text-align: left;
+	font-size: 12px;
+}
+
+.titleright {
+   color: #CC0000;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: right;
+	font-size: 12px;
+}
+
+.data {
+	color : Black;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : normal;
+	text-align: left;
+	font-size: 12px;
+}
+
+.dataright {
+	color : Black;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : normal;
+	text-align: right;
+	font-size: 12px;
+}
+
+.datacenter {
+	color : Black;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : normal;
+	text-align: center;
+	font-size: 12px;
+}
+
+.calendar {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight : normal;
+	text-align: left;
+}
+
+.ptitle {
+	background-color : #FFFF99;
+   color: #cc0000;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : bold;
+	text-align: center;
+	font-size: 8px;
+}
+
+.ptitleleft {
+	background-color : #FFFF99;
+   color: #cc0000;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : bold;
+	text-align: left;
+	font-size: 8px;
+}
+
+.ptitleright {
+	background-color : #FFFF99;
+   color: #cc0000;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: right;
+	font-size: 8px;
+}
+
+.pdata {
+	color : Black;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : normal;
+	text-align: left;
+	font-size: 8px;
+}
+
+.pdataright {
+	color : Black;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : normal;
+	text-align: right;
+	font-size: 8px;
+}
+
+.pdatacenter {
+	color : Black;
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-weight : normal;
+	text-align: center;
+	font-size: 8px;
+}
+
+/* lang=EN-US link="#CC0000" vlink="#009933" style='tab-interval:.5in' alink="#0033FF" */
