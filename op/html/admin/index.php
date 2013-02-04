@@ -16,6 +16,7 @@ if (isset($adminuser) && isset($paswd))
    #Login Attempted
    user_auth($adminuser, $paswd);
 }
+
 include_once("header.php");
 if (isset($_SESSION['s_username']))
 {
@@ -40,7 +41,7 @@ else
    }
 #Provide login form
 ?>
-<form action="<? echo $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 <table border="1" cellpadding="5" cellspacing="0" summary="Login form">
    <tr>
       <td colspan="2" class="title">OP Administration Login</td>
@@ -59,8 +60,7 @@ else
 </table>
 </form>
 <p>Forgotten your password? <a href="reset.php">Reset your password.</a></p>
-<?
+<?php
 }
 include("footer.php");
 ?>
-

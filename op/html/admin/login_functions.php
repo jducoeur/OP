@@ -1,4 +1,4 @@
-<?
+<?php
 require_once('db.php'); 
 /** 
  * Authenticate user
@@ -17,20 +17,8 @@ function user_auth($adminuser, $paswd)
    $link = db_admin_connect();
 
    $auth_query = 
-      "SELECT user_auth.*, chivalry.chivalry_id, laurel.laurel_id, pelican.pelican_id, rose.rose_id, " .
-             "whitescarf.whitescarf_id, pearl.pearl_id, dolphin.dolphin_id, " .
-             "kraken.kraken_id, seastag.seastag_id, yewbow.yewbow_id " .
+      "SELECT user_auth.* " .
       "FROM $DBNAME_AUTH.user_auth " .
-      "LEFT JOIN $DBNAME_ORDER.chivalry ON user_auth.atlantian_id = chivalry.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.laurel ON user_auth.atlantian_id = laurel.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.pelican ON user_auth.atlantian_id = pelican.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.rose ON user_auth.atlantian_id = rose.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.whitescarf ON user_auth.atlantian_id = whitescarf.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.pearl ON user_auth.atlantian_id = pearl.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.dolphin ON user_auth.atlantian_id = dolphin.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.kraken ON user_auth.atlantian_id = kraken.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.seastag ON user_auth.atlantian_id = seastag.atlantian_id " .
-      "LEFT JOIN $DBNAME_ORDER.yewbow ON user_auth.atlantian_id = yewbow.atlantian_id " .
       "WHERE UPPER(user_auth.username) = " . quote_smart(strtoupper($adminuser)) . " " .
       "AND user_auth.pass_word = password(" . quote_smart($paswd) .")";
    if ($LOCKOUT == 1)
@@ -52,7 +40,7 @@ function user_auth($adminuser, $paswd)
       $_SESSION['s_username'] = $adminuser;
       $_SESSION['s_sca_name'] = stripslashes($register['sca_name']);
       $_SESSION['s_email'] = stripslashes($register['email']);
-
+/*
       //-------------
       // Order Member
       //-------------
@@ -186,6 +174,7 @@ function user_auth($adminuser, $paswd)
       {
          $_SESSION[$CHATELAINE_ADMIN] = true;
       }
+*/
       // Other apps
       if ($register[$OP_ADMIN] != '' && $register[$OP_ADMIN] > 0)
       {
@@ -208,7 +197,7 @@ function user_auth($adminuser, $paswd)
          $_SESSION[$UNIVERSITY_ADMIN] = true;
       }
 
-      $login_update = "UPDATE $DBNAME_AUTH.user_auth SET last_log = " . value_or_null(date("Y-m-d")) . ", client_ip = " . value_or_null($_SERVER['REMOTE_ADDR']) . " WHERE user_id = " . value_or_null($register['user_id']);
+      $login_update = "UPDATE $DBNAME_AUTH.user_auth SET last_log = " . value_or_null(gmdate("Y-m-d")) . ", client_ip = " . value_or_null($_SERVER['REMOTE_ADDR']) . " WHERE user_id = " . value_or_null($register['user_id']);
       $login_result = mysql_query($login_update) 
          or die ("Error 2 (user_auth).  Please forward this error to the " . get_webminister_display($link) . ".  " . mysql_error());
 

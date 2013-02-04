@@ -11,11 +11,11 @@ $DBNAME_UNIVERSITY = 'atlantia_university';
 $DBNAME_WARRANT = 'atlantia_warrant';
 $DBNAME = $DBNAME_OP;
 
-$DBUSER = 'atlantia_agent';
-$DBPASS = '0nlyV!3w';
+$DBUSER = 'op';
+$DBPASS = 'galliard';
 
-$DBUSER_ADMIN = 'atlantia_admin';
-$DBUSER_PASS = 'Sp!d3r';
+$DBUSER_ADMIN = 'op';
+$DBUSER_PASS = 'galliard';
 
 function db_connect()
 {

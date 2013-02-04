@@ -11,7 +11,7 @@ $DBHOST = 'mysql.database.atlantia.sca.org';
 */
 $SESSION_DOMAIN = "localhost";
 
-$HOME_DIR = "/eastop/";
+$HOME_DIR = "/";
 $OP_FILE_DIR = "C:\\Users\kjordan\Documents\webpage\\Atlantia\\op\\East\\html";
 $TMP = $OP_FILE_DIR . "html\\functions\\tmp";
 $TMP_DIR = $TMP . "\\";
