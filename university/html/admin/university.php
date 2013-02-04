@@ -427,7 +427,7 @@ To add a new University: Visit the <a href="<?php echo $_SERVER['PHP_SELF'] . "?
       {
 ?>
 <p style="text-align:center"><a href="catalog.php?university_id=<?php echo $form_university_id; ?>">Edit University Courses</a></p>
-<?
+<?php
       }
    }
 }

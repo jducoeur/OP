@@ -1,4 +1,4 @@
-<? 
+<?php 
 include_once("db.php");
 // Only allow authorized users
 if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
@@ -146,7 +146,7 @@ if ((isset($errmsg) && $errmsg != "") || !isset($_POST['submit']))
    </tr>
 </table>
 </form>
-<?
+<?php
 }
 }
 // Not allowed to access page

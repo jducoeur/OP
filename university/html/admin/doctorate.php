@@ -284,7 +284,7 @@ To add a new Doctorate: Visit the <a href="select_participant.php?type=<?php ech
       <td colspan="2" class="datacenter"><input type="submit" name="submit" id="submit" value="<?php echo $SUBMIT_SAVE; ?>"/></td>
    </tr>
 </table>
-<?
+<?php
       }
    }
 ?>

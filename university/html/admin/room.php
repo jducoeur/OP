@@ -261,7 +261,7 @@ To add a new Room: Visit the <a href="<?php echo $_SERVER['PHP_SELF'] . "?mode="
       <td colspan="2" class="datacenter"><input type="submit" name="submit" id="submit" value="<?php echo $SUBMIT_SAVE; ?>"/></td>
    </tr>
 </table>
-<?
+<?php
          if ($form_room_id != NULL)
          {
             $link = db_connect();

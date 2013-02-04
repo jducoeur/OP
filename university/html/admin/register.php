@@ -1,4 +1,4 @@
-<? 
+<?php 
 include_once("../db/db.php");
 include_once("../admin/db.php");
 $title = "User Account Registration";
