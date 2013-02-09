@@ -7,19 +7,19 @@
       <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
          <tr>
             <td class="datacenter" width="33%" valign="top">
-            <img src="images/atlantia.gif" width="40" height="50" alt="Kingdom of Atlantia" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>monarchs.php">The Kings and Queens of Atlantia</a>
+            <img src="images/east.gif" width="40" height="50" alt="Kingdom of East" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>monarchs.php">The Kings and Queens of East</a>
             <br/>
-            The Kingdom of Atlantia's ruling monarchs in history.
+            The Kingdom of East's ruling monarchs in history.
             </td>
             <td class="datacenter" width="33%" valign="top">
-            <img src="images/atlantia.gif" width="40" height="50" alt="Kingdom of Atlantia" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>principality.php">The Princes and Princesses of Atlantia</a>
+            <img src="images/east.gif" width="40" height="50" alt="Kingdom of East" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>principality.php">The Princes and Princesses of East</a>
             <br/>
-            The Kingdom of Atlantia's ruling Princes and Princesses from the time when Atlantia was a principality of the East Kingdom.
+            The Kingdom of East's ruling Princes and Princesses from the time when East was a principality of the East Kingdom.
             </td>
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>baron.gif" width="65" height="30" alt="Baronies of Atlantia" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>baronies.php">The Baronies of Atlantia</a>
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>baron.gif" width="65" height="30" alt="Baronies of East" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>baronies.php">The Baronies of East</a>
             <br/><br/>
-            A listing of the Order of Precedence for the Baronies of Atlantia.
+            A listing of the Order of Precedence for the Baronies of East.
             </td>
          </tr>
       </table>
@@ -70,13 +70,13 @@
       </td>
    </tr>
    <tr>
-      <th class="title">Atlantian OP</th>
+      <th class="title">Eastern OP</th>
    </tr>
    <tr>
       <td class="datacenter" valign="top">
-      <a href="<?php echo $HOME_DIR; ?>atlantian_op.php">Atlantian Order of Precedence</a>
+      <a href="<?php echo $HOME_DIR; ?>eastern_op.php">Eastern Order of Precedence</a>
       <br/><br/>
-      The Order of Precedence for the populace of Atlantia.
+      The Order of Precedence for the populace of East.
       </td>
    </tr>
 </table>

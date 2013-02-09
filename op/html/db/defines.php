@@ -2,7 +2,8 @@
 include_once('host_defines.php');
 include_once('admin_defines.php');
 
-$OP_EMAIL = "op@atlantia.sca.org";
+$OP_EMAIL = "arbradley@gmail.com";
+$COURT_REP_EMAIL = "arbradley@gmail.com";  
 $IMAGES_DIR = $HOME_DIR . "images/";
 $BRANCH_IMAGE_DIR = $IMAGES_DIR . "branches/";
 $DEVICE_IMAGE_DIR = $IMAGES_DIR . "devices/";
@@ -91,6 +92,31 @@ $SILVER_OSPREY_ID   = 30;
 $SEA_DRAGON_ID      = 31;
 $LANCERS_ID         = 768;
 
+  //eastern awards
+$CRESCENT_ID        = 233;
+$MAUNCHE_ID         = 234; 
+$OTC = 235;
+$SAGITTARIUS = 236;
+$OGR = 237;
+$QOC = 238;
+$BURDENED_TYGER = 239;
+$TYGER_CUB=240;
+$TROUBADOUR=241;
+$TERPSICHORE=242;
+$QUEEN_CYPHER = 243;
+$KING_CYPHER=244;
+$KING_ORDER_EXCELENCE=245;
+$BLUE_TYGER_LEGION=246;
+$QUEEN_HONOR_DESTINCTION=247;
+$TYGER_OF_VALOR=248;
+$GIFT_OF_GOLDEN_TYGER=249;
+$KINGDOM_AUGMENTATION_ARMS=250;
+$ROYAL_AUGMENTATION_ARMS=251;
+$TYGER_OF_EAST=252;
+$ROYAL_MANDARIN_OF_COURT=620;
+ 
+
+
 $SUPPORTERS_ID      = 32;
 $CBARON             = 33;
 $CBARON_GOA         = 759;
@@ -129,7 +155,10 @@ $DOLPHIN_GROUP          = 8;
 $RETIRED_BARONAGE_GROUP = 9;
 
 // Kingdoms
-$ATLANTIA_NAME = 'Atlantia';
+$ATLANTIA_NAME = 'East';
+$KINGDOM_NAME = 'East';
+$KINGDOM_ADJ = 'Eastern';
+$KINGDOM_RES = 'Easterner';
 
 $WEST = 1;
 $EAST = 2;
@@ -151,7 +180,7 @@ $LOCHAC = 17;
 $NORTHSHIELD = 18;
 $GLEANN_ABHANN = 112;
 
-// Atlantia's GoA date for Orders of Merit -> Orders of High Merit
+// East's GoA date for Orders of Merit -> Orders of High Merit
 $GOA_DATE = '2003-04-01';
 
 // Gender codes
@@ -207,7 +236,7 @@ $DEL_TYPE_EVENT = 2;
 $DEL_TYPE_CR = 3;
 $DEL_TYPE_AWARD = 4;
 
-$DELTYPE[$DEL_TYPE_ATLANTIAN] = "Atlantian";
+$DELTYPE[$DEL_TYPE_ATLANTIAN] = "Easterner";
 $DELTYPE[$DEL_TYPE_EVENT] = "Event";
 $DELTYPE[$DEL_TYPE_CR] = "Court Report";
 $DELTYPE[$DEL_TYPE_AWARD] = "Award";
