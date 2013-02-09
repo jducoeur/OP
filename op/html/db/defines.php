@@ -9,6 +9,8 @@ $BRANCH_IMAGE_DIR = $IMAGES_DIR . "branches/";
 $DEVICE_IMAGE_DIR = $IMAGES_DIR . "devices/";
 $AWARD_IMAGE_DIR = $IMAGES_DIR . "awards/";
 
+date_default_timezone_set("America/New_York");
+
 // Precedence values
 $ORDER_HIGH_MERIT_P   = 12;
 $GOA_P                = 14;
