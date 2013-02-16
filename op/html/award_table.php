@@ -283,14 +283,15 @@
             The Order of the Burdened Tyger may be awarded to gentles associated with running an event which was well above the normal standard of excellence in the East Kingdom.
             </td> 
             <td class="datacenter" width="33%" valign="top">
-          <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TROUBADOUR; ?>">Troubadour</a>
+          <img src="<?php echo $AWARD_IMAGE_DIR; ?>troub.gif" width="40" height="40" alt="Troubadour" border="0" align="middle"/><a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TROUBADOUR; ?>">Troubadour</a>
             <br/>
-             The Troubadour is awarded for excellence in Bardic Arts.
+             Given for vocal entertainment, especially for encouraging others to participate.
            </td> 
              <td class="datacenter" width="33%" valign="top">
-          <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TERPSICHORE; ?>">Terpsichore</a>
+          <img src="<?php echo $AWARD_IMAGE_DIR; ?>terp.gif" width="40" height="40" alt="Terpsichore" border="0" align="middle"/><a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TERPSICHORE; ?>">Terpsichore</a>
             <br/>
-             The Terpsichore is awarded for excellence in Dance.
+             Given for consistent and unselfish
+devotion in teaching dance and polite court movement.
            </td> 
          </tr>
          <tr>
