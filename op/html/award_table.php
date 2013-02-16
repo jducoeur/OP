@@ -290,16 +290,28 @@
              <td class="datacenter" width="33%" valign="top">
           <img src="<?php echo $AWARD_IMAGE_DIR; ?>terp.gif" width="40" height="40" alt="Terpsichore" border="0" align="middle"/><a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TERPSICHORE; ?>">Terpsichore</a>
             <br/>
-             Given for consistent and unselfish
-devotion in teaching dance and polite court movement.
+             Given for consistent and unselfish devotion in teaching dance and polite court movement.
            </td> 
          </tr>
          <tr>
+             <td class="datacenter" width="33%" valign="top">
+           <img src="<?php echo $AWARD_IMAGE_DIR; ?>gawain.gif" width="40" height="40" alt="Gawain" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $GAWAIN; ?>">Order of Gawain</a>
+            <br/>
+            The Order of Gawain is given to youth who excell in martial activities.
+            </td> 
             <td class="datacenter" width="33%" valign="top">
+          <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $ARTEMIS; ?>">Artemis</a>
+            <br/>
+             Given for prowess in combat archery.
+           </td> 
+             <td class="datacenter" width="33%" valign="top">
             <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $KING_ORDER_EXCELENCE; ?>">King's Order of Excellence</a>
             <br/>
             One is awarded the KOE for excellence in service to the King and kingdom.
             </td>
+         </tr>
+         <tr>
+            
            <td class="datacenter" width="33%" valign="top">
                <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TYGER_OF_EAST; ?>">Tyger of the East</a>
             <br/>

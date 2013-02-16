@@ -7,10 +7,10 @@ if (isset($printable) && $printable == 1)
    $pagewidth = 650;
 }
 ?>
-<p class="title2" align="center">The Awards of the Kingdom of East</p>
+<p class="title2" align="center">The Awards of the Kingdom of <?php echo $KINGDOM_NAME; ?></p>
 
 <p align="center">
-<a href="awards.php">Eastern Award Descriptions</a> | <a href="award_table_only.php">Eastern Awards by Precedence</a> | <a href="award_discipline.php">Eastern Awards by Discipline</a>
+<a href="awards.php"><?php echo $KINGDOM_ADJ; ?> Award Descriptions</a> | <a href="award_table_only.php"><?php echo $KINGDOM_ADJ; ?> Awards by Precedence</a> | <a href="award_discipline.php"><?php echo $KINGDOM_ADJ; ?> Awards by Discipline</a>
 </p>
 
 <table align="center" width="<?php echo $pagewidth; ?>" cellpadding="5" cellspacing="0" border="0" summary="">
@@ -18,18 +18,18 @@ if (isset($printable) && $printable == 1)
       <td width="100%">
       <table align="center" width="100%" cellpadding="5" cellspacing="0" border="1" summary="">
          <tr>
-            <th colspan="2" align="center" valign="middle" class="title">Kingdom of East</th>
+            <th colspan="2" align="center" valign="middle" class="title">Kingdom of the <?php echo $KINGDOM_NAME; ?></th>
          </tr>
          <tr>
-            <th width="40%" align="center" valign="middle"><img src="images/east.gif" width="195" height="236" alt="Arms of East" border="0"/></th>
-            <td class="data"><b>East</b> is the Second Kingdom of the Society for Creative Anachronism. </td>
+            <th width="40%" align="center" valign="middle"><img src="images/east.gif" width="195" height="236" alt="Arms of <?php echo $KINGDOM_NAME; ?>" border="0"/></th>
+            <td class="data"><b><?php echo $KINGDOM_NAME; ?></b> is the Second Kingdom of the Society for Creative Anachronism. </td>
          </tr>
       </table>
       <br/><br/>
       <table align="center" width="100%" cellpadding="5" cellspacing="0" border="1" summary="">
          <tr>
             <th width="40%" align="center" valign="middle" class="title">Royal Peerages</th>
-            <td class="data">The Royal Peers of East receive a Patent of Arms (PoA) at Their decoronation provided the Monarch stepping down did not already have a PoA or Bestowed Peerage prior to Their coronation. 
+            <td class="data">The Royal Peers of the East receive a Patent of Arms (PoA) at Their decoronation provided the Monarch stepping down did not already have a PoA or Bestowed Peerage prior to Their coronation. 
             The Queens or Consorts of East are inducted into the Order of the Rose upon completion of Their first reign of the order so deems appropriate.</td>
          </tr>
          <tr>
