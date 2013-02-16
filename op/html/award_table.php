@@ -106,36 +106,31 @@
       <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
          <tr>
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>white_scarf.gif" width="40" height="40" alt="Order of the White Scarf" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $WHITE_SCARF_ID; ?>">White Scarf</a>
+                       <img src="<?php echo $AWARD_IMAGE_DIR; ?>silver_crescent.gif" width="40" height="40" alt="Order of the Silver Crescent" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $CRESCENT_ID; ?>">Silver Crescent</a>
             <br/>
-            Grant Level: One receives a White Scarf for prowess in rapier combat.
+            AoA Level: One receives a Silver Crescent for Service.
+            </td>
+                        <td class="datacenter" width="33%" valign="top">
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>otc.gif" width="40" height="40" alt="Order of the Tyger's Combatant" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $OTC; ?>">Tyger's Combatant</a>
+            <br/>
+            AoA Level: One becomes a Tyger's Combatant through excellence in armored combat or youth combat.
             </td>
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>sea_stag.gif" width="40" height="40" alt="Order of the Sea Stag" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_group_id=<?php echo $SEA_STAG_GROUP; ?>">Sea Stag</a>
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>maunche.gif" width="40" height="40" alt="Order of the Maunche" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $MAUNCHE_ID; ?>">Maunche</a>
             <br/>
-            Grant Level: One becomes a Sea Stag through excellence in teaching armored combat, rapier combat, combat and target archery, thrown weapons, siege warfare, or youth combat.
-            </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>kraken.gif" width="40" height="40" alt="Order of the Kraken" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_group_id=<?php echo $KRAKEN_GROUP; ?>">Kraken</a>
-            <br/>
-            Grant Level: One is awarded the Kraken for excellence in armored combat (non-belted fighters).
+            AoA Level: One is awarded the Maunche for excellence in Arts and Sciences.
             </td>
          </tr>
          <tr>
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>yew_bow.gif" width="40" height="40" alt="Order of the Yew Bow" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_group_id=<?php echo $YEW_BOW_GROUP; ?>">Yew Bow</a>
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>sagitarius.gif" width="40" height="40" alt="Order of the Sagitarius" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_group_id=<?php echo $SAGITTARIUS; ?>">Sagitarius</a>
             <br/>
-            Grant Level: One is awarded the Yew Bow for excellence with bow and arrow (both target and combat), thrown weapons, or siegecraft.
+            AoA Level: One is awarded the Sagitarius for excellence with bow and arrow.
             </td>
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>pearl.gif" width="40" height="40" alt="Order of the Pearl" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_group_id=<?php echo $PEARL_GROUP; ?>">Pearl</a>
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>ogr.gif" width="40" height="40" alt="Order of the Golden Rapier" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $OGR; ?>">Order of the Golden Rapier</a>
             <br/>
-            Grant Level: One becomes a Pearl through teaching and excellence in the arts and sciences.
-            </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>golden_dolphin.gif" width="40" height="40" alt="Order of the Golden Dolphin" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_group_id=<?php echo $DOLPHIN_GROUP; ?>">Golden Dolphin</a>
-            <br/>
-            Grant Level: One becomes a Golden Dolphin through excellence in service and leadership.
+            AoA Level: One becomes an OGR through excellence in Rapier Combat.
             </td>
          </tr>
       </table>
@@ -157,7 +152,7 @@
       </td>
    </tr>
    <tr>
-      <th class="title">Orders of Merit</th>
+     <!-- <th class="title">Orders of Merit</th>
    </tr>
    <tr>
       <td class="datacenter">
@@ -199,7 +194,7 @@
       </table>
       </td>
    </tr>
-   <tr>
+   <tr> -->
       <th class="title">Court Baronage</th>
    </tr>
    <tr>
@@ -255,17 +250,23 @@
       <td class="datacenter">
       <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
          <tr>
-            <td class="datacenter" width="50%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>qoc.gif" width="40" height="40" alt="Queen's Order of Courtesy" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $QOC_ID; ?>">Queen's Order of Courtesy</a>
+            <td class="datacenter" width="33%" valign="top">
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>qoc.gif" width="40" height="40" alt="Queen's Order of Courtesy" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $QOC; ?>">Queen's Order of Courtesy</a>
             <br/>
             An accolade to courtesy as designated by the Queen.
             </td>
-            <td class="datacenter" width="50%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>nonpareil.gif" width="40" height="40" alt="Order of the Nonpareil" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $NONPAREIL_ID; ?>">Order of the Nonpareil</a>
+           <td class="datacenter" width="33%" valign="top">
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>tiger_cub.gif" width="40" height="40" alt="Tyger's Cub" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TYGER_CUB; ?>">Order of the Tyger's Cub</a>
             <br/>
-            One is awarded the Nonpareil for personifying what it is to be an Eastern. This award may only be given once per reign.
+            The Order of the Tyger's Cub may be awarded to children under the age of eighteen who have displayed admirable virtue and decorum at events.
             </td>
-         </tr>
+            <td class="datacenter" width="33%" valign="top">
+            <img src="<?php echo $AWARD_IMAGE_DIR; ?>silver_rapier.gif" width="40" height="40" alt="Silver Rapier" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $SILVER_RAPIER; ?>">Order of the Silver Rapier</a>
+            <br/>
+            Given for martial skill upon the rapier field.
+            </td>
+        </tr>
+        
       </table>
       </td>
    </tr>
@@ -276,92 +277,39 @@
       <td class="datacenter">
       <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
          <tr>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>sharks_tooth.gif" width="40" height="40" alt="Award of the Shark's Tooth" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $SHARKS_TOOTH_ID; ?>">Shark's Tooth</a>
+             <td class="datacenter" width="33%" valign="top">
+           <img src="<?php echo $AWARD_IMAGE_DIR; ?>burdened_tiger.gif" width="40" height="40" alt="Burdened Tyger" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $BURDENED_TYGER; ?>">Burdened Tyger</a>
             <br/>
-            One is awarded a Shark's Tooth for an act of bravery on the field.
-            </td>
+            The Order of the Burdened Tyger may be awarded to gentles associated with running an event which was well above the normal standard of excellence in the East Kingdom.
+            </td> 
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>silver_nautilus.gif" width="40" height="40" alt="Award of the Silver Nautilus" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $SILVER_NAUTILUS_ID; ?>">Silver Nautilus</a>
+          <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TROUBADOUR; ?>">Troubadour</a>
             <br/>
-            One is awarded the Silver Nautilus in recognition of skill in the arts and sciences.
-            </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>fountain.gif" width="40" height="40" alt="Award of the Fountain" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $FOUNTAIN_ID; ?>">Fountain</a>
+             The Troubadour is awarded for excellence in Bardic Arts.
+           </td> 
+             <td class="datacenter" width="33%" valign="top">
+          <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TERPSICHORE; ?>">Terpsichore</a>
             <br/>
-            One is awarded the Fountain in recognition of service to the kingdom.
-            </td>
+             The Terpsichore is awarded for excellence in Dance.
+           </td> 
          </tr>
          <tr>
             <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>kae.gif" width="40" height="40" alt="King's Award of Excellence" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $KAE_ID; ?>">King's Award of Excellence</a>
+            <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $KING_ORDER_EXCELENCE; ?>">King's Order of Excellence</a>
             <br/>
-            One is awarded the KAE for excellence in service to the King and kingdom.
+            One is awarded the KOE for excellence in service to the King and kingdom.
             </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>undine.gif" width="40" height="40" alt="Award of the Undine" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $UNDINE_ID; ?>">Undine</a>
+           <td class="datacenter" width="33%" valign="top">
+               <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TYGER_OF_EAST; ?>">Tyger of the East</a>
             <br/>
-            One is awarded the Undine for excellence in service to the Queen.
+            One is awarded the Tyger of the East for personifying what it is to be an Easterner.
             </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>herring.gif" width="40" height="40" alt="Award of the Herring" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $HERRING_ID; ?>">Herring</a>
-            <br/>
-            One is awarded the Herring for extraordinary achievement as an autocrat.
-            </td>
+            
          </tr>
-         <tr>
-            <td class="datacenter" width="33%" valign="top" colspan="3">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>vexillum_easte.gif" width="40" height="40" alt="Award of the Vexillum Easte" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $VEXILLUM_ID; ?>">Vexillum Easte</a>
-            <br/>
-            A group is awarded the Vexillum Easte for an act of bravery on the field.
-            </td>
-         </tr>
+        
       </table>
       </td>
    </tr>
-   <tr>
-      <th class="title">Youth Awards</th>
-   </tr>
-   <tr>
-      <td class="datacenter">
-      <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
-         <tr>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>sea_urchin.gif" width="40" height="40" alt="Order of the Sea Urchin" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $SEA_URCHIN_ID; ?>">Sea Urchin</a>
-            <br/>
-            Youth are awarded the Sea Urchin for contributions to the Kingdom in service, martial activities, and/or arts and sciences.
-            </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>arielle.gif" width="40" height="40" alt="Award of Arielle" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $ARIELLE_ID; ?>">Arielle</a>
-            <br/>
-            The Award of Arielle is given to youth for acts of courtesy.
-            </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>royal_aug.gif" width="40" height="40" alt="Royal Augmentation of Arms" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $AUG; ?>">Royal Augmentation of Arms</a>
-            <br/>
-            Children of East's Monarchs may be awarded a royal augmentation.
-            </td>
-         </tr>
-      </table>
-      <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
-         <tr>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>hippocampus.gif" width="40" height="40" alt="Order of the Hippocampus" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $HIPPOCAMPUS_ID; ?>">Hippocampus</a>
-            <br/>
-            Youth are awarded the Hippocampus for excellence in service and leadership.
-            </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>sea_tyger.gif" width="40" height="40" alt="Order of the Sea Tyger" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $SEA_TIGER_ID; ?>">Sea Tyger</a>
-            <br/>
-            Youth are awarded the Sea Tyger for excellence in youth combat.
-            </td>
-            <td class="datacenter" width="33%" valign="top">
-            <img src="<?php echo $AWARD_IMAGE_DIR; ?>alcyon.gif" width="40" height="40" alt="Order of the Alcyon" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $ALCYON_ID; ?>">Alcyon</a>
-            <br/>
-            Youth are awarded the Alcyon for excellence in arts and sciences.
-            </td>
-         </tr>
-      </table>
-      </td>
-   </tr>
+   
+      
 </table>
