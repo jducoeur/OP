@@ -327,13 +327,13 @@ CREATE TABLE `atlantian_award` (
   `revoked_date` date DEFAULT NULL,
   `last_updated` date DEFAULT NULL,
   `last_updated_by` mediumint(8) unsigned DEFAULT NULL,
-  `comments` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `comments` varchar(100) DEFAULT NULL,
   `court_report_id` mediumint(8) unsigned DEFAULT NULL,
   `private` tinyint(4) NOT NULL DEFAULT '0',
   `scroll_status_id` mediumint(8) unsigned DEFAULT NULL,
-  `scroll_assignees` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `scroll_assignees` varchar(255) DEFAULT NULL,
   `scroll_assigned_date` date DEFAULT NULL,
-  `scroll_notes` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `scroll_notes` varchar(255) DEFAULT NULL,
   `branch_id` mediumint(8) unsigned DEFAULT NULL,
   `gender` char(1) DEFAULT NULL,
   PRIMARY KEY (`atlantian_award_id`),
@@ -364,19 +364,19 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `award` (
   `award_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `award_name` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `award_name` varchar(255) NOT NULL DEFAULT '',
   `select_branch` tinyint(4) NOT NULL DEFAULT '0',
   `type_id` mediumint(8) unsigned DEFAULT NULL,
   `title_id` mediumint(9) DEFAULT NULL,
-  `award_file_name` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `collective_name` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `award_name_male` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `award_name_female` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `award_file_name` varchar(255) DEFAULT NULL,
+  `collective_name` varchar(255) DEFAULT NULL,
+  `award_name_male` varchar(255) DEFAULT NULL,
+  `award_name_female` varchar(255) DEFAULT NULL,
   `closed` tinyint(4) NOT NULL DEFAULT '0',
   `award_blurb` text CHARACTER SET latin1,
   `last_updated` date DEFAULT NULL,
   `last_updated_by` mediumint(8) unsigned DEFAULT NULL,
-  `website` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `website` varchar(100) DEFAULT NULL,
   `award_group_id` mediumint(8) unsigned DEFAULT NULL,
   `branch_id` mediumint(8) unsigned DEFAULT NULL,
   PRIMARY KEY (`award_id`),
@@ -397,6 +397,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `award` WRITE;
 /*!40000 ALTER TABLE `award` DISABLE KEYS */;
+/*
 INSERT INTO `award` VALUES 
 (1,'Sovereign',1,1,1,NULL,'Monarchs','King','Queen',0,NULL,NULL,NULL,NULL,NULL,NULL),
 (2,'Consort',1,1,1,NULL,'Monarchs','King','Queen',0,NULL,NULL,NULL,NULL,NULL,NULL),
@@ -1218,6 +1219,7 @@ INSERT INTO `award` VALUES
 (846,'Black Diamond',0,20,NULL,NULL,'Order of the Black Diamond','Black Diamond','Black Diamond',0,'Awarded to an individual who shines as an example to all of the strength and purity of the Black Diamond.','2010-06-19',7,NULL,NULL,26),
 (847,'Diamond Chip',0,20,NULL,NULL,'Award of the Diamond Chip','Diamond Chip','Diamond Chip',0,'Given in recognition of individual feats of service or sacrifice. May be given more than once.','2010-10-10',7,NULL,NULL,26),
 (848,'Seraphic Star',0,20,NULL,NULL,'Order of the Seraphic Star','Companion of the Seraphic Star','Companion of the Seraphic Star',0,'Order of the Seraphic Star: Established in 1971 by Baron Sárkányi Gerö to recognize outstanding service to the Barony. It is a polling order. The very special award, when given, is bestowed at Angels Yule. Please send recommendations to the Principal of the Order.','2010-10-10',128,'http://www.sca-angels.org/history.php',NULL,148);
+*/;
 /*!40000 ALTER TABLE `award` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1230,11 +1232,11 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `award_group` (
   `award_group_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `award_group_name` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `award_file_name` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `award_file_name2` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `collective_name` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `website` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `award_group_name` varchar(255) NOT NULL DEFAULT '',
+  `award_file_name` varchar(255) DEFAULT NULL,
+  `award_file_name2` varchar(255) DEFAULT NULL,
+  `collective_name` varchar(255) DEFAULT NULL,
+  `website` varchar(100) DEFAULT NULL,
   `award_blurb` text CHARACTER SET latin1,
   `last_updated` date DEFAULT NULL,
   `last_updated_by` mediumint(8) unsigned DEFAULT NULL,
@@ -1273,7 +1275,7 @@ CREATE TABLE `baronage` (
   `baronage_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `baron_id` mediumint(8) unsigned DEFAULT NULL,
   `baroness_id` mediumint(8) unsigned DEFAULT NULL,
-  `baronage_display` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `baronage_display` varchar(50) DEFAULT NULL,
   `event_id` mediumint(8) unsigned DEFAULT NULL,
   `baronage_start_sequence` smallint(6) NOT NULL DEFAULT '0',
   `baronage_start_date` date DEFAULT NULL,
@@ -1355,10 +1357,10 @@ CREATE TABLE `court_report` (
   `reign_id` mediumint(8) unsigned DEFAULT NULL,
   `principality_id` mediumint(8) unsigned DEFAULT NULL,
   `baronage_id` mediumint(8) unsigned DEFAULT NULL,
-  `court_type` char(1) CHARACTER SET latin1 DEFAULT NULL,
+  `court_type` char(1) DEFAULT NULL,
   `court_date` date DEFAULT NULL,
   `court_time` tinyint(4) DEFAULT NULL,
-  `herald` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `herald` varchar(255) DEFAULT NULL,
   `received_date` date DEFAULT NULL,
   `entered_date` date DEFAULT NULL,
   `notes` text CHARACTER SET latin1,
@@ -1394,7 +1396,7 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `event` (
   `event_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `event_name` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `event_name` varchar(255) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
   `last_updated` date DEFAULT NULL,
   `last_updated_by` mediumint(8) unsigned DEFAULT NULL,
@@ -1420,10 +1422,10 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `precedence` (
   `type_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `type` varchar(50) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `type` varchar(50) NOT NULL DEFAULT '',
   `precedence` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `display_name` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `award_file_name` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `display_name` varchar(255) DEFAULT NULL,
+  `award_file_name` varchar(255) DEFAULT NULL,
   `award_blurb` text CHARACTER SET latin1,
   `last_updated` date DEFAULT NULL,
   `last_updated_by` mediumint(8) unsigned DEFAULT NULL,
@@ -1475,7 +1477,7 @@ CREATE TABLE `principality` (
   `principality_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `prince_id` mediumint(8) unsigned DEFAULT NULL,
   `princess_id` mediumint(8) unsigned DEFAULT NULL,
-  `principality_display` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `principality_display` varchar(50) DEFAULT NULL,
   `event_id` mediumint(8) unsigned DEFAULT NULL,
   `principality_start_sequence` smallint(6) NOT NULL DEFAULT '0',
   `principality_start_date` date DEFAULT NULL,
@@ -1506,7 +1508,7 @@ CREATE TABLE `reign` (
   `reign_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `king_id` mediumint(8) unsigned DEFAULT NULL,
   `queen_id` mediumint(8) unsigned DEFAULT NULL,
-  `monarchs_display` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `monarchs_display` varchar(50) DEFAULT NULL,
   `event_id` mediumint(8) unsigned DEFAULT NULL,
   `reign_start_sequence` smallint(6) NOT NULL DEFAULT '0',
   `reign_start_date` date DEFAULT NULL,
@@ -1535,8 +1537,8 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `scroll_status` (
   `scroll_status_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `scroll_status_code` char(1) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `scroll_status` varchar(25) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `scroll_status_code` char(1) NOT NULL DEFAULT '',
+  `scroll_status` varchar(25) NOT NULL DEFAULT '',
   PRIMARY KEY (`scroll_status_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
@@ -1564,8 +1566,8 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `title` (
   `title_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `title_male` varchar(50) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `title_female` varchar(50) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `title_male` varchar(50) NOT NULL DEFAULT '',
+  `title_female` varchar(50) NOT NULL DEFAULT '',
   `last_updated` date DEFAULT NULL,
   `last_updated_by` mediumint(8) unsigned DEFAULT NULL,
   PRIMARY KEY (`title_id`),
@@ -1780,6 +1782,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `branch` WRITE;
 /*!40000 ALTER TABLE `branch` DISABLE KEYS */;
+/*
 INSERT INTO `branch` VALUES (1,'West',NULL,1,0,'1966-05-01','1966-05-01',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,100,0,NULL,1,NULL,NULL,NULL),
 (2,'East',NULL,1,0,'1968-06-01','1968-06-01',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,200,0,NULL,2,NULL,NULL,NULL),
 (3,'Middle',NULL,1,0,'1969-09-01','1969-09-01',NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,300,0,NULL,3,NULL,NULL,NULL),
@@ -1928,6 +1931,7 @@ INSERT INTO `branch` VALUES (1,'West',NULL,1,0,'1966-05-01','1966-05-01',NULL,0,
 (146,'Torhvassir',8,4,0,NULL,NULL,'1992-03-01',1,NULL,'Or, a chevron wavy azure between, in chief, a water wheel proper between two towers gules and in base a laurel wreath proper.',NULL,NULL,NULL,NULL,NULL,NULL,41,1,NULL,NULL,NULL,'2010-04-12',1),
 (147,'Wandering Lands',8,6,0,NULL,NULL,'1992-03-01',1,'1982-05-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,87,1,NULL,NULL,NULL,'2010-04-12',1),
 (148,'Angels',6,3,0,NULL,NULL,NULL,0,'1970-10-18','Gules, a standing seraph affronty proper, winged Or, haloed of a laurel wreath proper.','1977-11-01',NULL,NULL,'http://www.sca-angels.org/',NULL,NULL,607,0,'Current device registration may be February 1975 or earlier. Need to cross-check drawings in the Laurel files.',NULL,NULL,'2010-10-10',128);
+*/
 /*!40000 ALTER TABLE `branch` ENABLE KEYS */;
 UNLOCK TABLES;
 
