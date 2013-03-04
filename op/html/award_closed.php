@@ -3,7 +3,7 @@
    <tr>
       <th class="title">Kingdom Honors</th>
    </tr>
-   <tr>
+   <tr> <!--
       <td class="datacenter">
       <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
          <tr>
@@ -14,12 +14,12 @@
             </td>
          </tr>
       </table>
-      </td>
+      </td> -->
    </tr>
    <tr>
       <th class="title">Closed Orders</th>
    </tr>
-   <tr>
+   <tr> <!--
       <td class="datacenter">
       <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
          <tr>
@@ -35,6 +35,6 @@
             </td>
          </tr>
       </table>
-      </td>
+      </td> -->
    </tr>
 </table>
