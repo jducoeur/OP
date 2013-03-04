@@ -337,7 +337,10 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
             $bestowers_display = "BNA*";
          }
 
-         $preferred_sca_name = get_preferred_sca_name($atlantian_id, $sca_name);
+		 /* This preferred_sca_name() thing takes for-bloody-ever when querying a large order. And it seems very unimportant. For
+		  * now, we'll neuter it. Later, reintroduce it as a single mass query instead. -- JduCoeur, 3/4/13 */
+         /*$preferred_sca_name = get_preferred_sca_name($atlantian_id, $sca_name);*/
+         $preferred_sca_name = "";
          $link = db_connect();
 
          if ($private == 0 || ($private == 1 && ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))))
