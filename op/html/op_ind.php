@@ -434,7 +434,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
                $event_display .= " (" . $event_loc . ")";
             }
          }
-         else if ($kingdom != "Atlantia")
+         else if ($kingdom != $KINGDOM_NAME)
          {
             $event_display = "ENA*";
          }
