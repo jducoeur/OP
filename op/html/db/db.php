@@ -524,6 +524,9 @@ function is_award_linkable($award_id, $award_group_id, $type_id, $kingdom)
  */
 function is_award_gender_specific($award_id, $award_group_id, $type_id)
 {
+   return true;
+/* I can find no reason for this silly hardcoding, which isn't correct for the East anyway. We
+   should simply use what we find in the DB to match the award.
    $retval = false;
    global $MONARCH, $HEIR, $PPRINCE, $PHEIR, $DUCAL, $COUNTY, $VISCOUNTY, $M_AT_ARMS, $LAUREL, $PELICAN, $LANDED_BARONAGE, $RETIRED_BARONAGE, $COURT_BARONAGE_AOA, $COURT_BARONAGE_GOA, $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $ROSE_GROUP;
 
@@ -549,6 +552,7 @@ function is_award_gender_specific($award_id, $award_group_id, $type_id)
    }
 
    return $retval;
+*/
 }
 
 /**
