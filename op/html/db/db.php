@@ -68,7 +68,7 @@ function generate_password($uname)
 function get_title($atlantian_id, $checkdate)
 {
    global $DBNAME_AUTH, $DBNAME_OP, $DBNAME_BRANCH, $DBNAME_ORDER;
-   global $MALE, $FEMALE, $RETIRED_BARONAGE_ID, $LANDED_BARONAGE_ID, $FOUNDING_BARON, $FOUNDING_BARONESS, $LORD, $LADY, $ORDER_MERIT_P, $ORDER_HIGH_MERIT, $ORDER_HIGH_MERIT_P, $ATLANTIA_NAME, $GOA_DATE, $COURT_BARONAGE_AOA, $COURT_BARONAGE_GOA, $GOA;
+   global $MALE, $FEMALE, $RETIRED_BARONAGE_ID, $LANDED_BARONAGE_ID, $FOUNDING_BARON, $FOUNDING_BARONESS, $LORD, $LADY, $ORDER_MERIT_P, $ORDER_HIGH_MERIT, $ORDER_HIGH_MERIT_P, $ATLANTIA_NAME, /*$GOA_DATE,*/ $COURT_BARONAGE_AOA, $COURT_BARONAGE_GOA, $GOA;
 
    $title = NULL;
    /* Performing SQL query */
@@ -560,6 +560,11 @@ function is_award_gender_specific($award_id, $award_group_id, $type_id)
  * @param atlantian_id The Atlantian ID of the individual
  * @param sca_name The official SCA Name of the individual
  * @return String the preferred SCA name
+ *
+ * TODO (JustinDuC 3/5/13): I have commented out most uses of this, because they are happening inside
+ *   tight loops and are simply driving the DB to its knees and causing timeouts. At *least*, this should be using the
+ *   existing database connection; really, it should be incorporated into the larger queries, where
+ *   it would typically take a fraction of a second.
  */
 function get_preferred_sca_name($atlantian_id, $sca_name)
 {

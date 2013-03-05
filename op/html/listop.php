@@ -2,6 +2,7 @@
 <table border="0" align="center" summary="table for layout">
    <tr>
       <td>
+<p>TO DO: this needs to be rewritten for the East -- this order isn't quite right</p>
 <p>The Order of Precedence in the Kingdom of Atlantia is as follows: </p>
 	<ul>
 		<li>Their Majesties of Atlantia</li>

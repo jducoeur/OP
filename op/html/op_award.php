@@ -218,7 +218,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       <th scope="col" class="title" nowrap="nowrap">Event</th>
       <th scope="col" class="title" nowrap="nowrap">Bestowed By</th>
 <?php 
-      if ($award_group_id == $YEW_BOW_GROUP || $award_id == $SUPPORTERS_ID || $award_id == $AUG || $award_id == $MARINUS_STEWARDS)
+      if (false)//$award_group_id == $YEW_BOW_GROUP || $award_id == $SUPPORTERS_ID || $award_id == $AUG || $award_id == $MARINUS_STEWARDS)
       {
 ?>
       <th scope="col" class="title">Description</th>
@@ -365,7 +365,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       <td class="data"><?php echo $event_display; ?></td>
       <td class="data" nowrap="nowrap"><?php echo $bestowers_display; ?></td>
 <?php 
-            if ($award_group_id == $YEW_BOW_GROUP || $award_id == $SUPPORTERS_ID || $award_id == $AUG || $award_id == $MARINUS_STEWARDS)
+            if (false)//$award_group_id == $YEW_BOW_GROUP || $award_id == $SUPPORTERS_ID || $award_id == $AUG || $award_id == $MARINUS_STEWARDS)
             {
 ?>
       <td class="data"><?php echo $comments; ?></td>

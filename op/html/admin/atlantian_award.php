@@ -1109,7 +1109,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       <td class="data"><input name="form_premier" id="form_premier" type="checkbox" value="1"<?php if (isset($form_premier) && $form_premier == 1) { echo ' checked="checked"'; }?>/></td>
    </tr>
       <?php
-      if ($form_award_group_id == $YEW_BOW_GROUP || $form_award_id == $SUPPORTERS_ID || $form_award_id == $AUG || $form_award_id == $MARINUS_STEWARDS)
+      if (false)//$form_award_group_id == $YEW_BOW_GROUP || $form_award_id == $SUPPORTERS_ID || $form_award_id == $AUG || $form_award_id == $MARINUS_STEWARDS)
       {
       ?>
    <tr>
@@ -1118,7 +1118,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
    </tr>
       <?php
       }
-      if ($form_award_id == $ST_AIDAN || $form_award_id == $RETIRED_BARONAGE_ID || $form_award_id == $LANDED_BARONAGE_ID || $form_award_id == $RETIRED_BARONAGE_NA_ID)
+      if (false)//$form_award_id == $ST_AIDAN || $form_award_id == $RETIRED_BARONAGE_ID || $form_award_id == $LANDED_BARONAGE_ID || $form_award_id == $RETIRED_BARONAGE_NA_ID)
       {
       ?>
    <tr>

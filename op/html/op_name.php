@@ -134,7 +134,7 @@ if ($num_recipient_result > 0)
       {
          $device_reg_date = ' (' . format_full_month_date($device_reg_date) . ')';
       }
-      $preferred_sca_name = get_preferred_sca_name($atlantian_id, $sca_name);
+      $preferred_sca_name = ""; //get_preferred_sca_name($atlantian_id, $sca_name);
 
       $has_dev = "";
       $device_file_name = clean($recipient_data['device_file_name']);

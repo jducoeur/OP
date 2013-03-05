@@ -289,9 +289,10 @@ function get_rose_arms_by_kingdom($kingdom_id)
    return $arms;
 }
 
+// TODO: what is this? Is it still relevant, or can we just scrag it as we should?
 function is_order_award($award_id)
 {
-   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID;
+   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, /* $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
 
    $retval = false;
    switch($award_id)
@@ -303,14 +304,14 @@ function is_order_award($award_id)
       case $PELICAN:
       case $KNIGHT:
       case $M_AT_ARMS:
-      case $PEARL_ID:
-      case $PEARL_AOA_ID:
-      case $DOLPHIN_ID:
-      case $DOLPHIN_AOA_ID:
-      case $YEW_BOW_ID:
-      case $KRAKEN_ID:
-      case $SEA_STAG_ID:
-      case $WHITE_SCARF_ID:
+//      case $PEARL_ID:
+//      case $PEARL_AOA_ID:
+//      case $DOLPHIN_ID:
+//      case $DOLPHIN_AOA_ID:
+//      case $YEW_BOW_ID:
+//      case $KRAKEN_ID:
+//      case $SEA_STAG_ID:
+//      case $WHITE_SCARF_ID:
          $retval = true;
          break;
    }
@@ -319,7 +320,7 @@ function is_order_award($award_id)
 
 function get_order_table($award_id)
 {
-   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID;
+   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, /* $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
 
    $order_table = "";
    switch($award_id)
@@ -339,6 +340,7 @@ function get_order_table($award_id)
       case $M_AT_ARMS:
          $order_table = "chivalry";
          break;
+/*
       case $PEARL_ID:
       case $PEARL_AOA_ID:
          $order_table = "pearl";
@@ -359,13 +361,14 @@ function get_order_table($award_id)
       case $WHITE_SCARF_ID:
          $order_table = "whitescarf";
          break;
+*/
    }
    return $order_table;
 }
 
 function get_order_access_field($award_id)
 {
-   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID;
+   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, /* $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
 
    $order_table = "";
    switch($award_id)
@@ -385,6 +388,7 @@ function get_order_access_field($award_id)
       case $M_AT_ARMS:
          $order_table = "chivalry";
          break;
+/*
       case $PEARL_ID:
       case $PEARL_AOA_ID:
          $order_table = "pearl";
@@ -405,13 +409,14 @@ function get_order_access_field($award_id)
       case $WHITE_SCARF_ID:
          $order_table = "whitescarf";
          break;
+*/
    }
    return $order_table;
 }
 
 function get_order_pending_field($award_id)
 {
-   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID;
+   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, /* $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
 
    $order_table = "";
    switch($award_id)
@@ -431,6 +436,7 @@ function get_order_pending_field($award_id)
       case $M_AT_ARMS:
          $order_table = "chivalry_pend";
          break;
+/*
       case $PEARL_ID:
       case $PEARL_AOA_ID:
          $order_table = "pearl_pend";
@@ -451,6 +457,7 @@ function get_order_pending_field($award_id)
       case $WHITE_SCARF_ID:
          $order_table = "whitescarf_pend";
          break;
+*/
    }
    return $order_table;
 }
