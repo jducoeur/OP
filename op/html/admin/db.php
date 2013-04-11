@@ -292,7 +292,7 @@ function get_rose_arms_by_kingdom($kingdom_id)
 // TODO: what is this? Is it still relevant, or can we just scrag it as we should?
 function is_order_award($award_id)
 {
-   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, /* $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
+   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS/* , $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
 
    $retval = false;
    switch($award_id)
@@ -320,7 +320,7 @@ function is_order_award($award_id)
 
 function get_order_table($award_id)
 {
-   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, /* $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
+   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS/* , $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
 
    $order_table = "";
    switch($award_id)
@@ -368,7 +368,7 @@ function get_order_table($award_id)
 
 function get_order_access_field($award_id)
 {
-   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, /* $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
+   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS/* , $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
 
    $order_table = "";
    switch($award_id)
@@ -416,7 +416,7 @@ function get_order_access_field($award_id)
 
 function get_order_pending_field($award_id)
 {
-   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS, /* $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
+   global $ROSE, $ROSE_AOA, $ROSE_NO_ARMS, $LAUREL, $PELICAN, $KNIGHT, $M_AT_ARMS/* , $PEARL_ID, $PEARL_AOA_ID, $DOLPHIN_ID, $DOLPHIN_AOA_ID, $YEW_BOW_ID, $KRAKEN_ID, $SEA_STAG_ID, $WHITE_SCARF_ID */;
 
    $order_table = "";
    switch($award_id)

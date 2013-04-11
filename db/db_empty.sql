@@ -336,6 +336,7 @@ CREATE TABLE `atlantian_award` (
   `scroll_notes` varchar(255) DEFAULT NULL,
   `branch_id` mediumint(8) unsigned DEFAULT NULL,
   `gender` char(1) DEFAULT NULL,
+  `given_as` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`atlantian_award_id`),
   KEY `FK_atlantian_award__atlantian` (`atlantian_id`),
   KEY `FK_atlantian_award__award` (`award_id`),
