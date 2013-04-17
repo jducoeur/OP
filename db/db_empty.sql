@@ -337,6 +337,8 @@ CREATE TABLE `atlantian_award` (
   `branch_id` mediumint(8) unsigned DEFAULT NULL,
   `gender` char(1) DEFAULT NULL,
   `given_as` varchar(255) DEFAULT NULL,
+  `old_source` char(4) DEFAULT NULL,
+  `date_precision` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`atlantian_award_id`),
   KEY `FK_atlantian_award__atlantian` (`atlantian_id`),
   KEY `FK_atlantian_award__award` (`award_id`),
