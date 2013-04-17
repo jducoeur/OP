@@ -212,7 +212,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <?php
    /* Performing SQL query */
    $ind_query = 
-      "(SELECT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
+      "(SELECT DISTINCT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
       "atlantian_award.award_date, atlantian_award.sequence, atlantian_award.premier, atlantian_award.retired_date, atlantian_award.resigned_date, atlantian_award.revoked_date, atlantian_award.comments, atlantian_award.private, atlantian_award.gender, " .
       "branch.branch, branch.branch_id, precedence.precedence, branch.date_founded, " .
       "court_report.event_id, court_report.reign_id, court_report.principality_id, court_report.baronage_id, baronage.branch_id as barony_id, " .
@@ -227,8 +227,8 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       "LEFT OUTER JOIN $DBNAME_OP.principality ON court_report.principality_id = principality.principality_id " .
       "LEFT OUTER JOIN $DBNAME_OP.baronage ON court_report.baronage_id = baronage.baronage_id " .
       "WHERE atlantian_award.atlantian_id = ". $atlantian_id . ") ".
-      "UNION ALL ".
-      "(SELECT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
+      "UNION DISTINCT ".
+      "(SELECT DISTINCT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
       "atlantian_award.award_date, atlantian_award.sequence, atlantian_award.premier, atlantian_award.retired_date, atlantian_award.resigned_date, atlantian_award.revoked_date, atlantian_award.comments, atlantian_award.private, atlantian_award.gender, " .
       "branch.branch, branch.branch_id, precedence.precedence, branch.date_founded, " .
       "court_report.event_id, court_report.reign_id, court_report.principality_id, court_report.baronage_id, baronage.branch_id as barony_id, " .
@@ -243,8 +243,8 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       "LEFT OUTER JOIN $DBNAME_OP.principality ON court_report.principality_id = principality.principality_id " .
       "LEFT OUTER JOIN $DBNAME_OP.baronage ON court_report.baronage_id = baronage.baronage_id " .
       "WHERE atlantian_award.atlantian_id = ". $atlantian_id . ") ".
-      "UNION ALL ".
-      "(SELECT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
+      "UNION DISTINCT ".
+      "(SELECT DISTINCT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
       "atlantian_award.award_date, atlantian_award.sequence, atlantian_award.premier, atlantian_award.retired_date, atlantian_award.resigned_date, atlantian_award.revoked_date, atlantian_award.comments, atlantian_award.private, atlantian_award.gender, " .
       "null AS branch, null AS branch_id, precedence.precedence, " . date("Y-m-d") . " as date_founded, " .
       "court_report.event_id, court_report.reign_id, court_report.principality_id, court_report.baronage_id, baronage.branch_id as barony_id, " .
