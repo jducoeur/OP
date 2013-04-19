@@ -227,12 +227,9 @@ SET character_set_client = @saved_cs_client;
 LOCK TABLES `user_auth` WRITE;
 /*!40000 ALTER TABLE `user_auth` DISABLE KEYS */;
 INSERT INTO `user_auth` VALUES 
-(1,NULL,'webminister',password('password'),'webminister@atlantia.sca.org',NULL,NULL,'Web Minister',NULL,NULL,NULL,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,NULL,NULL,NULL),
-(2,NULL,'opclerk',password('password'),'op@atlantia.sca.org',NULL,NULL,'Clerk of Precedence',NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,NULL,NULL,NULL),
-(3,NULL,'backlog',password('password'),'backlog@atlantia.sca.org',NULL,NULL,'Scroll Backlog Deputy',NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,NULL,'2009-01-11',1),
-(4,NULL,'herald',password('password'),'herald@atlantia.sca.org',NULL,NULL,'Triton Principal Herald',NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,NULL,'2009-01-11',1),
-(5,NULL,'university',password('password'),'university@atlantia.sca.org',NULL,NULL,'University Chancellor',NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,NULL,NULL,NULL),
-(6,NULL,'registrar',password('password'),'registrar@atlantia.sca.org',NULL,NULL,'University Registrar',NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,NULL,NULL,NULL);
+(1,NULL,'webminister','*826CE8D83778AA407527A8E40F07A42106E14747','webminister@atlantia.sca.org',NULL,NULL,'Web Minister',NULL,NULL,NULL,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,NULL,NULL,NULL),
+(2,NULL,'opclerk','*54EA48BC4A02DFC284F280D1E009E509DF0D944E','op@atlantia.sca.org',NULL,NULL,'Clerk of Precedence',NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,NULL,NULL,NULL),
+(3,NULL,'herald','*145EB3C2E7485777C9BDEB16457BB97475563D6D','herald@atlantia.sca.org',NULL,NULL,'Triton Principal Herald',NULL,NULL,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,NULL,'2009-01-11',1);
 /*!40000 ALTER TABLE `user_auth` ENABLE KEYS */;
 UNLOCK TABLES;
 
