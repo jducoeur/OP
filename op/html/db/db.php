@@ -11,11 +11,9 @@ $DBNAME_UNIVERSITY = 'atlantia_university';
 $DBNAME_WARRANT = 'atlantia_warrant';
 $DBNAME = $DBNAME_OP;
 
-$DBUSER = 'op';
-$DBPASS = 'galliard';
-
-$DBUSER_ADMIN = 'op';
-$DBUSER_PASS = 'galliard';
+/* TODO: you need to copy db_conn.php.template to db_conn.php, and fill in the
+ * actual connection info: */
+include_once("db_conn.php");
 
 function db_connect()
 {
