@@ -2,60 +2,49 @@
 include_once('db/host_defines.php');
 require_once('admin/session.php');
 
-$letter = "A";
-if (isset($_GET['letter']))
+if (isset($_GET['ids']))
 {
-   $letter = $_GET['letter'];
+  $ids = explode(',',$_GET['ids']);
+  // TODO: validate $ids! They should all be numeric.
+  $where = "atlantian.atlantian_id IN (" . implode(',', $ids) . ") ";
+  $title = "Order of March for selected individuals";
 }
-$title = "Award Listing - $letter";
-
-// Default sort
-$list_type = "O";
-$order_by = "award_date, sequence";
-$order_display = "Awards are listed in the order bestowed.";
-$order_switch = "Sort awards by precedence";
-$other_list_type = "P";
-
-if (isset($_GET['list_type']))
+else
 {
-   $list_type = $_GET['list_type'];
-   if ($list_type == "P")
-   {
-      $order_by = "precedence, award_date, sequence";
-      $order_display = "Awards are listed in order of precedence.";
-      $order_switch = "Sort awards by date";
-      $other_list_type = "O";
-   }
+  $letter = "A";
+  if (isset($_GET['letter']))
+  {
+     $letter = $_GET['letter'];
+  }
+  // TODO: this should be using quote_begins_like(), but we can't include that this high up
+  $where = "sca_name LIKE '$letter%'";
+  $title = "Order of March for letter $letter";
 }
+
+// Default sort -- this display is always sorted by precedence
+$list_type = "P";
+$order_by = "precedence, award_date, sequence";
+$order_display = "Awards are listed in order of precedence.";
 
 include("header.php");
 
 $link = db_connect();
 
-$sql_extra = "";
-if ($letter == 'A')
-{
-   $sql_extra = " OR sca_name LIKE 'Æ%'";
-}
-if ($letter == 'O')
-{
-   $sql_extra = " OR sca_name LIKE 'Ø%'";
-}
-if ($letter == 'T')
-{
-   $sql_extra = " OR sca_name LIKE 'Þ%'";
-}
-
-$recipient_query = "SELECT atlantian.atlantian_id, sca_name, MIN(precedence.precedence) AS rank, alternate_names, name_reg_date, blazon, device_reg_date, atlantian.gender, deceased, revoked, atlantian.revoked_date, device_file_name " .
-                   "FROM $DBNAME_AUTH.atlantian " .
-				   "JOIN atlantian_award ON atlantian.atlantian_id = atlantian_award.atlantian_id " .
-				   "JOIN award ON award.award_id = atlantian_award.award_id ".
-                   "JOIN precedence ON precedence.type_id = award.type_id ".
-                   "WHERE (sca_name LIKE " . quote_begins_like($letter) . $sql_extra . ") " .
-                   "GROUP BY atlantian.atlantian_id ".
-                   "ORDER BY rank";
+// The Caitlin Number is a mechanism for ranking that Mistress Caitlin Davies popularized: you combine the
+// precedence and date of a given award to produce a number. Your rank is your lowest Caitlin Number.
+$recipient_query = "SELECT atlantian_id, sca_name, MIN(caitlin_number) as rank, alternate_names, name_reg_date, blazon, device_reg_date, gender, deceased, revoked, revoked_date, device_file_name " .
+                   "  FROM (SELECT DISTINCT atlantian.atlantian_id, sca_name, ((precedence.precedence * 1000000) + TO_DAYS(atlantian_award.award_date)) AS caitlin_number, alternate_names, name_reg_date, blazon, device_reg_date, atlantian.gender, deceased, revoked, atlantian.revoked_date, device_file_name " .
+                   "    FROM $DBNAME_AUTH.atlantian " .
+				   "    JOIN atlantian_award ON atlantian.atlantian_id = atlantian_award.atlantian_id " .
+				   "    JOIN award ON award.award_id = atlantian_award.award_id ".
+                   "    JOIN precedence ON precedence.type_id = award.type_id ".
+                   "    WHERE ($where) " .
+				   "  ) AS caitlin_table " .
+				   "WHERE caitlin_number IS NOT NULL " .
+                   "GROUP BY atlantian_id ".
+                   "ORDER BY rank ";
 ?>
-<p class="title2" align="center">Alphabetical Award Listing - <?php echo $letter; ?></p>
+<p class="title2" align="center"><?php echo $title; ?></p>
 <p align="center">
 Each award listing displays the following information, if available:<br/>
 SCA Name and date registered<br/>
@@ -63,8 +52,7 @@ Alternate names<br/>
 Blazon and date registered<br/>
 Awards received (including date, award, event, and awarding royalty)<br/>
 <br/>
-<?php echo $order_display; ?><br/>
-<a href="op_name.php?letter=<?php echo $letter; ?>&amp;list_type=<?php echo $other_list_type; ?>"><?php echo $order_switch; ?></a>
+<?php echo $order_display; ?>
 <br/><br/>
 <img src="<?php echo $IMAGES_DIR; ?>dev_icon.gif" height="15" width="15" alt="Device icon" /> This icon indicates the recipient has a device image.<br/>
 <br/>
