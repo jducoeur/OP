@@ -355,7 +355,7 @@ include("header.php");
 <?php 
       }
 ?>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="" method="post">
 <input type="hidden" name="mode" id="mode" value="<?php echo $mode; ?>"/>
 <?php 
       if (isset($form_atlantian_id) && $form_atlantian_id > 0)
