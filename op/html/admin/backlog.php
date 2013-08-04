@@ -38,7 +38,7 @@ $result = mysql_query($query)
 ?>
    <tr>
       <td class="data"><?php echo $sca_name; ?></td>
-      <td class="data" nowrap="nowrap"><?php echo "<a href=\"atlantian_award.php?mode=edit&atlantian_id=$atlantian_id&atlantian_award_id=$atlantian_award_id\">$award_name</a>"; ?></td>
+      <td class="data" nowrap="nowrap"><?php echo "<a href=\"edit_ind_award.php?mode=edit&atlantian_id=$atlantian_id&atlantian_award_id=$atlantian_award_id\">$award_name</a>"; ?></td>
       <td class="data"><?php echo $award_date; ?></td>
       <td class="data"><?php echo $scroll_status; ?></td>
    </tr>

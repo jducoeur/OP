@@ -92,7 +92,7 @@ if ($submit == $SUBMIT_SELECT)
          }
          else if ($type == $TYPE_AWARD)
          {
-            redirect("atlantian_award.php?mode=$mode&atlantian_id=$form_atlantian_id&form_event_id=$form_event_id&form_court_report_id=$form_court_report_id");
+            redirect("edit_ind_award.php?mode=$mode&atlantian_id=$form_atlantian_id&form_event_id=$form_event_id&form_court_report_id=$form_court_report_id");
          }
          else if ($type == $TYPE_BACKLOG)
          {
@@ -114,7 +114,7 @@ if ($submit == $SUBMIT_SELECT)
          }
          else if ($type == $TYPE_AWARD)
          {
-            echo '<a href="atlantian_award.php?mode=' . $mode . '&atlantian_id=' . $form_atlantian_id . '&form_event_id=' . $form_event_id.  '&form_court_report_id=' . $form_court_report_id . '">Continue</a>';
+            echo '<a href="edit_ind_award.php?mode=' . $mode . '&atlantian_id=' . $form_atlantian_id . '&form_event_id=' . $form_event_id.  '&form_court_report_id=' . $form_court_report_id . '">Continue</a>';
          }
          else if ($type == $TYPE_BACKLOG)
          {

@@ -746,7 +746,7 @@ Click the Remove button to remove an award from this court report (this does not
       </form>
       </td>
       <td>
-      <form action="atlantian_award.php" method="post">
+      <form action="edit_ind_award.php" method="post">
          <input type="hidden" name="form_atlantian_id" id="form_atlantian_id" value="<?php echo $atlantian_id; ?>"/>
          <input type="hidden" name="form_award_id" id="form_award_id" value="<?php echo $award_id; ?>"/>
          <input type="hidden" name="form_atlantian_award_id" id="form_atlantian_award_id" value="<?php echo $atlantian_award_id; ?>"/>
