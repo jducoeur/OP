@@ -290,7 +290,7 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
             db_disconnect($link);
 
             // Redirect to edit page
-            redirect("atlantian.php?atlantian_id=$form_atlantian_id&mode=$MODE_EDIT");
+            redirect("edit_ind.php?atlantian_id=$form_atlantian_id&mode=$MODE_EDIT");
          }
       } // Submit Save
    } // Submit

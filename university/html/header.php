@@ -178,7 +178,7 @@ if (!$printable && isset($_SESSION['s_username']) && substr($_SERVER['PHP_SELF']
 ?>
       &nbsp;&nbsp;&nbsp;<a style="color:white" href="<?php echo $ADMIN_DIR; ?>preregistrations.php">My Registrations</a><img src="<?php echo $HOME_DIR; ?>images/spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       &nbsp;&nbsp;&nbsp;<a style="color:white" href="<?php echo $ADMIN_DIR; ?>transcript.php">My Transcript</a><img src="<?php echo $HOME_DIR; ?>images/spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
-      &nbsp;&nbsp;&nbsp;<a style="color:white" href="<?php echo $ADMIN_DIR; ?>atlantian.php">Edit Profile</a><img src="<?php echo $HOME_DIR; ?>images/spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      &nbsp;&nbsp;&nbsp;<a style="color:white" href="<?php echo $ADMIN_DIR; ?>edit_ind.php">Edit Profile</a><img src="<?php echo $HOME_DIR; ?>images/spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
 <?php
    }
 ?>

@@ -88,7 +88,7 @@ if ($submit == $SUBMIT_SELECT)
       {
          if ($type == $TYPE_ATLANTIAN)
          {
-            redirect("atlantian.php?mode=$MODE_EDIT&atlantian_id=$form_atlantian_id&form_event_id=$form_event_id&form_court_report_id=$form_court_report_id");
+            redirect("edit_ind.php?mode=$MODE_EDIT&atlantian_id=$form_atlantian_id&form_event_id=$form_event_id&form_court_report_id=$form_court_report_id");
          }
          else if ($type == $TYPE_AWARD)
          {
@@ -110,7 +110,7 @@ if ($submit == $SUBMIT_SELECT)
               "Cannot redirect; click on the link below:<br/><br/>";
          if ($type == $TYPE_ATLANTIAN)
          {
-            echo '<a href="atlantian.php?mode=' . $MODE_EDIT . '&atlantian_id=' . $form_atlantian_id . '&form_event_id=' . $form_event_id.  '&form_court_report_id=' . $form_court_report_id . '">Continue</a>';
+            echo '<a href="edit_ind.php?mode=' . $MODE_EDIT . '&atlantian_id=' . $form_atlantian_id . '&form_event_id=' . $form_event_id.  '&form_court_report_id=' . $form_court_report_id . '">Continue</a>';
          }
          else if ($type == $TYPE_AWARD)
          {

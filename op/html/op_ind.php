@@ -199,10 +199,10 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <p align="center">
 <img src="<?php echo $IMAGES_DIR; ?>private.gif" width="15" height="15" alt="Marked Private" border="0"/> Lock icon indicates record is marked private.
 <br/>
-<form action="admin/atlantian.php" method="post">
+<form action="admin/edit_ind.php" method="post">
    <input type="hidden" name="form_atlantian_id" value="<?php echo $atlantian_id; ?>" />
    <input type="hidden" name="mode" value="<?php echo $MODE_EDIT; ?>" />
-   <input type="submit" value="Edit Atlantian" />
+   <input type="submit" value="Edit Person" />
 </form>
 <br/>
 </p>

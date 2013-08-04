@@ -1398,10 +1398,10 @@ if (isset($errmsg) && strlen($errmsg) > 0)
          </tr>
          <tr>
             <td colspan="2" align="center">
-            <form action="atlantian.php" method="post">
+            <form action="edit_ind.php" method="post">
                <input type="hidden" name="form_atlantian_id" id="form_atlantian_id" value="<?php echo $form_atlantian_id; ?>"/>
                <input type="hidden" name="mode" id="mode" value="<?php echo $MODE_EDIT; ?>"/>
-               <input type="submit" value="Edit Atlantian <?php echo $form_scaname; ?>"/>
+               <input type="submit" value="Edit Person <?php echo $form_scaname; ?>"/>
             </form>
             </td>
          </tr>
