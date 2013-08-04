@@ -182,6 +182,7 @@ $ATLANTIA_NAME = 'East';
 $KINGDOM_NAME = 'East';
 $KINGDOM_ADJ = 'Eastern';
 $KINGDOM_RES = 'Easterner';
+$KINGDOM_ID = 20;
 
 // TODO: fix these!
 $WEST = 1;

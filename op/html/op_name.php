@@ -351,12 +351,12 @@ if ($num_recipient_result > 0)
          {
             $event_display = "<a href=\"" . $HOME_DIR . "op_event.php?event_id=" . $award_data['event_id'] . "\" class=\"td\">" . $event_display . "</a>";
             $event_loc = clean($award_data['event_location']);
-            if ($event_loc != "")
+            if ($event_loc != "" && $event_loc != $KINGDOM_NAME)
             {
                $event_display .= " (" . $event_loc . ")";
             }
          }
-         else if ($kingdom != "Atlantia")
+         else if ($kingdom != $KINGDOM_NAME)
          {
             $event_display = "ENA*";
          }
@@ -378,7 +378,7 @@ if ($num_recipient_result > 0)
          {
             $bestowers_display = "<a href=\"" . $HOME_DIR . "awards_by_principality.php?principality_id=" . $award_data['principality_id'] . "\" class=\"td\">" . clean($award_data['principality_display']) . "</a>";
          }
-         else if ($event_display == "ENA*" || $kingdom != "Atlantia")
+         else if ($event_display == "ENA*" || $kingdom != $KINGDOM_NAME)
          {
             $bestowers_display = "BNA*";
          }
