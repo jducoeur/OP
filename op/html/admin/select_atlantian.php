@@ -100,7 +100,7 @@ if ($submit == $SUBMIT_SELECT)
          }
          else if ($type == $TYPE_MERGE)
          {
-            redirect("atlantian_merge.php?first_atlantian_id=$first_atlantian_id&second_atlantian_id=$form_atlantian_id");
+            redirect("merge_people.php?first_atlantian_id=$first_atlantian_id&second_atlantian_id=$form_atlantian_id");
          }
       }
       // Debugging
@@ -122,7 +122,7 @@ if ($submit == $SUBMIT_SELECT)
          }
          else if ($type == $TYPE_MERGE)
          {
-            echo '<a href="atlantian_merge.php?first_atlantian_id=' . $first_atlantian_id . '&second_atlantian_id=' . $form_atlantian_id . '">Continue</a>';
+            echo '<a href="merge_people.php?first_atlantian_id=' . $first_atlantian_id . '&second_atlantian_id=' . $form_atlantian_id . '">Continue</a>';
          }
          echo "<br/><br/>";
          echo var_dump(headers_list());
