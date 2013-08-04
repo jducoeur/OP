@@ -200,7 +200,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
    echo '<p align="center" style="color:red;font-weight:bold">' . $errmsg . '</p>';
 }
 ?>
-<form action="select_atlantian.php" method="post">
+<form action="select_ind.php" method="post">
 <input type="hidden" name="form_user_id" id="form_user_id"<?php if (isset($form_user_id) && $form_user_id != 0) { echo " value=\"$form_user_id\"";} ?>/>
 <table align="center" border="1" cellpadding="5" cellspacing="0" summary="Search Criteria selection">
    <tr>
@@ -239,7 +239,7 @@ Only known members of the Order who match your criteria are shown below.
       echo '<p align="center" style="color:red;font-weight:bold">' . $errmsg2 . '</p>';
    }
 ?>
-<form action="select_atlantian.php" method="post">
+<form action="select_ind.php" method="post">
 <input type="hidden" name="form_sca_name" id="form_sca_name"<?php if (isset($form_sca_name) && $form_sca_name != '') { echo " value=\"$form_sca_name\"";} ?>/>
 <input type="hidden" name="form_user_id" id="form_user_id"<?php if (isset($form_user_id) && $form_user_id != 0) { echo " value=\"$form_user_id\"";} ?>/>
 <table align="center" cellpadding="5" cellspacing="0" border="1" summary="Table listing search results">

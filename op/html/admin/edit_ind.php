@@ -484,7 +484,7 @@ include("header.php");
       </form>
       </td>
       <td>
-      <form action="select_atlantian.php" method="post">
+      <form action="select_ind.php" method="post">
          <input type="hidden" name="first_atlantian_id" id="first_atlantian_id" value="<?php echo $form_atlantian_id; ?>"/>
          <input type="hidden" name="mode" id="mode" value="<?php echo $MODE_EDIT; ?>"/>
          <input type="hidden" name="type" id="type" value="<?php echo $TYPE_MERGE; ?>"/>

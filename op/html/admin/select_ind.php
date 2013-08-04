@@ -220,7 +220,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
    echo '<p align="center" style="color:red;font-weight:bold">' . $errmsg . '</p>';
 }
 ?>
-<form action="select_atlantian.php" method="post">
+<form action="select_ind.php" method="post">
 <input type="hidden" name="form_court_report_id" id="form_court_report_id" value="<?php echo $form_court_report_id; ?>"/>
 <input type="hidden" name="form_event_id" id="form_event_id" value="<?php echo $form_event_id; ?>"/>
 <input type="hidden" name="first_atlantian_id" id="first_atlantian_id" value="<?php echo $first_atlantian_id; ?>"/>
@@ -260,7 +260,7 @@ if (isset($result) && mysql_num_rows($result) > 0)
       echo '<p align="center" style="color:red;font-weight:bold">' . $errmsg2 . '</p>';
    }
 ?>
-<form action="select_atlantian.php" method="post">
+<form action="select_ind.php" method="post">
 <input type="hidden" name="form_sca_name" id="form_sca_name"<?php if (isset($form_sca_name) && $form_sca_name != '') { echo " value=\"$form_sca_name\"";} ?>/>
 <input type="hidden" name="form_first_name" id="form_first_name"<?php if (isset($form_first_name) && $form_first_name != '') { echo " value=\"$form_first_name\"";} ?>/>
 <input type="hidden" name="form_last_name" id="form_last_name"<?php if (isset($form_last_name) && $form_last_name != '') { echo " value=\"$form_last_name\"";} ?>/>

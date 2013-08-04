@@ -372,7 +372,7 @@ The user account needs to be associated with a specific Atlantian so the user ma
 <p align="center">
 If this is an invalid or duplicate user account, you may delete it.
 </p>
-<form action="select_atlantian.php" method="post" style="text-align:center">
+<form action="select_ind.php" method="post" style="text-align:center">
 <input type="hidden" name="form_user_id" id="form_user_id"<?php if (isset($form_user_id) && $form_user_id != 0) { echo " value=\"$form_user_id\"";} ?>/>
 <input type="submit" name="submit" value="<?php echo $SUBMIT_DELETE; ?>"/>
 </form>
@@ -389,7 +389,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
    echo '<p align="center" style="color:red;font-weight:bold">' . $errmsg . '</p>';
 }
 ?>
-<form action="select_atlantian.php" method="post">
+<form action="select_ind.php" method="post">
 <input type="hidden" name="form_user_id" id="form_user_id"<?php if (isset($form_user_id) && $form_user_id != 0) { echo " value=\"$form_user_id\"";} ?>/>
 <table align="center" border="1" cellpadding="5" cellspacing="0" summary="Search Criteria selection">
    <tr>
@@ -423,7 +423,7 @@ if (isset($result) && mysql_num_rows($result) > 0)
       echo '<p align="center" style="color:red;font-weight:bold">' . $errmsg2 . '</p>';
    }
 ?>
-<form action="select_atlantian.php" method="post">
+<form action="select_ind.php" method="post">
 <input type="hidden" name="form_sca_name" id="form_sca_name"<?php if (isset($form_sca_name) && $form_sca_name != '') { echo " value=\"$form_sca_name\"";} ?>/>
 <input type="hidden" name="form_user_id" id="form_user_id"<?php if (isset($form_user_id) && $form_user_id != 0) { echo " value=\"$form_user_id\"";} ?>/>
 <table align="center" cellpadding="5" cellspacing="0" border="1" summary="Table listing search results">

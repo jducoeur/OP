@@ -1415,7 +1415,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
             </form>
             </td>
             <td align="left">
-            <form action="select_atlantian.php" method="post">
+            <form action="select_ind.php" method="post">
                <input type="hidden" name="form_event_id" id="form_event_id" value="<?php echo $form_event_id; ?>"/>
                <input type="hidden" name="form_court_report_id" id="form_court_report_id" value="<?php echo $form_court_report_id; ?>"/>
                <input type="hidden" name="type" id="type" value="<?php echo $TYPE_AWARD; ?>"/>
