@@ -88,11 +88,11 @@ if ($submit == $SUBMIT_SELECT)
       {
          if ($type == $TYPE_ATLANTIAN)
          {
-            redirect("atlantian.php?mode=$MODE_EDIT&atlantian_id=$form_atlantian_id&form_event_id=$form_event_id&form_court_report_id=$form_court_report_id");
+            redirect("edit_ind.php?mode=$MODE_EDIT&atlantian_id=$form_atlantian_id&form_event_id=$form_event_id&form_court_report_id=$form_court_report_id");
          }
          else if ($type == $TYPE_AWARD)
          {
-            redirect("atlantian_award.php?mode=$mode&atlantian_id=$form_atlantian_id&form_event_id=$form_event_id&form_court_report_id=$form_court_report_id");
+            redirect("edit_ind_award.php?mode=$mode&atlantian_id=$form_atlantian_id&form_event_id=$form_event_id&form_court_report_id=$form_court_report_id");
          }
          else if ($type == $TYPE_BACKLOG)
          {
@@ -100,7 +100,7 @@ if ($submit == $SUBMIT_SELECT)
          }
          else if ($type == $TYPE_MERGE)
          {
-            redirect("atlantian_merge.php?first_atlantian_id=$first_atlantian_id&second_atlantian_id=$form_atlantian_id");
+            redirect("merge_people.php?first_atlantian_id=$first_atlantian_id&second_atlantian_id=$form_atlantian_id");
          }
       }
       // Debugging
@@ -110,11 +110,11 @@ if ($submit == $SUBMIT_SELECT)
               "Cannot redirect; click on the link below:<br/><br/>";
          if ($type == $TYPE_ATLANTIAN)
          {
-            echo '<a href="atlantian.php?mode=' . $MODE_EDIT . '&atlantian_id=' . $form_atlantian_id . '&form_event_id=' . $form_event_id.  '&form_court_report_id=' . $form_court_report_id . '">Continue</a>';
+            echo '<a href="edit_ind.php?mode=' . $MODE_EDIT . '&atlantian_id=' . $form_atlantian_id . '&form_event_id=' . $form_event_id.  '&form_court_report_id=' . $form_court_report_id . '">Continue</a>';
          }
          else if ($type == $TYPE_AWARD)
          {
-            echo '<a href="atlantian_award.php?mode=' . $mode . '&atlantian_id=' . $form_atlantian_id . '&form_event_id=' . $form_event_id.  '&form_court_report_id=' . $form_court_report_id . '">Continue</a>';
+            echo '<a href="edit_ind_award.php?mode=' . $mode . '&atlantian_id=' . $form_atlantian_id . '&form_event_id=' . $form_event_id.  '&form_court_report_id=' . $form_court_report_id . '">Continue</a>';
          }
          else if ($type == $TYPE_BACKLOG)
          {
@@ -122,7 +122,7 @@ if ($submit == $SUBMIT_SELECT)
          }
          else if ($type == $TYPE_MERGE)
          {
-            echo '<a href="atlantian_merge.php?first_atlantian_id=' . $first_atlantian_id . '&second_atlantian_id=' . $form_atlantian_id . '">Continue</a>';
+            echo '<a href="merge_people.php?first_atlantian_id=' . $first_atlantian_id . '&second_atlantian_id=' . $form_atlantian_id . '">Continue</a>';
          }
          echo "<br/><br/>";
          echo var_dump(headers_list());
@@ -220,7 +220,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
    echo '<p align="center" style="color:red;font-weight:bold">' . $errmsg . '</p>';
 }
 ?>
-<form action="select_atlantian.php" method="post">
+<form action="select_ind.php" method="post">
 <input type="hidden" name="form_court_report_id" id="form_court_report_id" value="<?php echo $form_court_report_id; ?>"/>
 <input type="hidden" name="form_event_id" id="form_event_id" value="<?php echo $form_event_id; ?>"/>
 <input type="hidden" name="first_atlantian_id" id="first_atlantian_id" value="<?php echo $first_atlantian_id; ?>"/>
@@ -260,7 +260,7 @@ if (isset($result) && mysql_num_rows($result) > 0)
       echo '<p align="center" style="color:red;font-weight:bold">' . $errmsg2 . '</p>';
    }
 ?>
-<form action="select_atlantian.php" method="post">
+<form action="select_ind.php" method="post">
 <input type="hidden" name="form_sca_name" id="form_sca_name"<?php if (isset($form_sca_name) && $form_sca_name != '') { echo " value=\"$form_sca_name\"";} ?>/>
 <input type="hidden" name="form_first_name" id="form_first_name"<?php if (isset($form_first_name) && $form_first_name != '') { echo " value=\"$form_first_name\"";} ?>/>
 <input type="hidden" name="form_last_name" id="form_last_name"<?php if (isset($form_last_name) && $form_last_name != '') { echo " value=\"$form_last_name\"";} ?>/>

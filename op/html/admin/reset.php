@@ -1,4 +1,4 @@
-<? 
+<?php 
 include_once("db.php");
 include("header.php");
 if (isset($_POST['submit']))

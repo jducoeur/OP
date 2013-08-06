@@ -1,4 +1,4 @@
-<? 
+<?php 
 include_once("db.php");
 include("header.php");
 
@@ -566,12 +566,12 @@ To add a new Branch: Visit the <a href="<?php echo $_SERVER['PHP_SELF'] . "?mode
    </tr>
 </table>
 <p class="blurb1">Device images for branches are stored in <?php echo $BRANCH_IMAGE_DIR; ?>.</p>
-<?
+<?php
       if (isset($form_device_file_name) && $form_device_file_name != '')
       {
 ?>
 <p><img src="<?php echo $BRANCH_IMAGE_DIR . $form_device_file_name; ?>" height="200" border="0" alt="Device Image for <?php echo $form_branch; ?>" /></p>
-<?
+<?php
       }
    }
 }

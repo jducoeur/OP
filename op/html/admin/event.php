@@ -216,8 +216,8 @@ $link = db_connect();
 $group_pl_query = "SELECT branch_id, branch, parent_branch_id, incipient, branch.branch_type_id, branch_type " .
                   "FROM $DBNAME_BRANCH.branch, $DBNAME_BRANCH.branch_type " .
                   "WHERE branch.branch_type_id = branch_type.branch_type_id " .
-                  "AND (branch.branch_type_id = $BT_KINGDOM OR parent_branch_id = $ATLANTIA " .
-                  "OR parent_branch_id IN (SELECT branch_id FROM $DBNAME_BRANCH.branch WHERE parent_branch_id = $ATLANTIA)) " .
+                  "AND (branch.branch_type_id = $BT_KINGDOM OR parent_branch_id = $KINGDOM_ID " .
+                  "OR parent_branch_id IN (SELECT branch_id FROM $DBNAME_BRANCH.branch WHERE parent_branch_id = $KINGDOM_ID)) " .
                   "ORDER BY branch";
 
 /* Performing SQL query */

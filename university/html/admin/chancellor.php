@@ -329,7 +329,7 @@ To add a new Chancellor: Visit the <a href="select_participant.php?type=<?php ec
       <td colspan="2" class="datacenter"><input type="submit" name="submit" id="submit" value="<?php echo $SUBMIT_SAVE; ?>"/></td>
    </tr>
 </table>
-<?
+<?php
       }
    }
 ?>

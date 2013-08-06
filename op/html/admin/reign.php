@@ -1,4 +1,4 @@
-<? 
+<?php 
 include_once("db.php");
 
 // Only web admins allowed
@@ -402,7 +402,7 @@ To add a new Monarchs: Visit the <a href="<?php echo $_SERVER['PHP_SELF'] . "?mo
       <td colspan="2" class="title"><input type="submit" name="submit" id="submit" value="<?php echo $SUBMIT_SAVE; ?>"/></td>
    </tr>
 </table>
-<?
+<?php
    }
 }
 ?>

@@ -1,4 +1,4 @@
-<? 
+<?php 
 include("../db/db.php");
 include("db.php");
 
@@ -75,7 +75,7 @@ if (isset($_SESSION[$UNIVERSITY_ADMIN]) && $_SESSION[$UNIVERSITY_ADMIN] == 1)
          $account_link_post = "";
          if (isset($_SESSION[$WEBMINISTER_ADMIN]) && $_SESSION[$WEBMINISTER_ADMIN] == 1)
          {
-            $account_link_pre = "<a href=\"select_atlantian.php?user_id=$form_user_id\">";
+            $account_link_pre = "<a href=\"select_ind.php?user_id=$form_user_id\">";
             $account_link_post = "</a>";
          }
 ?>

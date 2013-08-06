@@ -105,7 +105,7 @@ if (isset($_SESSION[$UNIVERSITY_ADMIN]) && $_SESSION[$UNIVERSITY_ADMIN] == 1)
    </tr>
 </table>
 </form>
-<?
+<?php
       /* Closing connection */
       mysql_close($link);
    }

@@ -1,0 +1,32 @@
+Refactoring the OP
+==================
+
+The biggest problem with the OP system is that there is a vast amount of mostly
+duplicated code. We need to pull that out into common code, and probably just fewer
+files.
+
+The following pages are all just variants of "list the OP for a group of people":
+-- op_ind: awards for a person, by ID
+-- op_march: awards for a number of people by ID, in order of march
+-- op_name: awards for people, based on first letter
+-- group_op: awards for everyone in a branch (inconsistent, and pretty poorly factored)
+
+Available tools that we can use for refactoring (and improving security):
+-- Views (possibly good for introducing, eg, the caitlin_number, and collecting the
+   info about a list of recognitions with all the joins)
+-- Prepared statements
+-- Stored procedures and functions
+
+Note that PHP does support fetching full result sets from stored procedures, which
+is likely to be handy. The relevant calls are real_query() and multi_query().
+
+It seems like the most obvious place to start is with Views. There is likely a big,
+nasty, prejoined View that we can use to get all of the recognitions.
+
+Note that op_ind should be the key basis, since I've already begun to improve the
+SQL query there.
+
+==================
+Functional Changes
+==================
+

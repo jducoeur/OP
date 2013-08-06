@@ -58,7 +58,7 @@ if (!$printable)
       <br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>baronies.php"><?php echo $KINGDOM_ADJ; ?> Baronies</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
-      <a class="menu" href="<?php echo $HOME_DIR; ?>eastern_op.php"><?php echo $KINGDOM_ADJ; ?> OP</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="<?php echo $HOME_DIR; ?>kingdom_op.php"><?php echo $KINGDOM_ADJ; ?> OP</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>roa.php">Roll of Arms</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>

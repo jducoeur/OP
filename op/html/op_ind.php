@@ -199,10 +199,10 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <p align="center">
 <img src="<?php echo $IMAGES_DIR; ?>private.gif" width="15" height="15" alt="Marked Private" border="0"/> Lock icon indicates record is marked private.
 <br/>
-<form action="admin/atlantian.php" method="post">
+<form action="admin/edit_ind.php" method="post">
    <input type="hidden" name="form_atlantian_id" value="<?php echo $atlantian_id; ?>" />
    <input type="hidden" name="mode" value="<?php echo $MODE_EDIT; ?>" />
-   <input type="submit" value="Edit Atlantian" />
+   <input type="submit" value="Edit Person" />
 </form>
 <br/>
 </p>
@@ -212,14 +212,16 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <?php
    /* Performing SQL query */
    $ind_query = 
-      "(SELECT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
+      "(SELECT DISTINCT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
       "atlantian_award.award_date, atlantian_award.sequence, atlantian_award.premier, atlantian_award.retired_date, atlantian_award.resigned_date, atlantian_award.revoked_date, atlantian_award.comments, atlantian_award.private, atlantian_award.gender, " .
       "branch.branch, branch.branch_id, precedence.precedence, branch.date_founded, " .
       "court_report.event_id, court_report.reign_id, court_report.principality_id, court_report.baronage_id, baronage.branch_id as barony_id, " .
       "event.event_name, event_loc.branch as event_location, reign.monarchs_display, principality.principality_display, baronage.baronage_display " .
       "FROM $DBNAME_OP.atlantian_award JOIN $DBNAME_OP.award ON atlantian_award.award_id = award.award_id " .
       "JOIN $DBNAME_OP.precedence ON award.type_id = precedence.type_id " .
-      "JOIN $DBNAME_BRANCH.branch ON award.branch_id = branch.branch_id " .
+	  /* This is the key line in the duplications problem, once I simplify things a little. The key is that
+	   * the data shouldn't be too aggressive about setting atlantian_award.branch_id: */
+      "JOIN $DBNAME_BRANCH.branch ON (award.branch_id = branch.branch_id OR atlantian_award.branch_id = branch.branch_id) " .
       "LEFT OUTER JOIN $DBNAME_OP.court_report ON atlantian_award.court_report_id = court_report.court_report_id " .
       "LEFT OUTER JOIN $DBNAME_OP.event ON court_report.event_id = event.event_id " .
       "LEFT OUTER JOIN $DBNAME_BRANCH.branch event_loc ON event.branch_id = event_loc.branch_id " .
@@ -227,24 +229,8 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       "LEFT OUTER JOIN $DBNAME_OP.principality ON court_report.principality_id = principality.principality_id " .
       "LEFT OUTER JOIN $DBNAME_OP.baronage ON court_report.baronage_id = baronage.baronage_id " .
       "WHERE atlantian_award.atlantian_id = ". $atlantian_id . ") ".
-      "UNION ALL ".
-      "(SELECT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
-      "atlantian_award.award_date, atlantian_award.sequence, atlantian_award.premier, atlantian_award.retired_date, atlantian_award.resigned_date, atlantian_award.revoked_date, atlantian_award.comments, atlantian_award.private, atlantian_award.gender, " .
-      "branch.branch, branch.branch_id, precedence.precedence, branch.date_founded, " .
-      "court_report.event_id, court_report.reign_id, court_report.principality_id, court_report.baronage_id, baronage.branch_id as barony_id, " .
-      "event.event_name, event_loc.branch as event_location, reign.monarchs_display, principality.principality_display, baronage.baronage_display " .
-      "FROM $DBNAME_OP.atlantian_award JOIN $DBNAME_OP.award ON atlantian_award.award_id = award.award_id " .
-      "JOIN $DBNAME_OP.precedence ON award.type_id = precedence.type_id " .
-      "JOIN $DBNAME_BRANCH.branch ON atlantian_award.branch_id = branch.branch_id " .
-      "LEFT OUTER JOIN $DBNAME_OP.court_report ON atlantian_award.court_report_id = court_report.court_report_id " .
-      "LEFT OUTER JOIN $DBNAME_OP.event ON court_report.event_id = event.event_id " .
-      "LEFT OUTER JOIN $DBNAME_BRANCH.branch event_loc ON event.branch_id = event_loc.branch_id " .
-      "LEFT OUTER JOIN $DBNAME_OP.reign ON court_report.reign_id = reign.reign_id " .
-      "LEFT OUTER JOIN $DBNAME_OP.principality ON court_report.principality_id = principality.principality_id " .
-      "LEFT OUTER JOIN $DBNAME_OP.baronage ON court_report.baronage_id = baronage.baronage_id " .
-      "WHERE atlantian_award.atlantian_id = ". $atlantian_id . ") ".
-      "UNION ALL ".
-      "(SELECT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
+      "UNION DISTINCT ".
+      "(SELECT DISTINCT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
       "atlantian_award.award_date, atlantian_award.sequence, atlantian_award.premier, atlantian_award.retired_date, atlantian_award.resigned_date, atlantian_award.revoked_date, atlantian_award.comments, atlantian_award.private, atlantian_award.gender, " .
       "null AS branch, null AS branch_id, precedence.precedence, " . date("Y-m-d") . " as date_founded, " .
       "court_report.event_id, court_report.reign_id, court_report.principality_id, court_report.baronage_id, baronage.branch_id as barony_id, " .
@@ -434,7 +420,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
                $event_display .= " (" . $event_loc . ")";
             }
          }
-         else if ($kingdom != "Atlantia")
+         else if ($kingdom != $KINGDOM_NAME)
          {
             $event_display = "ENA*";
          }

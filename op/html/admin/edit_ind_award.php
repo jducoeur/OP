@@ -795,7 +795,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       $award_result = mysql_query($award_query) 
          or die("Award query failed : " . mysql_error());
    ?>
-   <form action="atlantian_award.php?mode=<?php echo $mode; ?>" method="post">
+   <form action="edit_ind_award.php?mode=<?php echo $mode; ?>" method="post">
    <?php 
       if ($form_atlantian_id > 0) 
       { 
@@ -873,7 +873,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
    else if ($form_atlantian_id > 0 && ($form_award_id > 0 || $form_atlantian_award_id > 0) && (($submit != $SUBMIT_SAVE && $submit != $SUBMIT_DELETE) || $errmsg != ""))
    {
    ?>
-   <form action="atlantian_award.php?mode=<?php echo $mode; ?>" method="post">
+   <form action="edit_ind_award.php?mode=<?php echo $mode; ?>" method="post">
       <input name="form_select_branch" id="form_select_branch" type="hidden" value="<?php echo $form_select_branch; ?>"/>
    <?php 
       if ($form_atlantian_id > 0) 
@@ -1109,7 +1109,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       <td class="data"><input name="form_premier" id="form_premier" type="checkbox" value="1"<?php if (isset($form_premier) && $form_premier == 1) { echo ' checked="checked"'; }?>/></td>
    </tr>
       <?php
-      if ($form_award_group_id == $YEW_BOW_GROUP || $form_award_id == $SUPPORTERS_ID || $form_award_id == $AUG || $form_award_id == $MARINUS_STEWARDS)
+      if (false)//$form_award_group_id == $YEW_BOW_GROUP || $form_award_id == $SUPPORTERS_ID || $form_award_id == $AUG || $form_award_id == $MARINUS_STEWARDS)
       {
       ?>
    <tr>
@@ -1118,7 +1118,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
    </tr>
       <?php
       }
-      if ($form_award_id == $ST_AIDAN || $form_award_id == $RETIRED_BARONAGE_ID || $form_award_id == $LANDED_BARONAGE_ID || $form_award_id == $RETIRED_BARONAGE_NA_ID)
+      if (false)//$form_award_id == $ST_AIDAN || $form_award_id == $RETIRED_BARONAGE_ID || $form_award_id == $LANDED_BARONAGE_ID || $form_award_id == $RETIRED_BARONAGE_NA_ID)
       {
       ?>
    <tr>
@@ -1382,14 +1382,14 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       <table border="0" align="center" cellpadding="5" summary="layout">
          <tr>
             <td align="right">
-            <form action="atlantian_award.php" method="post">
+            <form action="edit_ind_award.php" method="post">
                <input type="hidden" name="form_atlantian_id" id="form_atlantian_id" value="<?php echo $form_atlantian_id; ?>"/>
                <input type="hidden" name="mode" id="mode" value="<?php echo $MODE_ADD; ?>"/>
                <input type="submit" value="Add Award for <?php echo $form_scaname; ?>"/>
             </form>
             </td>
             <td align="left">
-            <form action="atlantian_award.php" method="post">
+            <form action="edit_ind_award.php" method="post">
                <input type="hidden" name="form_atlantian_id" id="form_atlantian_id" value="<?php echo $form_atlantian_id; ?>"/>
                <input type="hidden" name="mode" id="mode" value="<?php echo $MODE_EDIT; ?>"/>
                <input type="submit" value="Edit Awards for <?php echo $form_scaname; ?>"/>
@@ -1398,10 +1398,10 @@ if (isset($errmsg) && strlen($errmsg) > 0)
          </tr>
          <tr>
             <td colspan="2" align="center">
-            <form action="atlantian.php" method="post">
+            <form action="edit_ind.php" method="post">
                <input type="hidden" name="form_atlantian_id" id="form_atlantian_id" value="<?php echo $form_atlantian_id; ?>"/>
                <input type="hidden" name="mode" id="mode" value="<?php echo $MODE_EDIT; ?>"/>
-               <input type="submit" value="Edit Atlantian <?php echo $form_scaname; ?>"/>
+               <input type="submit" value="Edit Person <?php echo $form_scaname; ?>"/>
             </form>
             </td>
          </tr>
@@ -1415,7 +1415,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
             </form>
             </td>
             <td align="left">
-            <form action="select_atlantian.php" method="post">
+            <form action="select_ind.php" method="post">
                <input type="hidden" name="form_event_id" id="form_event_id" value="<?php echo $form_event_id; ?>"/>
                <input type="hidden" name="form_court_report_id" id="form_court_report_id" value="<?php echo $form_court_report_id; ?>"/>
                <input type="hidden" name="type" id="type" value="<?php echo $TYPE_AWARD; ?>"/>

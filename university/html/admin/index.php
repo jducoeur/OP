@@ -1,4 +1,4 @@
-<?
+<?php
 require_once('../db/session.php');
 require_once('login_functions.php');
 
@@ -58,12 +58,12 @@ else
 <p style="text-align:center">Forgotten your password? <a href="reset.php">Reset your password.</a></p>
 <p style="text-align:center">Don't have an account? <a href="register.php">Register now.</a></p>
 <br/>
-<?
+<?php
    if (isset($LOCKOUT) && $LOCKOUT == 1)
    {
 ?>
 <p style="text-align:center">The system is currently down for maintenance.  Please try again later.</p>
-<?
+<?php
    }
 }
 include("../footer.php");

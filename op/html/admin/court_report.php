@@ -664,7 +664,7 @@ include("header.php");
 <table border="0" align="center" cellpadding="5" summary="">
    <tr>
       <td>
-      <form action="select_atlantian.php" method="post">
+      <form action="select_ind.php" method="post">
          <input type="hidden" name="form_court_report_id" id="form_court_report_id" value="<?php echo $form_court_report_id; ?>"/>
          <input type="hidden" name="form_event_id" id="form_event_id" value="<?php echo $form_event_id; ?>"/>
          <input type="hidden" name="type" id="type" value="<?php echo $TYPE_AWARD; ?>"/>
@@ -746,7 +746,7 @@ Click the Remove button to remove an award from this court report (this does not
       </form>
       </td>
       <td>
-      <form action="atlantian_award.php" method="post">
+      <form action="edit_ind_award.php" method="post">
          <input type="hidden" name="form_atlantian_id" id="form_atlantian_id" value="<?php echo $atlantian_id; ?>"/>
          <input type="hidden" name="form_award_id" id="form_award_id" value="<?php echo $award_id; ?>"/>
          <input type="hidden" name="form_atlantian_award_id" id="form_atlantian_award_id" value="<?php echo $atlantian_award_id; ?>"/>

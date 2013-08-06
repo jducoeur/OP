@@ -290,7 +290,7 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
             db_disconnect($link);
 
             // Redirect to edit page
-            redirect("atlantian.php?atlantian_id=$form_atlantian_id&mode=$MODE_EDIT");
+            redirect("edit_ind.php?atlantian_id=$form_atlantian_id&mode=$MODE_EDIT");
          }
       } // Submit Save
    } // Submit
@@ -355,7 +355,7 @@ include("header.php");
 <?php 
       }
 ?>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="" method="post">
 <input type="hidden" name="mode" id="mode" value="<?php echo $mode; ?>"/>
 <?php 
       if (isset($form_atlantian_id) && $form_atlantian_id > 0)
@@ -477,14 +477,14 @@ include("header.php");
 <table border="0" align="center" cellpadding="5" summary="">
    <tr>
       <td>
-      <form action="atlantian_award.php" method="post">
+      <form action="edit_ind_award.php" method="post">
          <input type="hidden" name="form_atlantian_id" id="form_atlantian_id" value="<?php echo $form_atlantian_id; ?>"/>
          <input type="hidden" name="mode" id="mode" value="<?php echo $MODE_ADD; ?>"/>
          <input type="submit" value="Add Award for <?php echo $form_sca_name; ?>"/>
       </form>
       </td>
       <td>
-      <form action="select_atlantian.php" method="post">
+      <form action="select_ind.php" method="post">
          <input type="hidden" name="first_atlantian_id" id="first_atlantian_id" value="<?php echo $form_atlantian_id; ?>"/>
          <input type="hidden" name="mode" id="mode" value="<?php echo $MODE_EDIT; ?>"/>
          <input type="hidden" name="type" id="type" value="<?php echo $TYPE_MERGE; ?>"/>
@@ -599,7 +599,7 @@ Click the Edit button to edit an award.<br/>
 ?>
    <tr>
       <td>
-      <form action="atlantian_award.php" method="post">
+      <form action="edit_ind_award.php" method="post">
          <input type="hidden" name="form_atlantian_id" id="form_atlantian_id" value="<?php echo $atlantian_id; ?>"/>
          <input type="hidden" name="form_award_id" id="form_award_id" value="<?php echo $award_id; ?>"/>
          <input type="hidden" name="form_atlantian_award_id" id="form_atlantian_award_id" value="<?php echo $atlantian_award_id; ?>"/>

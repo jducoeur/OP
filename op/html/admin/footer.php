@@ -9,7 +9,7 @@
 if (!$printable)
 {
    $is_printable = false;
-   if (strstr($_SERVER['PHP_SELF'], "atlantian_op.php") || strstr($_SERVER['PHP_SELF'], "unknown.php") || strstr($_SERVER['PHP_SELF'], "private.php") || strstr($_SERVER['PHP_SELF'], "branch.php") || 
+   if (strstr($_SERVER['PHP_SELF'], "kingdom_op.php") || strstr($_SERVER['PHP_SELF'], "unknown.php") || strstr($_SERVER['PHP_SELF'], "private.php") || strstr($_SERVER['PHP_SELF'], "branch.php") || 
        strstr($_SERVER['PHP_SELF'], "overdue.php") || strstr($_SERVER['PHP_SELF'], "baronage.php") || strstr($_SERVER['PHP_SELF'], "monarchs.php") || strstr($_SERVER['PHP_SELF'], "principality.php"))
    {
       $is_printable = true;

@@ -231,10 +231,12 @@
       <td class="datacenter">
       <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" summary="Table for layout">
          <tr>
+		 <!--
             <td class="datacenter" width="50%" valign="top">
             <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $SUPPORTERS_ID; ?>">Supporters</a>
             <br/>
             </td>
+		-->
             <td class="datacenter" width="50%" valign="top">
             <a href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $AUG; ?>">Augmentation of Arms</a>
             <br/>

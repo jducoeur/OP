@@ -472,7 +472,7 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
       else
       {
 ?>
-<p>There are no listed Heirs.<br/>Please use the <a href="select_atlantian.php?type=<?php echo $TYPE_AWARD; ?>&mode=<?php echo $MODE_ADD; ?>">Add Atlantian Award</a> link to add the Prince and Princess.</p>
+<p>There are no listed Heirs.<br/>Please use the <a href="select_ind.php?type=<?php echo $TYPE_AWARD; ?>&mode=<?php echo $MODE_ADD; ?>">Add Atlantian Award</a> link to add the Prince and Princess.</p>
 <?php
       }
    }

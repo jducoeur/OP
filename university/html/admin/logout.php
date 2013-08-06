@@ -106,7 +106,7 @@ session_destroy();
 include("../header.php");
 ?>
 <p align="center" class="title2">Logout</p>
-<?
+<?php
 
 if (isset($old_user) && !empty($old_user))
 {
