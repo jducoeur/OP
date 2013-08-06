@@ -25,9 +25,9 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
       $no_edit_selection = true;
    }
 
-   $SUBMIT_SAVE = "Save Atlantian";
-   $SUBMIT_DELETE = "Delete Atlantian";
-   $SUBMIT_MERGE = "Merge Atlantian";
+   $SUBMIT_SAVE = "Save";
+   $SUBMIT_DELETE = "Delete";
+   $SUBMIT_MERGE = "Merge";
 
    // Data submitted
    if (isset($_POST['submit']))
@@ -335,13 +335,13 @@ $branch_data_array = get_branch_pick_list();
 $title = ucfirst($mode) . " Atlantian";
 include("header.php");
 ?>
-<p align="center" class="title2"><?php echo ucfirst($mode); ?> Atlantian</p>
-<p align="center" class="title2">Atlantian Information</p>
+<p align="center" class="title2"><?php echo ucfirst($mode); ?> <?php echo $KINGDOM_RES; ?></p>
+<p align="center" class="title2"><?php echo $KINGDOM_RES; ?> Information</p>
 <?php 
    if (isset($no_edit_selection) && $no_edit_selection)
    {
 ?>
-<p align="center" class="title3" style="color:red">No Atlantian was selected for Edit.  Please use a navigation link to the left.</p>
+<p align="center" class="title3" style="color:red">No person was selected for Edit.  Please use a navigation link to the left.</p>
 <?php 
    }
    else
@@ -631,7 +631,7 @@ else
 {
 include("header.php");
 ?>
-<p align="center" class="title2">Edit Atlantian</p>
+<p align="center" class="title2">Edit Person</p>
 <p align="center" class="title2">You are not authorized to access this page.</p>
 <?php
 }
