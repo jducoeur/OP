@@ -29,7 +29,7 @@ echo '<?xml version="1.0" encoding="iso-8859-1"?>';
    <meta http-equiv="Description" content="Atlantian Order of Precedence - Atlantian Awards" />
    <meta http-equiv="Keywords" content="SCA, Atlantia, OP, Heraldry, Order of Precedence" />
    <meta http-equiv="Copyright" content="Kingdom of Atlantia/SCA, Inc. 2005" />
-   <title>Atlantian Order of Precedence Administration - <?php echo $title; ?></title>
+   <title><?php echo $KINGDOM_ADJ; ?> Order of Precedence Administration - <?php echo $title; ?></title>
    <link rel="stylesheet" type="text/css" href="<?php echo $HOME_DIR; ?>op.css" />
 	<link rel="shortcut icon" href="<?php echo $HOME_DIR; ?>favicon.ico">
 </head>
@@ -44,7 +44,7 @@ if (!$printable)
 ?>
       <td width="15%" valign="top" nowrap="nowrap">
       <table border="0" width="100%" summary="table used for formatting">
-         <tr><td align="center"><a href="<?php echo $HOME_DIR; ?>index.php"><img src="<?php echo $IMAGES_DIR; ?>atlantian-op.gif" alt="Atlantian Order of Precedence" border="0"/></a></td></tr>
+         <tr><td align="center"><a href="<?php echo $HOME_DIR; ?>index.php"><img src="<?php echo $IMAGES_DIR; ?>eastern.gif" alt="<?php echo $KINGDOM_ADJ; ?> Order of Precedence" border="0"/></a></td></tr>
          <tr>
             <td nowrap="nowrap">
       <p class="t_menu"><a href="#skip_navigation"><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="1" height="1" alt="W3C Compliant Skip Navigation Link" border="0"/></a></p>
@@ -52,13 +52,13 @@ if (!$printable)
       if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) 
       {
 ?>
-      <p class="t_menu_header">Atlantians</p>
+      <p class="t_menu_header"><?php echo $KINGDOM_RES; ?>s</p>
       <p class="t_menu">
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/edit_ind.php?mode=<?php echo $MODE_ADD; ?>">Add Person</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
-      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_ATLANTIAN; ?>">Edit Atlantian</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_ATLANTIAN; ?>">Edit Person</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
-      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_AWARD; ?>&amp;mode=<?php echo $MODE_ADD; ?>">Add Atlantian Award</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
-      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_AWARD; ?>&amp;mode=<?php echo $MODE_EDIT; ?>">Edit Atlantian Award</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_AWARD; ?>&amp;mode=<?php echo $MODE_ADD; ?>">Add Award</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_AWARD; ?>&amp;mode=<?php echo $MODE_EDIT; ?>">Edit Award</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/coronation.php?mode=<?php echo $MODE_ADD; ?>">Coronation</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
@@ -122,7 +122,7 @@ if (!$printable)
 ?>
       <p class="t_menu_header">Backlog</p>
       <p class="t_menu">
-      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_BACKLOG; ?>&amp;mode=<?php echo $MODE_EDIT; ?>">Search By Atlantian</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_BACKLOG; ?>&amp;mode=<?php echo $MODE_EDIT; ?>">Search By <?php echo $KINGDOM_ADJ; ?></a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/search_award.php">Search By Award</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/search_scribe.php">Search Scribes</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
 <?php
@@ -148,11 +148,11 @@ if (!$printable)
       </p>
       <p class="t_menu_header">Links</p>
       <p class="t_menu">
-      <a class="menu" href="<?php echo $HOME_DIR; ?>">Atlantian OP</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="<?php echo $HOME_DIR; ?>"><?php echo $KINGDOM_ADJ; ?> OP</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
-      <a class="menu" href="http://herald.atlantia.sca.org/">Atlantian College of Heralds</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="http://www.eastkingdom.org/heraldry/"><?php echo $KINGDOM_ADJ; ?> College of Heralds</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
-      <a class="menu" href="http://atlantia.sca.org/">Kingdom of Atlantia</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="http://eastkingdom.org/">Kingdom of <?php echo $KINGDOM_NAME; ?></a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       </p>
       <br/>
             </td>
@@ -168,7 +168,7 @@ if (!$printable)
 } // Printable
 ?>
       <td align="center" valign="top">
-      <img src="<?php echo $IMAGES_DIR; ?>op-title.gif" alt="Atlantian Order of Precedence" border="0"/>
+      <img src="<?php echo $IMAGES_DIR; ?>op-title.gif" alt="<?php echo $KINGDOM_ADJ; ?> Order of Precedence" border="0"/>
       <br/>
       <img src="<?php echo $IMAGES_DIR; ?>op-divider.gif" width="648" height="41" border="0" alt="OP Line"/>
       <br/>
