@@ -2,7 +2,7 @@
 include_once('db/host_defines.php');
 require_once('admin/session.php');
 
-$title = "Individual <?php echo $KINGDOM_ADJ; ?> Award Information";
+$title = "Individual $KINGDOM_ADJ Award Information";
 include('db/db.php');
 include('header.php');
 
