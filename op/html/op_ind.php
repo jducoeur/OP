@@ -2,8 +2,9 @@
 include_once('db/host_defines.php');
 require_once('admin/session.php');
 
-$title = "Individual $KINGDOM_ADJ Award Information";
 include('db/db.php');
+$title = "Individual $KINGDOM_ADJ Award Information";
+
 include('header.php');
 
 if (isset($_GET['atlantian_id']))
@@ -142,7 +143,7 @@ while ($data = mysql_fetch_array($result, MYSQL_BOTH))
    $preferred_sca_name = get_preferred_sca_name($atlantian_id, $sca_name);
    $link = db_connect();
 ?>
-<p class="title2" align="center">Individual Atlantian Award Information</p>
+<p class="title2" align="center">Individual <?php echo $KINGDOM_ADJ; ?> Award Information</p>
 <p class="title3" align="center">
 <?php echo $title . ' ' . $sca_name . $preferred_sca_name . $deceased_display . $revoked_display; ?>
 <br/><br/>
