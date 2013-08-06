@@ -2,8 +2,8 @@
 include_once("db.php");
 
 $SUBMIT_SELECT = "Select Award";
-$SUBMIT_SAVE = "Save $KINGDOM_ADJ Award";
-$SUBMIT_DELETE = "Delete Atlantian Award";
+$SUBMIT_SAVE = "Save Award";
+$SUBMIT_DELETE = "Delete Award";
 
 $submit = "";
 if (isset($_POST['submit']))
