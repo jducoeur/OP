@@ -28,7 +28,7 @@ $group_pl_query = "SELECT branch.branch_id, branch.branch, branch.incipient, bra
 $group_pl_result = mysql_query($group_pl_query) 
    or die("Group List Query failed : " . mysql_error());
 
-$SUBMIT_SEARCH = "Search Atlantian OP";
+$SUBMIT_SEARCH = "Search $KINGDOM_ADJ OP";
 
 $list_type = "A";
 $award_type = "A";

@@ -2,7 +2,7 @@
 include_once("db.php");
 
 $SUBMIT_SELECT = "Select Award";
-$SUBMIT_SAVE = "Save Atlantian Award";
+$SUBMIT_SAVE = "Save $KINGDOM_ADJ Award";
 $SUBMIT_DELETE = "Delete Atlantian Award";
 
 $submit = "";
@@ -734,7 +734,7 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
    $title = ucfirst($mode) . " Atlantian Award";
    include('header.php');
 ?>
-<p class="title2"><?php echo ucfirst($mode); ?> Atlantian Award</p>
+<p class="title2"><?php echo ucfirst($mode); ?> <?php echo $KINGDOM_ADJ; ?> Award</p>
 <?php
 if (isset($errmsg) && strlen($errmsg) > 0)
 {
@@ -825,7 +825,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       }
    ?>
    <tr>
-      <th class="titleright">Atlantian:</th>
+      <th class="titleright"><?php echo $KINGDOM_RES; ?>:</th>
       <td class="data"><?php echo $form_scaname; ?></td>
    </tr>
    <tr>
@@ -1010,7 +1010,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       }
    ?>
    <tr>
-      <th class="titleright">Atlantian:</th>
+      <th class="titleright"><?php echo $KINGDOM_RES; ?>:</th>
       <td class="data"><?php echo $form_scaname; ?></td>
    </tr>
    <tr>
@@ -1222,7 +1222,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       }
 ?>
    <tr>
-      <th class="titleright" valign="top">Atlantian:</th>
+      <th class="titleright" valign="top"><?php echo $KINGDOM_RES; ?>:</th>
       <td class="data"><?php echo $form_scaname; ?></td>
    </tr>
    <tr>
@@ -1445,7 +1445,7 @@ else
 {
 include("header.php");
 ?>
-   <p class="title2">Add/Edit Atlantian Award</p>
+   <p class="title2">Add/Edit <?php echo $KINGDOM_ADJ; ?> Award</p>
    <P>You are not authorized to access this page.</p>
 <?php
 }
