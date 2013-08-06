@@ -2,7 +2,7 @@
 include_once('db/host_defines.php');
 require_once('admin/session.php');
 
-$title = "Individual Atlantian Award Information";
+$title = "Individual <?php echo $KINGDOM_ADJ; ?> Award Information";
 include('db/db.php');
 include('header.php');
 
@@ -470,8 +470,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 ?>
 </table>
 <p align="center">There <?php if ($num_ind_results == 1) { echo "is 1 award"; } else { echo "are $num_ind_results awards"; } ?>.</p>
-<p align="center"><span class="blurb">* ENA = Event Not Atlantian - Only events where Atlantian royalty bestowed awards are tracked in the Atlantian OP.<br/>
-* BNA = Bestowed By Not Atlantian - Only when awards are bestowed by Atlantian royalty is that information tracked in the Atlantian OP.</span></p>
 <?php 
    }
    else
