@@ -149,14 +149,6 @@ while ($data = mysql_fetch_array($result, MYSQL_BOTH))
    <tr>
       <th scope="col" class="<?php echo $printstyle; ?>title">Rank</th>
       <th scope="col" class="<?php echo $printstyle; ?>title">SCA Name</th>
-<?php
-      if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
-      {
-?>
-      <th scope="col" class="<?php echo $printstyle; ?>title">Legal Name</th>
-<?php
-      }
-?>
       <th scope="col" class="<?php echo $printstyle; ?>title">Award Date</th>
       <th scope="col" class="<?php echo $printstyle; ?>title">Highest Ranking Award</th>
    </tr>
@@ -168,8 +160,6 @@ while ($data = mysql_fetch_array($result, MYSQL_BOTH))
    {
       $num_op_people++;
       $sca_name = clean($data['sca_name']);
-      $first_name = trim($data['first_name']);
-      $last_name = trim($data['last_name']);
       $name_reg_date = "&nbsp;";
       if (trim($data['name_reg_date']) != '')
       {
@@ -339,14 +329,6 @@ while ($data = mysql_fetch_array($result, MYSQL_BOTH))
       <tr>
          <td valign="top" class="<?php echo $printstyle; ?>dataright"><?php echo $rank; ?></td>
          <td valign="top" class="<?php echo $printstyle; ?>data"><?php echo $atlantian_display;  ?></td>
-<?php
-         if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
-         {
-?>
-         <td valign="top" class="<?php echo $printstyle; ?>data"><?php echo "$first_name $last_name"; ?></td>
-<?php
-         }
-?>
          <td valign="top" class="<?php echo $printstyle; ?>dataright"><?php echo $award_date; ?></td>
          <td valign="top" class="<?php echo $printstyle; ?>data"><?php echo $display_string; ?></td>
 <?php
