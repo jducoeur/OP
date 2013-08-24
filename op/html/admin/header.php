@@ -63,8 +63,9 @@ if (!$printable)
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/coronation.php?mode=<?php echo $MODE_ADD; ?>">Coronation</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/reign.php?mode=<?php echo $MODE_EDIT; ?>">Monarchs</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
-      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/principality.php?mode=<?php echo $MODE_EDIT; ?>">Principality</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
-      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/baronage.php?mode=<?php echo $MODE_EDIT; ?>">Baronage</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <!--<a class="menu" href="<?php echo $HOME_DIR; ?>admin/principality.php?mode=<?php echo $MODE_EDIT; ?>">Principality</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      -->
+	  <a class="menu" href="<?php echo $HOME_DIR; ?>admin/baronage.php?mode=<?php echo $MODE_EDIT; ?>">Baronage</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <!--
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/investiture.php?mode=<?php echo $MODE_EDIT; ?>"></a>Investiture<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       -->
@@ -122,7 +123,7 @@ if (!$printable)
 ?>
       <p class="t_menu_header">Backlog</p>
       <p class="t_menu">
-      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_BACKLOG; ?>&amp;mode=<?php echo $MODE_EDIT; ?>">Search By <?php echo $KINGDOM_ADJ; ?></a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+      <a class="menu" href="<?php echo $HOME_DIR; ?>admin/select_ind.php?type=<?php echo $TYPE_BACKLOG; ?>&amp;mode=<?php echo $MODE_EDIT; ?>">Search By Name</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/search_award.php">Search By Award</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>admin/search_scribe.php">Search Scribes</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
 <?php

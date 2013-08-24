@@ -14,13 +14,13 @@ $query = "SELECT branch_id, branch, ceremonial_date_founded, device_file_name, w
 $result = mysql_query($query) 
    or die("Barony Query failed : " . mysql_error());
 ?>
-<p class="title2" align="center">The Baronies of Atlantia</p>
+<p class="title2" align="center">The Baronies of the <?php echo $KINGDOM_NAME; ?></p>
 <p align="center">
-The Baronies of Atlantia, in order of precedence
+The Baronies of the <?php echo $KINGDOM_NAME; ?>, in order of precedence
 <br/><br/>
 <img src="<?php echo $IMAGES_DIR; ?>op-divider.gif" width="648" height="41" border="0" alt="OP Line"/>
 </p>
-<table align="center" cellpadding="5" cellspacing="0" border="1" summary="Table listing the Baronies of Atlantia in order of founding (first investiture date)">
+<table align="center" cellpadding="5" cellspacing="0" border="1" summary="Table listing the Baronies of the <?php echo $KINGDOM_NAME; ?> in order of founding (first investiture date)">
    <tr>
       <th class="title">#</th>
       <th class="title">Barony</th>
@@ -78,8 +78,7 @@ The Baronies of Atlantia, in order of precedence
 Note: The Barony of Myrkewoode is not listed, but its legacy is the Kingdom around us today.
 </p>
 <p align="center" class="blurb1">
-Images of Baronial arms courtesy of Corun MacAnndra, Eldred AElfwald, and Darri Kveldulfsson <br/>
-(from the Atlantian Scribal web site <a href="http://scribe.atlantia.sca.org/arms_images.php">http://scribe.atlantia.sca.org/arms_images.php</a>).
+
 </p>
 <?php 
 /* Free resultset */

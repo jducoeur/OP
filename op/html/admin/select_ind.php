@@ -4,8 +4,8 @@ include_once("db.php");
 // Only allow authorized users
 if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) || $_SESSION[$BACKLOG_ADMIN]))
 {
-$SUBMIT_SEARCH = "Search Atlantians";
-$SUBMIT_SELECT = "Select Atlantian";
+$SUBMIT_SEARCH = "Search";
+$SUBMIT_SELECT = "Select ";
 
 $submit = "";
 if (isset($_POST['submit']))
@@ -213,7 +213,7 @@ else if ($type == $TYPE_AWARD)
 }
 include("header.php");
 ?>
-<p class="title2" align="center">Search for Atlantians</p>
+<p class="title2" align="center">Search for <?php echo $KINGDOM_RES; ?>s</p>
 <?php
 if (isset($errmsg) && strlen($errmsg) > 0)
 {
@@ -327,7 +327,7 @@ else
 {
 include("header.php");
 ?>
-<p class="title2">Select Atlantian</p>
+<p class="title2">Select Person</p>
 <p>You are not authorized to access this page.</p>
 <?php
 }

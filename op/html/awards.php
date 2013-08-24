@@ -131,7 +131,7 @@ if (isset($printable) && $printable == 1)
             <th width="40%" align="center" valign="middle"><img src="<?php echo $AWARD_IMAGE_DIR; ?>gawain.gif" width="130" height="130" alt="Badge for the Order of Gawain" border="0"/></th>
             <td class="data"><b>The Order of Gawain:</b> Given by the Crown to honor and recognize those young people, up to 
               and including the age of 17, who have distinguished themselves by acts of valor, honor, chivalry, courtesy, 
-              and leadership within a youth martial activity.  Established by Gryffith and aikaterine, april 22, a.S. 41.</td>
+              and leadership within a youth martial activity.  Established by Gryffith and Aikaterine, april 22, a.S. 41.</td>
          </tr>
          <tr>
             <th width="40%" align="center" valign="middle"><img src="<?php echo $AWARD_IMAGE_DIR; ?>troub.gif" width="130" height="130" alt="Badge for the Troubadour" border="0"/></th>
@@ -146,20 +146,20 @@ if (isset($printable) && $printable == 1)
            
               <td class="data"><b>King's Order of Excellence:</b> given by the Sovereign to those who maintain a high 
                 standard of authenticity in their dress, behavior, persona, and goods, in the feast hall, in their 
-                encampments, and on the field. Established 16 march, a.S. XXv by rhys and Elaina.</td>
+                encampments, and on the field. Established 16 march, a.S. XXv by Rhys and Elaina.</td>
          </tr>
          <tr> 
            <th width="40%" align="center" valign="middle" style="font-style:italic"></th>
            
               <td class="data"><b>Order of Artemis:</b> given by the Crown for prowess in combat archery on the field 
                 of battle, who have demonstrated service to the Kingdom such as marshalling, commanding, building 
-                equipment, teaching and service to the Queen on and off the field. (is award is bestowed upon a 
-                single individual once.) Established by lucan and Yana, march 24, a.S. 41</td>
+                equipment, teaching and service to the Queen on and off the field. (This award is bestowed upon a 
+                single individual once.) Established by Lucan and Yana, march 24, a.S. 41</td>
          </tr>
          <tr>
             <th width="40%" align="center" valign="middle" style="font-style:italic"></th>
             <td class="data"><b>The Tyger of the East:</b> given by the Crown to the individual who most embodies and personifies
-              the ideals of the East Kingdom. This honor is infrequently granted. Established april 26, A.S. XXXvII by Darius and roxane</td>
+              the ideals of the East Kingdom. This honor is infrequently granted. Established april 26, A.S. XXXvII by Darius and Roxane</td>
          </tr>
          
       </table>

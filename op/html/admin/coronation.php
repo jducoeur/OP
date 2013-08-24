@@ -291,7 +291,7 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
       <td>
 <table border="1" width="100%" cellpadding="5" cellspacing="0" summary="Award Data">
    <tr>
-      <th class="titleright" valign="top">Atlantian:</th>
+      <th class="titleright" valign="top">Person:</th>
       <td class="data"><?php echo $scaname; ?></td>
    </tr>
    <tr>
@@ -472,7 +472,7 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
       else
       {
 ?>
-<p>There are no listed Heirs.<br/>Please use the <a href="select_ind.php?type=<?php echo $TYPE_AWARD; ?>&mode=<?php echo $MODE_ADD; ?>">Add Atlantian Award</a> link to add the Prince and Princess.</p>
+<p>There are no listed Heirs.<br/>Please use the <a href="select_ind.php?type=<?php echo $TYPE_AWARD; ?>&mode=<?php echo $MODE_ADD; ?>">Add Award</a> link to add the Prince and Princess.</p>
 <?php
       }
    }
