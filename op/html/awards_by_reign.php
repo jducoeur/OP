@@ -205,14 +205,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
    <tr>
       <th class="title">#</th>
       <th class="title" nowrap="nowrap">Recipient</th>
-<?php 
-            if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
-            {
-?>
-      <th class="title" nowrap="nowrap">Real Name</th>
-<?php 
-            }
-?>
       <th class="title">Award</th>
       <th class="title">Date</th>
 <?php 
@@ -234,8 +226,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
             $name_display = "<a href=\"op_ind.php?atlantian_id=$atlantian_id\" class=\"td\">$sca_name</a>";
          }
          $gender = $award_data['gender'];
-         $first_name = clean($award_data['first_name']);
-         $last_name = clean($award_data['last_name']);
          $award_name = clean($award_data['award_name']);
          $award_name_display = $award_name;
          $award_id = clean($award_data['award_id']);
@@ -334,9 +324,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <?php 
                if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
                {
-?>
-      <td class="data"><?php echo $first_name . " " . $last_name . " ($gender)"; ?></td>
-<?php 
+			     // Formerly the Real name column
                }
 ?>
       <td class="data"><?php echo $award_name_display; ?></td>
