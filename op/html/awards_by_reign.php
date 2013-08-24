@@ -120,7 +120,7 @@ $award_result = mysql_query($award_query)
 ?>
 <p class="title2" align="center">Awards by Reign<br/><br/><?php echo $monarchs_display; ?><br/><?php echo format_sca_date($coronation_date) . " - " . format_sca_date($next_coronation_date); ?></p>
 <p align="center">
-<img src="images/atlantia.gif" width="97" height="118" alt="Arms of Atlantia" border="0"/>
+<img src="images/east.gif" width="97" height="118" alt="Arms of the East" border="0"/>
 <br/><br/>
 <?php
 if (!$printable)
