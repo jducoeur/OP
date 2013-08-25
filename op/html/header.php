@@ -52,8 +52,10 @@ if (!$printable)
       <p class="t_menu">
       <a class="menu" href="<?php echo $HOME_DIR; ?>awards.php"><?php echo $KINGDOM_ADJ; ?> Awards</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
+<!--
       <a class="menu" href="<?php echo $HOME_DIR; ?>principality.php">Principalities of the <?php echo $KINGDOM_NAME; ?></a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
+-->
       <a class="menu" href="<?php echo $HOME_DIR; ?>monarchs.php"><?php echo $KINGDOM_ADJ; ?> Monarchs</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>baronies.php"><?php echo $KINGDOM_ADJ; ?> Baronies</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
