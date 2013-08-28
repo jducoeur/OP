@@ -35,26 +35,21 @@ if (!$printable)
 {
 ?>
       <p class="copy">
-      The data on this web site is maintained by the Clerk of Precedence, <a href="functions/mailto.php?u=op&amp;d=atlantia.sca.org" target="redir">Lady Glynis Gwynedd</a>.  Please use the <a href="corrections.php">corrections form</a> to report any issues with OP data.
+      The data on this web site is maintained by the Clerk of Precedence, <a href="functions/mailto.php?u=shepherds.crook&amp;d=eastkingdom.org" target="redir">Duchess Anna Halloway</a>.  Please use the <a href="corrections.php">corrections form</a> to report any issues with OP data.
       <br/><br/>
-      This is the recognized website for the Order of Precedence of the <a href="http://atlantia.sca.org">Kingdom of Atlantia</a> of the <a href="http://www.sca.org">Society for Creative Anachronism</a>, Inc. 
-      and is maintained by <a href="functions/mailto.php?u=webminister&amp;d=atlantia.sca.org" target="redir">Maestra Cassandra Arabella Giordani (Kim Jordan)</a>. 
+      This is the recognized website for the Order of Precedence of the <a href="http://easkingdom.org">Kingdom of the <?php echo $KINGDOM_NAME; ?></a> of the <a href="http://www.sca.org">Society for Creative Anachronism</a>, Inc. 
+       
       This site may contain electronic versions of the branch's governing documents. 
       Any discrepancies between the electronic version of any information on this site and the printed version that is available from the originating office will be decided in favor of the printed version.
       <br/><br/>
-      Copyright &copy; 2005-<?php echo date("Y"); ?> Order of Precedence of the Kingdom of Atlantia.  The original contributors retain the copyright of certain portions of this site.
+      Copyright &copy; 2005-<?php echo date("Y"); ?> Order of Precedence of the Kingdom of the<?php echo $KINGDOM_NAME; ?>.  The original contributors retain the copyright of certain portions of this site.
       <br/><br/>
-      For information on using photographs, articles, or artwork from this website, please contact the web minister at 
-      <a href="functions/mailto.php?u=webminister&amp;d=atlantia.sca.org" target="redir">webminister AT atlantia.sca.org</a>. 
-      They will assist you in contacting the original creator of the piece.  Please respect the legal rights of our contributors.
-      <br/><br/>
+      
       All external links are not part of the Order of Precedence website. 
       Inclusion of a page or site here is neither implicit nor explicit endorsement of the site. 
       Further, <acronym title="Society for Creative Anachronism">SCA</acronym>, Inc. is not responsible for content outside of op.atlantia.sca.org.
       <br/><br/>
-      The images of many of the award badges were gleaned from the Atlantian Scribal Handbook: <a href="http://scribe.atlantia.sca.org">http://scribe.atlantia.sca.org</a>.
-      <br/>
-      Other award badge images created by Maestra Cassandra Arabella Giordani.
+    
       </p>
 <?php
 }

@@ -1,5 +1,5 @@
 <p align="center">
-<a href="awards.php">Eastern Award Descriptions</a> | <a href="award_table_only.php">Eastern Awards by Precedence</a> | <a href="award_discipline.php">Eastern Awards by Discipline</a>
+<a href="awards.php">Eastern Award Descriptions</a> | <a href="award_table_only.php">Eastern Awards by Precedence</a> 
 </p>
 <table width="<?php echo $pagewidth; ?>" align="center" cellpadding="5" cellspacing="0" border="1" summary="Table for layout">
    <tr>

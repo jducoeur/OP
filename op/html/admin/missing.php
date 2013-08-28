@@ -4,7 +4,7 @@ include_once("db.php");
 // Only allow authorized users
 if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
 {
-$SUBMIT_SEARCH = "Search Atlantian Awards not in Court Report";
+$SUBMIT_SEARCH = "Search Awards not in Court Report";
 
 $submit = "";
 if (isset($_POST['submit']))
@@ -88,7 +88,7 @@ if ($submit == $SUBMIT_SEARCH)
 $title = "Search Atlantian Awards not in Court Report";
 include("header.php");
 ?>
-<p class="title2" align="center">Search Atlantian Awards not in Court Report</p>
+<p class="title2" align="center">Search <?php echo $KINGDOM_ADJ; ?> Awards not in Court Report</p>
 <?php
 if (isset($errmsg) && strlen($errmsg) > 0)
 {
@@ -197,7 +197,7 @@ else
 {
 include("header.php");
 ?>
-<p class="title2">Search Atlantian Awards not in Court Report</p>
+<p class="title2">Search Awards not in Court Report</p>
 <p>You are not authorized to access this page.</p>
 <?php
 }
