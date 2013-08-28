@@ -1,0 +1,54 @@
+Entering a new court report
+
+log into op.wiglaf.org/admin with username: eastkingdom passowrd:Tigertigerburningbright in the pop up
+log into admin system with username:opclerk password:Croz13r
+in the left hand bar click on "add op event"
+fill in the Event Name from the court report precisely.  
+Select the Branch where the event is held
+Enter the start and end Date in mm/dd/yyyy format, yes even if it is both the same day
+press the save event button
+
+you have now created the event
+
+now press the 'add court report for <event name>' button on the bottom
+fill in court time, All is a good default
+Set Court Type to Royal
+Set Kingdom to East
+Set Presiding Monarches to the right couple - If there is no correct couple, email Justin and Constance
+Enter the name of hte HErald or Heralds from the court report
+Enter the date that YOU recieved the court report in the 'REcieved Date' field
+Set Entered Date to today
+click 'save court report'
+
+you have now created a court report
+
+now press the 'add new award to this court report' button
+type in the sca first name of the recipient and  press search
+  IF the person is nto found, try similar names jsut in case
+  IF the right person is not found you must Add Person (see below)
+IF you find the person, click the circle to the left of therir name
+press Select
+Select the right award from the dropdown (this is a pain)
+press 'Select Award' button
+on the next page, enter the sequence number (1, 2, 3 etc down the page)
+set hte scroll status as appropriate
+copy the Scribe's name into field
+press Save Award
+Assuming there are more awards, press 'add award for court report' and repeat this last paragraph
+
+If you need to create a new person
+On the left, press 'Add Person'
+Enter SCA name
+If you have any other information FOR SURE fill it in, but DO NOT GUESS
+press Save
+on the left, go to 'OP Events'
+Using hte Prev and NExt links find the correct month and the correct event
+click o nthe event
+find the right court report
+press Edit
+press 'Add new Award to this Court Report' button
+search for hte person you jsut added
+continue as above
+
+
+
