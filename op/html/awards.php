@@ -10,8 +10,7 @@ if (isset($printable) && $printable == 1)
 <p class="title2" align="center">The Awards of the Kingdom of <?php echo $KINGDOM_NAME; ?></p>
 
 <p align="center">
-<a href="awards.php"><?php echo $KINGDOM_ADJ; ?> Award Descriptions</a> | <a href="award_table_only.php"><?php echo $KINGDOM_ADJ; ?> Awards by Precedence</a> | <a href="award_discipline.php"><?php echo $KINGDOM_ADJ; ?> Awards by Discipline</a>
-</p>
+<a href="awards.php"><?php echo $KINGDOM_ADJ; ?> Award Descriptions</a> | <a href="award_table_only.php"><?php echo $KINGDOM_ADJ; ?> Awards by Precedence</a>
 
 <table align="center" width="<?php echo $pagewidth; ?>" cellpadding="5" cellspacing="0" border="0" summary="">
    <tr>

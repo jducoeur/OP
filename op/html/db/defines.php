@@ -3,8 +3,8 @@ include_once('host_defines.php');
 include_once('admin_defines.php');
 include_once('award_defines.php');
 
-$OP_EMAIL = "shephards.crook@eastkingdom.org";
-$COURT_REP_EMAIL = "shephards.crook@eastkingdom.org"";  
+$OP_EMAIL = "shepherds.crook@eastkingdom.org";
+$COURT_REP_EMAIL = "shepherds.crook@eastkingdom.org";  
 $IMAGES_DIR = $HOME_DIR . "images/";
 $BRANCH_IMAGE_DIR = $IMAGES_DIR . "branches/";
 $DEVICE_IMAGE_DIR = $IMAGES_DIR . "devices/";

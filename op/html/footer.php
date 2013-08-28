@@ -35,9 +35,9 @@ if (!$printable)
 {
 ?>
       <p class="copy">
-      The data on this web site is maintained by the Clerk of Precedence, <a href="functions/mailto.php?u=shepherds.crook&amp;d=eastkingdom.org" target="redir">Duchess Anna Halloway</a>.  Please use the <a href="corrections.php">corrections form</a> to report any issues with OP data.
+      The data on this web site is maintained by the Clerk of Precedence, <a href="mailto:shepherds.crook@eastkingdom.org">Duchess Anna Halloway</a>.  Please use the <a href="corrections.php">corrections form</a> to report any issues with OP data.
       <br/><br/>
-      This is the recognized website for the Order of Precedence of the <a href="http://easkingdom.org">Kingdom of the <?php echo $KINGDOM_NAME; ?></a> of the <a href="http://www.sca.org">Society for Creative Anachronism</a>, Inc. 
+      This is the recognized website for the Order of Precedence of the <a href="http://www.eastkingdom.org">Kingdom of the <?php echo $KINGDOM_NAME; ?></a> of the <a href="http://www.sca.org">Society for Creative Anachronism</a>, Inc. 
        
       This site may contain electronic versions of the branch's governing documents. 
       Any discrepancies between the electronic version of any information on this site and the printed version that is available from the originating office will be decided in favor of the printed version.
