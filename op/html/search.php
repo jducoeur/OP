@@ -353,14 +353,6 @@ if (isset($result) && mysql_num_rows($result) > 0)
       <th class="title" nowrap="nowrap">
       SCA Name<?php if ($list_type == "A") { echo "&nbsp;<img src=\"" . $IMAGES_DIR . strtolower($dir) . ".gif\" align=\"middle\" border=\"0\" alt=\"" . $dir_title . "\"/>"; } ?>
       </th>
-<?php 
-   if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
-   {
-?>
-      <th class="title">Real Name</th>
-<?php 
-   }
-?>
       <th class="title">Award</th>
       <th class="title">
       Award Date<?php if ($list_type == "O") { echo "&nbsp;<img src=\"" . $IMAGES_DIR . strtolower($dir) . ".gif\" align=\"middle\" border=\"0\" alt=\"" . $dir_title . "\"/>"; } ?>
@@ -393,10 +385,7 @@ if (isset($result) && mysql_num_rows($result) > 0)
             $name_display .= " <i>[AKA " . $alternate_names . "]</i>";
          }
 
-         $first_name = clean($data['first_name']);
-         $last_name = clean($data['last_name']);
          $gender = $data['gender'];
-         $real_name_display = $first_name . " " . $last_name . " (" . $gender . ")";
 
          $award_id = $data['award_id'];
          $award_group_id = $data['ag_id'];
@@ -556,14 +545,6 @@ if (isset($result) && mysql_num_rows($result) > 0)
 ?>
    <tr>
       <td class="data"><?php echo $private_display . $name_display; ?></td>
-<?php 
-if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
-{
-?>
-      <td class="data"><?php echo $real_name_display; ?></td>
-<?php 
-}
-?>
       <td class="data"><?php echo $award_name_display; ?></td>
       <td class="data" nowrap="nowrap"><?php echo $award_date; ?></td>
 <?php 

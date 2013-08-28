@@ -2,6 +2,8 @@
 $title = "Territorial Princes and Princesss of Atlantia";
 include("header.php");
 
+include("disabled.php");
+
 $link = db_connect();
 
 $query = "SELECT principality.principality_id, prince.sca_name AS prince, princess.sca_name AS princess, principality.prince_id, principality.princess_id, principality.principality_start_date, principality.principality_display " .

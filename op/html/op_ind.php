@@ -421,10 +421,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
                $event_display .= " (" . $event_loc . ")";
             }
          }
-         else if ($kingdom != $KINGDOM_NAME)
-         {
-            $event_display = "ENA*";
-         }
          else
          {
             $event_display = "&nbsp;";
@@ -442,10 +438,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
          else if ($ind_data['principality_id'] != "")
          {
             $bestowers_display = "<a href=\"" . $HOME_DIR . "awards_by_principality.php?principality_id=" . $ind_data['principality_id'] . "\" class=\"td\">" . clean($ind_data['principality_display']) . "</a>";
-         }
-         else if ($event_display == "ENA*" || $kingdom != "Atlantia")
-         {
-            $bestowers_display = "BNA*";
          }
 
          $private = $ind_data['private'];

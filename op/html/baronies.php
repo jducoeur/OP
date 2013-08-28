@@ -2,6 +2,8 @@
 $title = "Baronies of Atlantia";
 include("header.php");
 
+include("disabled.php");
+
 $link = db_connect();
 
 $query = "SELECT branch_id, branch, ceremonial_date_founded, device_file_name, website " .

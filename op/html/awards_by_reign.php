@@ -97,7 +97,6 @@ $award_query =
    "LEFT OUTER JOIN $DBNAME_OP.court_report ON atlantian_award.court_report_id = court_report.court_report_id " .
    "WHERE award.type_id IN (SELECT type_id FROM $DBNAME_OP.precedence WHERE precedence NOT IN ($PRINCIPALITY_AWARD_P, $BARONIAL_AWARD_P)) " . 
    $reign_start_date_clause . $reign_end_date_clause .
-   "AND branch.is_atlantian = 1 " .
    "UNION ALL " .
    "SELECT atlantian.atlantian_id, atlantian.sca_name, atlantian.gender, atlantian.first_name, atlantian.last_name, " .
    "award.award_name, award.award_name_male, award.award_name_female, award.award_id, award.award_group_id, award.type_id, " .
@@ -111,7 +110,6 @@ $award_query =
    "LEFT OUTER JOIN $DBNAME_OP.court_report ON atlantian_award.court_report_id = court_report.court_report_id " .
    "WHERE award.type_id IN (SELECT type_id FROM $DBNAME_OP.precedence WHERE precedence NOT IN ($PRINCIPALITY_AWARD_P, $BARONIAL_AWARD_P)) " .
    $reign_start_date_clause . $reign_end_date_clause .
-   "AND branch.is_atlantian = 1 " .
    "ORDER BY award_date, event_id, sequence, sca_name";
 
 /* Performing SQL query */
@@ -207,14 +205,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
    <tr>
       <th class="title">#</th>
       <th class="title" nowrap="nowrap">Recipient</th>
-<?php 
-            if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
-            {
-?>
-      <th class="title" nowrap="nowrap">Real Name</th>
-<?php 
-            }
-?>
       <th class="title">Award</th>
       <th class="title">Date</th>
 <?php 
@@ -236,8 +226,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
             $name_display = "<a href=\"op_ind.php?atlantian_id=$atlantian_id\" class=\"td\">$sca_name</a>";
          }
          $gender = $award_data['gender'];
-         $first_name = clean($award_data['first_name']);
-         $last_name = clean($award_data['last_name']);
          $award_name = clean($award_data['award_name']);
          $award_name_display = $award_name;
          $award_id = clean($award_data['award_id']);
@@ -336,9 +324,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <?php 
                if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
                {
-?>
-      <td class="data"><?php echo $first_name . " " . $last_name . " ($gender)"; ?></td>
-<?php 
+			     // Formerly the Real name column
                }
 ?>
       <td class="data"><?php echo $award_name_display; ?></td>

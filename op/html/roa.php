@@ -6,6 +6,8 @@ $title = "Atlantian Roll of Arms";
 include('db/db.php');
 include('header.php');
 
+include("disabled.php");
+
 $pagewidth = "";
 $printstyle = "";
 $parastyle = "";

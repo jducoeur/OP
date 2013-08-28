@@ -356,10 +356,6 @@ if ($num_recipient_result > 0)
                $event_display .= " (" . $event_loc . ")";
             }
          }
-         else if ($kingdom != $KINGDOM_NAME)
-         {
-            $event_display = "ENA*";
-         }
          else
          {
             $event_display = "&nbsp;";
@@ -377,10 +373,6 @@ if ($num_recipient_result > 0)
          else if ($award_data['principality_id'] != "")
          {
             $bestowers_display = "<a href=\"" . $HOME_DIR . "awards_by_principality.php?principality_id=" . $award_data['principality_id'] . "\" class=\"td\">" . clean($award_data['principality_display']) . "</a>";
-         }
-         else if ($event_display == "ENA*" || $kingdom != $KINGDOM_NAME)
-         {
-            $bestowers_display = "BNA*";
          }
 
          $private = $award_data['private'];
@@ -412,8 +404,6 @@ if ($num_recipient_result > 0)
 ?>
 </table>
 <p align="center">There <?php if ($num_recipient_result == 1) { echo "is 1 award recipient"; } else { echo "are $num_recipient_result award recipients"; } ?>.</p>
-<p align="center"><span class="blurb">* ENA = Event Not Atlantian - Only events where Atlantian royalty bestowed awards are tracked in the Atlantian OP.<br/>
-* BNA = Bestowed By Not Atlantian - Only when awards are bestowed by Atlantian royalty is that information tracked in the Atlantian OP.</span></p>
 <?php 
 }
 // No awardees

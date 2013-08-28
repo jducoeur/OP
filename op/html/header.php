@@ -52,16 +52,22 @@ if (!$printable)
       <p class="t_menu">
       <a class="menu" href="<?php echo $HOME_DIR; ?>awards.php"><?php echo $KINGDOM_ADJ; ?> Awards</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
+<!--
       <a class="menu" href="<?php echo $HOME_DIR; ?>principality.php">Principalities of the <?php echo $KINGDOM_NAME; ?></a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
+-->
       <a class="menu" href="<?php echo $HOME_DIR; ?>monarchs.php"><?php echo $KINGDOM_ADJ; ?> Monarchs</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
+<!--
       <a class="menu" href="<?php echo $HOME_DIR; ?>baronies.php"><?php echo $KINGDOM_ADJ; ?> Baronies</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
+-->
       <a class="menu" href="<?php echo $HOME_DIR; ?>kingdom_op.php"><?php echo $KINGDOM_ADJ; ?> OP</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
+<!--
       <a class="menu" href="<?php echo $HOME_DIR; ?>roa.php">Roll of Arms</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
+-->
       <a class="menu" href="<?php echo $HOME_DIR; ?>search.php">Search</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
       <a class="menu" href="<?php echo $HOME_DIR; ?>corrections.php">Corrections</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
@@ -69,7 +75,7 @@ if (!$printable)
       <b style="color:<?php echo $accent_color; ?>">Alphabetical by SCA Name</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
          &nbsp;&nbsp;&nbsp;
          <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=A">A</a>&nbsp;&nbsp;&nbsp;<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
-         <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=�">�</a>&nbsp;&nbsp;<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
+         <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=Æ">Æ</a>&nbsp;&nbsp;<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
          <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=B">B</a>&nbsp;&nbsp;&nbsp;<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
          <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=C">C</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
          <br/>
@@ -92,7 +98,7 @@ if (!$printable)
          <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=O">O</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
          <br/>
          &nbsp;&nbsp;&nbsp;
-         <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=�">�</a>&nbsp;&nbsp;&nbsp;<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
+         <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=Þ">Þ</a>&nbsp;&nbsp;&nbsp;<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
          <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=P">P</a>&nbsp;&nbsp;&nbsp;<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
          <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=Q">Q</a>&nbsp;&nbsp;&nbsp;<img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
          <a class="submenu" href="<?php echo $HOME_DIR; ?>op_name.php?letter=R">R</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/>
@@ -144,7 +150,7 @@ if (!$printable)
          &nbsp;&nbsp;&nbsp;<b style="color:<?php echo $accent_color; ?>">Awards of Arms</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="submenu" href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $AOA; ?>">Award of Arms</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
          &nbsp;&nbsp;&nbsp;<b style="color:<?php echo $accent_color; ?>">Society Awards</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="submenu" href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $SUPPORTERS_ID; ?>">Supporters</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+<!--         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="submenu" href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $SUPPORTERS_ID; ?>">Supporters</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/> -->
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="submenu" href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $AUG; ?>">Augmentaion of Arms</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
          &nbsp;&nbsp;&nbsp;<b style="color:<?php echo $accent_color; ?>">Kingdom Orders</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="submenu" href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $QOC; ?>">Queen's Order of Courtesy</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
@@ -158,7 +164,7 @@ if (!$printable)
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="submenu" href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TERPSICHORE; ?>">Terpsichore</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="submenu" href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $KOE; ?>">KOE</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="submenu" href="<?php echo $HOME_DIR; ?>op_award.php?award_id=<?php echo $TYGER_OF_EAST; ?>">Tyger of the East</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
-        &nbsp;&nbsp;&nbsp;<b style="color:<?php echo $accent_color; ?>">Kingdom Honors</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
+<!--        &nbsp;&nbsp;&nbsp;<b style="color:<?php echo $accent_color; ?>">Kingdom Honors</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/> -->
         &nbsp;&nbsp;&nbsp;<b style="color:<?php echo $accent_color; ?>">Closed Orders</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
            </p>
       <p class="t_menu_header">Links</p>

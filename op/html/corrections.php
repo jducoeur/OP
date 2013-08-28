@@ -2,6 +2,8 @@
 $title = "Corrections";
 include("header.php");
 
+include("disabled.php");
+
 $SUBMIT_REQUEST = "Request Correction";
 
 // Data submitted

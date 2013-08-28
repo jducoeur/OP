@@ -310,10 +310,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
                $event_display .= " (" . $event_loc . ")";
             }
          }
-         else if ($select_branch == 1 && $kingdom_display != "Atlantia" && $kingdom_display != "<i>Unknown</i>")
-         {
-            $event_display = "ENA*";
-         }
          else
          {
             $event_display = "&nbsp;";
@@ -331,10 +327,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
          else if ($recipient_data['principality_id'] != "")
          {
             $bestowers_display = "<a href=\"" . $HOME_DIR . "awards_by_principality.php?principality_id=" . $recipient_data['principality_id'] . "\" class=\"td\">" . clean($recipient_data['principality_display']) . "</a>";
-         }
-         else if ($event_display == "ENA*" || ($select_branch == 1 && $kingdom_display != "Atlantia"))
-         {
-            $bestowers_display = "BNA*";
          }
 
 		 /* This preferred_sca_name() thing takes for-bloody-ever when querying a large order. And it seems very unimportant. For
@@ -379,8 +371,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 ?>
 </table>
 <p align="center">There <?php if ($num_recipient_result == 1) { echo "is 1 award recipient"; } else { echo "are $num_recipient_result award recipients"; } ?>.</p>
-<p align="center"><span class="blurb">* ENA = Event Not Atlantian - Only events where Atlantian royalty bestowed awards are tracked in the Atlantian OP.<br/>
-* BNA = Bestowed By Not Atlantian - Only when awards are bestowed by Atlantian royalty is that information tracked in the Atlantian OP.</span></p>
 <?php 
    }
    // No awardees

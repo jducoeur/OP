@@ -295,7 +295,8 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
                $insert_result = mysql_query($insert_query) 
                   or die("INSERT failed : " . mysql_error());
                $form_atlantian_award_id = mysql_insert_id();
-
+/* Some of this is peculiar to Atlantia's St. Aidan, and the rest inserts fake
+   awards that really should not be there -- it's duplicate data, and kind of lying.
                // Is this an award that requires special processing?
                // St. Aidan
                if ($form_award_id == $ST_AIDAN)
@@ -469,16 +470,15 @@ if (isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN])
                                              value_or_null(date("Y-m-d")) . ", " .
                                              value_or_null($_SESSION["s_user_id"]) .
                                              ")";
-                           /*
-                           $add_arms_result = mysql_query($add_arms_query) 
-                              or die("INSERT of Arms failed : " . mysql_error());
-                           $arms_id = mysql_insert_id();
-                           */
+//                         $add_arms_result = mysql_query($add_arms_query) 
+//                            or die("INSERT of Arms failed : " . mysql_error());
+//                         $arms_id = mysql_insert_id();
                         }
                      }
                   }
                } // check for extra awards
-            }
+*/
+			   }
          } // SUBMIT_SAVE
       }
       // Errors - display them without changing added data

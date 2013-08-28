@@ -106,9 +106,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <?php 
    if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
    {
-?>
-      <th class="title" nowrap="nowrap">Real Name</th>
-<?php 
+      // Header for now-deleted Mundane name
    }
 ?>
       <th class="title">Award</th>
@@ -140,8 +138,6 @@ while ($award_data = mysql_fetch_array($award_result, MYSQL_BOTH))
       $name_display = "<a href=\"op_ind.php?atlantian_id=$atlantian_id\" class=\"td\">$sca_name</a>";
    }
    $gender = $award_data['gender'];
-   $first_name = clean($award_data['first_name']);
-   $last_name = clean($award_data['last_name']);
    $award_name = clean($award_data['award_name']);
    $award_name_display = $award_name;
    $award_id = clean($award_data['award_id']);
@@ -242,9 +238,7 @@ while ($award_data = mysql_fetch_array($award_result, MYSQL_BOTH))
 <?php 
       if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))
       {
-?>
-      <td class="data"><?php echo $first_name . " " . $last_name . " ($gender)"; ?></td>
-<?php 
+	    // Used to display mundane name here, at least to admins. SCA rules are tighter now, so removed.
       }
 
       $bestowers_display = "&nbsp;";
