@@ -14,15 +14,15 @@ $query = "SELECT reign.reign_id, king.sca_name AS king, queen.sca_name AS queen,
 $result = mysql_query($query) 
    or die("Monarch Query failed : " . mysql_error());
 ?>
-<p class="title2" align="center">The Kings and Queens of Atlantia</p>
+<p class="title2" align="center">The Kings and Queens of the <?php echo $KINGDOM_NAME; ?></p>
 <p align="center">
-<img src="images/atlantia.gif" width="97" height="118" alt="Arms of Atlantia" border="0"/>
+<img src="images/east.gif" width="97" height="118" alt="Arms of the <?php echo $KINGDOM_NAME; ?>" border="0"/>
 <br/><br/>
-Herein lies the Atlantian Royal Lineage in order of reign.
+Herein lies the <?php echo $KINGDOM_ADJ; ?> Royal Lineage in order of reign.
 <br/><br/>
 <img src="<?php echo $IMAGES_DIR; ?>op-divider.gif" width="648" height="41" border="0" alt="OP Line"/>
 </p>
-<table align="center" cellpadding="5" cellspacing="0" border="1" summary="Table listing the Kings and Queens of Atlantia in order of reign">
+<table align="center" cellpadding="5" cellspacing="0" border="1" summary="Table listing the Kings and Queens of the <?php echo $KINGDOM_NAME; ?> in order of reign">
    <tr>
       <th class="title">#</th>
       <th class="title" nowrap="nowrap">Coronation Date</th>
