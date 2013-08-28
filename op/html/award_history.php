@@ -12,11 +12,6 @@
             The Kingdom of East's ruling monarchs in history.
             </td>
             <td class="datacenter" width="33%" valign="top">
-            <img src="images/east.gif" width="40" height="50" alt="Kingdom of East" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>principality.php">The Princes and Princesses of East</a>
-            <br/>
-            The Kingdom of East's ruling Princes and Princesses from the time when East was a principality of the East Kingdom.
-            </td>
-            <td class="datacenter" width="33%" valign="top">
             <img src="<?php echo $AWARD_IMAGE_DIR; ?>baron.gif" width="65" height="30" alt="Baronies of East" border="0" align="middle"/> <a href="<?php echo $HOME_DIR; ?>baronies.php">The Baronies of East</a>
             <br/><br/>
             A listing of the Order of Precedence for the Baronies of East.
