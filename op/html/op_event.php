@@ -77,7 +77,7 @@ $num_award_results = mysql_num_rows($award_result);
 ?>
 <p class="title2" align="center">Awards by Event<br/><br/><?php echo $event_name; ?><br/><?php echo $host_display; ?><br/><?php echo format_sca_date($start_date) . " - " . format_sca_date($end_date); ?></p>
 <p align="center">
-<img src="images/atlantia.gif" width="97" height="118" alt="Arms of Atlantia" border="0"/>
+<img src="images/east.gif" width="97" height="118" alt="Arms of the East" border="0"/>
 <br/><br/>
 Awards bestowed during this event in the order bestowed.
 <br/><br/>
@@ -276,8 +276,6 @@ while ($award_data = mysql_fetch_array($award_result, MYSQL_BOTH))
 }
 ?>
 </table>
-<p align="center">There <?php if ($num_award_results == 1) { echo "is 1 award"; } else { echo "are $num_award_results awards"; } ?>.</p>
-<p align="center"><span class="blurb">* BNA = Bestowed By Not Atlantian - Only when awards are bestowed by Atlantian royalty is that information tracked in the Atlantian OP.</span></p>
 <?php 
 /* Free resultset */
 mysql_free_result($result);
