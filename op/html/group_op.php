@@ -2,6 +2,9 @@
 $title = "Group Order of Precedence";
 include('db/db.php');
 include('header.php');
+
+include("disabled.php");
+
 $group_id = 29; // Ponte Alto
 
 if (isset($_GET['group_id']))

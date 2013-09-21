@@ -11,6 +11,10 @@ else if (isset($_POST['barony_id']))
    $barony_id = clean($_GET['barony_id']);
 }
 
+include_once("header.php");
+
+include("disabled.php");
+
 if ($barony_id > 0)
 {
    $link = db_connect();
@@ -31,7 +35,6 @@ if ($barony_id > 0)
    $website = clean($data['website']);
 
    $title = "Atlantian Barony - " . $barony;
-   include_once("header.php");
 ?>
 <p class="title2" align="center"><?php echo $title; ?></p>
 <p align="center">
@@ -249,7 +252,6 @@ Images of Baronial arms courtesy of Corun MacAnndra, Eldred AElfwald, and Darri 
 }
 else
 {
-include_once("header.php");
 ?>
 <p align="center">
 No Barony was selected for display.

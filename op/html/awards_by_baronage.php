@@ -15,6 +15,8 @@ if (isset($_GET['barony_id']))
 $title = "Awards by Baronage";
 include("header.php");
 
+include("disabled.php");
+
 $link = db_connect();
 
 $baronage_query = "SELECT baronage_id FROM $DBNAME_OP.baronage WHERE branch_id = $barony_id AND baronage_start_date IN (SELECT MAX(baronage_start_date) FROM $DBNAME_OP.baronage WHERE branch_id = $barony_id)";

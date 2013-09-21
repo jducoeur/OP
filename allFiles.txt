@@ -1,0 +1,56 @@
+CHECKED FILES:
+These files appear to be okay.
+
+02/03/2013  12:37 PM            10,977 all.php
+03/04/2013  10:59 AM             1,837 award_closed.php
+08/28/2013  06:55 PM             5,514 award_history.php
+08/28/2013  06:05 PM            18,617 award_table.php
+02/03/2013  12:37 PM               316 award_table_only.php
+08/28/2013  06:10 PM            12,694 awards.php
+08/25/2013  01:53 PM                11 common.php
+02/03/2013  12:37 PM             8,436 cr_status.php
+08/25/2013  02:00 PM               144 disabled.php
+02/03/2013  12:37 PM                 0 favicon.gif
+02/03/2013  12:37 PM             3,638 favicon.ico
+08/28/2013  06:49 PM             3,077 footer.php
+08/28/2013  06:45 PM            23,516 header.php
+08/28/2013  06:55 PM             1,553 index.php
+08/24/2013  04:32 PM            15,121 kingdom_op.php
+03/05/2013  04:34 PM             1,473 listop.php
+08/28/2013  06:42 PM             2,589 monarchs.php
+02/03/2013  12:37 PM             7,421 op.css
+
+
+DELETED PAGES:
+I don't believe we need these pages any more, and have removed them:
+03/04/2013  10:59 AM             1,836 award_by_discpline.php
+02/03/2013  12:37 PM               530 award_discipline.php
+02/03/2013  12:37 PM            25,526 awards2.php
+02/03/2013  12:37 PM             2,628 court_reports.php
+02/03/2013  12:37 PM            22,030 index2.php
+02/03/2013  12:37 PM         1,162,131 op.html
+08/04/2013  01:39 PM               319 op_html.php
+
+
+DISABLED PAGES:
+These pages are currently safe, by dint of having been crudely disabled:
+02/03/2013  12:37 PM            12,661 awards_by_baronage.php
+02/03/2013  12:37 PM            17,036 awards_by_principality.php
+08/25/2013  02:05 PM             3,449 baronies.php
+02/03/2013  12:37 PM             9,832 barony_awards.php
+08/25/2013  02:12 PM             5,366 corrections.php
+02/03/2013  12:37 PM            17,853 group_op.php
+08/25/2013  01:59 PM             2,849 principality.php
+08/25/2013  02:09 PM             6,053 roa.php
+
+
+NEED FIXING:
+These are the files that look dangerous from a SQL injection POV:
+
+08/24/2013  04:24 PM            16,051 awards_by_reign.php -- SEVERE
+08/24/2013  03:46 PM            16,066 op_award.php -- BAD ($award_group_id)
+08/28/2013  07:26 PM            11,809 op_event.php -- SEVERE
+08/24/2013  03:49 PM            21,152 op_ind.php  -- SEVERE
+04/25/2013  06:54 PM            19,704 op_march.php -- just the $where clause up top
+08/24/2013  03:43 PM            18,726 op_name.php
+08/24/2013  04:43 PM            23,279 search.php -- SEVERE: reduce functionality

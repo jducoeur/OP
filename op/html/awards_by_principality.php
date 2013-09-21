@@ -10,6 +10,8 @@ if (isset($_GET['principality_id']))
 $title = "Awards by Principality";
 include("header.php");
 
+include("disabled.php");
+
 $link = db_connect();
 
 $principality_query = "SELECT principality_id, principality_end_date FROM $DBNAME_OP.principality WHERE principality_start_date IN (SELECT MAX(principality_start_date) FROM $DBNAME_OP.principality)";
