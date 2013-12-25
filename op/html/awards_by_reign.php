@@ -11,13 +11,15 @@ $title = "Awards by Reign";
 include("header.php");
 
 $link = db_connect();
+$mysqli = db_new_connect();
 
 $reign_query = "SELECT reign_id FROM $DBNAME_OP.reign WHERE reign_start_date IN (SELECT MAX(reign_start_date) FROM $DBNAME_OP.reign)";
 /* Performing SQL query */
-$reign_result = mysql_query($reign_query) 
-   or die("Reign ID Query failed : " . mysql_error());
-$reign_data = mysql_fetch_array($reign_result, MYSQL_BOTH);
-$max_reign_id = $reign_data['reign_id'];
+// No user-specified parameters, so we can do a straight query:
+$reign_result = $mysqli->query($reign_query)
+  or die("Couldn't get a reign_result");
+$max_reign_obj = $reign_result->fetch_object();
+$max_reign_id = $max_reign_obj->reign_id;
 
 // Get current reign if no reign or invalid reign specified
 if ($reign_id == 0 || $reign_id > $max_reign_id)
