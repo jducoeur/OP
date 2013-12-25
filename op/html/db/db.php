@@ -411,6 +411,7 @@ function get_founding_baronage($barony_id, $link)
 /**
  * Returns the name of the Kingdom where of the given group is located
  * YOU MUST ALREADY HAVE A DATABASE CONNECTION BEFORE USING THIS METHOD
+ * DEPRECATED: use get_kingdom_new() instead.
  * @param branch_id The ID of the branch for which to get the kingdom name
  * @return String The name of the kingdom
  */
@@ -438,6 +439,39 @@ function get_kingdom($branch_id)
             or die("Kingdom Query failed : " . mysql_error());
 
          $data = mysql_fetch_array($result, MYSQL_BOTH);
+         $branch_type_id = trim($data['branch_type_id']);
+         $branch_id = trim($data['parent_branch_id']);
+         $kingdom = clean($data['branch']);
+      }
+   }
+
+   return $kingdom;
+}
+
+function get_kingdom_new($mysqli, $branch_id)
+{
+   global $DBNAME_AUTH, $DBNAME_OP, $DBNAME_BRANCH, $DBNAME_ORDER;
+   global $BT_KINGDOM;
+   $kingdom = "";
+
+   if (trim($branch_id) != "")
+   {
+      /* Performing SQL query */
+      $query = "SELECT branch_id, branch, branch_type_id, parent_branch_id FROM $DBNAME_BRANCH.branch WHERE branch_id = ?";
+
+      $result = mysqli_prepared_query($mysqli, $query, "i", array($branch_id))
+         or die("Kingdom Query failed : " . mysqli_error());
+
+      $data = $result[0];
+      $branch_type_id = trim($data['branch_type_id']);
+      $branch_id = trim($data['parent_branch_id']);
+      $kingdom = clean($data['branch']);
+      while ($branch_type_id != $BT_KINGDOM)
+      {
+         $result = mysqli_prepared_query($mysqli, $query, "i", array($branch_id))
+            or die("Kingdom Query failed : " . mysql_error());
+
+         $data = $result[0];
          $branch_type_id = trim($data['branch_type_id']);
          $branch_id = trim($data['parent_branch_id']);
          $kingdom = clean($data['branch']);

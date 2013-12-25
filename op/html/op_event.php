@@ -10,19 +10,19 @@ if (isset($_GET['event_id']))
 $title = "Awards by Event";
 include("header.php");
 
-$link = db_connect();
+$mysqli = db_new_connect();
 
 // Get information on the selected event
 $query = "SELECT e.event_name, e.start_date, e.end_date, r.branch, r.incipient, g.branch_type " .
          "FROM $DBNAME_OP.event e JOIN $DBNAME_BRANCH.branch r ON e.branch_id = r.branch_id " .
          "JOIN $DBNAME_BRANCH.branch_type g ON r.branch_type_id = g.branch_type_id " .
-         "WHERE e.event_id = $event_id";
+         "WHERE e.event_id = ?";
 
 /* Performing SQL query */
-$result = mysql_query($query) 
+$result = mysqli_prepared_query($mysqli, $query, "i", array($event_id))
    or die("Event Query failed : " . mysql_error());
 
-$data = mysql_fetch_array($result, MYSQL_BOTH);
+$data = $result[0];
 $event_name = clean($data['event_name']);
 $start_date = $data['start_date'];
 $end_date = $data['end_date'];
@@ -51,7 +51,7 @@ $award_query =
    "LEFT OUTER JOIN $DBNAME_OP.reign ON court_report.reign_id = reign.reign_id " .
    "LEFT OUTER JOIN $DBNAME_OP.principality ON court_report.principality_id = principality.principality_id " .
    "LEFT OUTER JOIN $DBNAME_OP.baronage ON court_report.baronage_id = baronage.baronage_id " .
-   "WHERE event.event_id = " . value_or_null($event_id) . " " .
+   "WHERE event.event_id = ? " .
    "UNION ALL " .
    "SELECT atlantian.atlantian_id, atlantian.sca_name, atlantian.gender, atlantian.first_name, atlantian.last_name, " .
    "award.award_name, award.award_name_male, award.award_name_female, award.award_id, award.award_group_id, award.type_id, " .
@@ -66,14 +66,14 @@ $award_query =
    "LEFT OUTER JOIN $DBNAME_OP.reign ON court_report.reign_id = reign.reign_id " .
    "LEFT OUTER JOIN $DBNAME_OP.principality ON court_report.principality_id = principality.principality_id " .
    "LEFT OUTER JOIN $DBNAME_OP.baronage ON court_report.baronage_id = baronage.baronage_id " .
-   "WHERE event.event_id = " . value_or_null($event_id) . " " .
+   "WHERE event.event_id = ? " .
    "ORDER BY award_date, sequence, sca_name";
 
 /* Performing SQL query */
-$award_result = mysql_query($award_query) 
+$award_result = mysqli_prepared_query($mysqli, $award_query, "ii", array($event_id, $event_id))
    or die("Award Query failed : " . mysql_error());
 
-$num_award_results = mysql_num_rows($award_result);
+$num_award_results = count($award_result);
 ?>
 <p class="title2" align="center">Awards by Event<br/><br/><?php echo $event_name; ?><br/><?php echo $host_display; ?><br/><?php echo format_sca_date($start_date) . " - " . format_sca_date($end_date); ?></p>
 <p align="center">
@@ -128,7 +128,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 {
    $num_cols = 7;
 }
-while ($award_data = mysql_fetch_array($award_result, MYSQL_BOTH))
+foreach ($award_result as $award_data)
 {
    $sca_name = clean($award_data['sca_name']);
    $name_display = $sca_name;
@@ -204,7 +204,7 @@ while ($award_data = mysql_fetch_array($award_result, MYSQL_BOTH))
    $kingdom = "";
    if ($branch_id != "" && $branch_id > 0)
    {
-      $kingdom = get_kingdom($branch_id);
+      $kingdom = get_kingdom_new($mysqli, $branch_id);
       if ($kingdom == $branch)
       {
          $branch = "&nbsp;";
@@ -277,11 +277,8 @@ while ($award_data = mysql_fetch_array($award_result, MYSQL_BOTH))
 ?>
 </table>
 <?php 
-/* Free resultset */
-mysql_free_result($result);
-
 /* Closing connection */
-db_disconnect($link);
+$mysqli->close();
 
 include("footer.php");
 ?>
