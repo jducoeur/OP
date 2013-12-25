@@ -706,6 +706,23 @@ function quote_smart($value)
    return $value;
 }
 
+function new_quote_smart($mysqli, $value)
+{
+   // Stripslashes if we need to
+   if (get_magic_quotes_gpc()) 
+   {
+      $value = stripslashes($value);
+   }
+
+   // Quote it if it's not a number
+   if (!is_numeric($value)) 
+   {
+      $value = "'" . $mysqli->real_escape_string(trim($value)) . "'";
+   }
+
+   return $value;
+}
+
 /**
 * Quote a variable to make it safe for SQL within a LIKE
 */

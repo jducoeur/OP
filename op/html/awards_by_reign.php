@@ -10,7 +10,6 @@ if (isset($_GET['reign_id']))
 $title = "Awards by Reign";
 include("header.php");
 
-$link = db_connect();
 $mysqli = db_new_connect();
 
 $reign_query = "SELECT reign_id FROM $DBNAME_OP.reign WHERE reign_start_date IN (SELECT MAX(reign_start_date) FROM $DBNAME_OP.reign)";
@@ -49,7 +48,7 @@ $monarchs_display = $data['monarchs_display'];
 // Get end of reign information from the next reign
 $next_query = "SELECT reign_id, reign_start_date, reign_start_sequence " .
               "FROM $DBNAME_OP.reign " .
-              "WHERE reign_start_date > " . value_or_null(format_mysql_date($coronation_date)) . " " .
+              "WHERE reign_start_date > " . sql_date($mysqli, $coronation_date) . " " .
               "ORDER BY reign_start_date";
 
 /* Performing SQL query */
@@ -73,16 +72,16 @@ else
 }
 
 $reign_start_date_clause = 
-   "AND (atlantian_award.award_date > " . value_or_null(format_mysql_date($coronation_date)) . " OR (atlantian_award.award_date = " . value_or_null(format_mysql_date($coronation_date)) . " AND atlantian_award.sequence > $start_sequence)) ";
+   "AND (atlantian_award.award_date > " . sql_date($mysqli, $coronation_date) . " OR (atlantian_award.award_date = " . sql_date($mysqli, $coronation_date) . " AND atlantian_award.sequence > $start_sequence)) ";
 $reign_end_date_clause = 
-   "AND (atlantian_award.award_date < " . value_or_null(format_mysql_date($next_coronation_date)) . " OR (atlantian_award.award_date = " . value_or_null(format_mysql_date($next_coronation_date)) . " AND atlantian_award.sequence < $next_start_sequence)) ";
+   "AND (atlantian_award.award_date < " . sql_date($mysqli, $next_coronation_date) . " OR (atlantian_award.award_date = " . sql_date($mysqli, $next_coronation_date) . " AND atlantian_award.sequence < $next_start_sequence)) ";
 if ($start_sequence == 0)
 {
-   $reign_start_date_clause = "AND (atlantian_award.award_date >= " . value_or_null(format_mysql_date($coronation_date)) . ") ";
+   $reign_start_date_clause = "AND (atlantian_award.award_date >= " . sql_date($mysqli, $coronation_date) . ") ";
 }
 if ($next_reign_id > 0 && $next_start_sequence == 0)
 {
-   $reign_end_date_clause = "AND (atlantian_award.award_date <= " . value_or_null(format_mysql_date($next_coronation_date)) . ") ";
+   $reign_end_date_clause = "AND (atlantian_award.award_date <= " . sql_date($mysqli, $next_coronation_date) . ") ";
 }
 // Award list query
 // TODO: this query works, but is horrible. Is there a reason we are doing it by date instead
@@ -337,7 +336,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <p align="center">* Items on Coronation date may be from previous <?php if ($reign_id == 1) { ?>principality<?php } else { ?>reign<?php } ?><br/>+ Items on Coronation date may be from next reign</p>
 <?php 
 /* Closing connection */
-db_disconnect($link);
+$mysqli->close();
 
 include("footer.php");
 ?>

@@ -63,6 +63,17 @@ function value_or_null($value)
    return $retval;
 }
 
+function sql_date($mysqli, $date)
+{
+   $value = format_mysql_date($date);
+   $retval = 'NULL';
+   if (trim($value) != '' && trim($value) != 'NULL')
+   {
+      $retval = new_quote_smart($mysqli, trim($value));
+   }
+   return $retval;
+}
+
 function value_or_zero($value)
 {
    $retval = 0;
