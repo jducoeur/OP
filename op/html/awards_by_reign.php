@@ -32,13 +32,12 @@ $query = "SELECT king.sca_name AS king, queen.sca_name AS queen, reign.king_id, 
          "FROM $DBNAME_AUTH.atlantian king, $DBNAME_AUTH.atlantian queen, $DBNAME_OP.reign " .
          "WHERE king.atlantian_id = reign.king_id " .
          "AND queen.atlantian_id = reign.queen_id " .
-         "AND reign.reign_id = $reign_id";
+         "AND reign.reign_id = ?";
 
 /* Performing SQL query */
-$result = mysql_query($query) 
-   or die("Reign Query failed : " . mysql_error());
+$data = mysqli_prepared_query($mysqli, $query, "i", array($reign_id))[0]
+   or die ("Reign Query failed: " . mysqli_error());
 
-$data = mysql_fetch_array($result, MYSQL_BOTH);
 $king = $data['king'];
 $queen = $data['queen'];
 $king_id = $data['king_id'];
