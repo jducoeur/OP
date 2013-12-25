@@ -53,13 +53,13 @@ $next_query = "SELECT reign_id, reign_start_date, reign_start_sequence " .
               "ORDER BY reign_start_date";
 
 /* Performing SQL query */
-$next_result = mysql_query($next_query) 
-   or die("Next Reign Query failed : " . mysql_error());
-$num_post_reigns = mysql_num_rows($next_result);
+$next_result = $mysqli->query($next_query)
+   or die("Next Reign Query failed : " . mysqli_error());
+$num_post_reigns = $next_result->num_rows;
 // First record contains next reign
 if ($num_post_reigns > 0)
 {
-   $next_data = mysql_fetch_array($next_result, MYSQL_BOTH);
+   $next_data = $next_result->fetch_assoc();
    $next_reign_id = $next_data['reign_id'];
    $next_coronation_date = $next_data['reign_start_date'];
    $next_start_sequence = $next_data['reign_start_sequence'];
@@ -85,6 +85,8 @@ if ($next_reign_id > 0 && $next_start_sequence == 0)
    $reign_end_date_clause = "AND (atlantian_award.award_date <= " . value_or_null(format_mysql_date($next_coronation_date)) . ") ";
 }
 // Award list query
+// TODO: this query works, but is horrible. Is there a reason we are doing it by date instead
+// of tracing through the court reports instead?
 $award_query =
    "SELECT atlantian.atlantian_id, atlantian.sca_name, atlantian.gender, atlantian.first_name, atlantian.last_name, " .
    "award.award_name, award.award_name_male, award.award_name_female, award.award_id, award.award_group_id, award.type_id, " .
@@ -114,8 +116,8 @@ $award_query =
    "ORDER BY award_date, event_id, sequence, sca_name";
 
 /* Performing SQL query */
-$award_result = mysql_query($award_query) 
-   or die("Award Query failed : " . mysql_error());
+$award_result = $mysqli->query($award_query) 
+   or die("Award Query failed : " . mysqli_error());
 ?>
 <p class="title2" align="center">Awards by Reign<br/><br/><?php echo $monarchs_display; ?><br/><?php echo format_sca_date($coronation_date) . " - " . format_sca_date($next_coronation_date); ?></p>
 <p align="center">
@@ -124,19 +126,6 @@ $award_result = mysql_query($award_query)
 <?php
 if (!$printable)
 {
-   if ($reign_id == 1)
-   {
-      $principality_query = "SELECT principality_id, principality_end_date FROM $DBNAME_OP.principality WHERE principality_start_date IN (SELECT MAX(principality_start_date) FROM $DBNAME_OP.principality)";
-      /* Performing SQL query */
-      $principality_result = mysql_query($principality_query) 
-         or die("Principality ID Query failed : " . mysql_error());
-      $principality_data = mysql_fetch_array($principality_result, MYSQL_BOTH);
-      $max_principality_id = $principality_data['principality_id'];
-      $max_principality_date = $principality_data['principality_end_date'];
-?>
-<a href="awards_by_principality.php?principality_id=<?php echo $max_principality_id; ?>">&lt;&lt; Previous Coronets</a>
-<?php 
-   }
    if ($reign_id > 1)
    {
       $prev_reign_id = $reign_id - 1;
@@ -179,7 +168,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       {
          $num_cols = 7;
       }
-      while ($award_data = mysql_fetch_array($award_result, MYSQL_BOTH))
+      while ($award_data = $award_result->fetch_assoc())
       {
          $event_id = $award_data['event_id'];
          if ((($event_id == null || $event_id == '') && $first_time == 1) || 
@@ -347,9 +336,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 </table>
 <p align="center">* Items on Coronation date may be from previous <?php if ($reign_id == 1) { ?>principality<?php } else { ?>reign<?php } ?><br/>+ Items on Coronation date may be from next reign</p>
 <?php 
-/* Free resultset */
-mysql_free_result($result);
-
 /* Closing connection */
 db_disconnect($link);
 
