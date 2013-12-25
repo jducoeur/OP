@@ -47,7 +47,7 @@ These pages are currently safe, by dint of having been crudely disabled:
 NEED FIXING:
 These are the files that look dangerous from a SQL injection POV:
 
-08/24/2013  04:24 PM            16,051 awards_by_reign.php -- SEVERE
+08/24/2013  04:24 PM            16,051 awards_by_reign.php -- SEVERE -- DONE
 08/24/2013  03:46 PM            16,066 op_award.php -- BAD ($award_group_id)
 08/28/2013  07:26 PM            11,809 op_event.php -- SEVERE
 08/24/2013  03:49 PM            21,152 op_ind.php  -- SEVERE

@@ -78,7 +78,7 @@ if (isset($_GET['list_type']))
    }
 }
 
-$link = db_connect();
+$mysqli = db_new_connect();
 
 $award_query = '';
 $recipient_query = "SELECT atlantian.atlantian_id, atlantian.sca_name, branch.branch, " .
@@ -98,25 +98,27 @@ $recipient_query = "SELECT atlantian.atlantian_id, atlantian.sca_name, branch.br
 // Get award info
 if ($award_id > 0)
 {
-   $award_query = "SELECT award_id, award_group_id, type_id, award_name, collective_name, award_file_name, select_branch, award_blurb, closed, website FROM $DBNAME_OP.award WHERE award_id IN (" . $award_id . ")"; 
-   $recipient_query .= " WHERE atlantian_award.award_id IN (" . $award_id . ")"; 
+   $award_query = "SELECT award_id, award_group_id, type_id, award_name, collective_name, award_file_name, select_branch, award_blurb, closed, website FROM $DBNAME_OP.award WHERE award_id IN (?)"; 
+   $recipient_query .= " WHERE atlantian_award.award_id IN (?)"; 
+   $query_params = array($award_id);
 }
 else if ($award_group_id > 0)
 {
-   $award_query = "SELECT award_id, award_group_id, type_id, award_name, collective_name, award_file_name, select_branch, award_blurb, closed, website FROM $DBNAME_OP.award WHERE award_group_id IN (" . $award_group_id . ")"; 
-   $award_group_query = "SELECT award_group_id, award_group_name, collective_name, award_file_name, award_file_name2, award_blurb, website FROM $DBNAME_OP.award_group WHERE award_group_id IN (" . $award_group_id . ")"; 
-   $recipient_query .= " WHERE atlantian_award.award_id IN (SELECT award_id FROM $DBNAME_OP.award WHERE award_group_id = " . $award_group_id . ")"; 
+   $award_query = "SELECT award_id, award_group_id, type_id, award_name, collective_name, award_file_name, select_branch, award_blurb, closed, website FROM $DBNAME_OP.award WHERE award_group_id IN (?)"; 
+   $award_group_query = "SELECT award_group_id, award_group_name, collective_name, award_file_name, award_file_name2, award_blurb, website FROM $DBNAME_OP.award_group WHERE award_group_id IN (?)"; 
+   $recipient_query .= " WHERE atlantian_award.award_id IN (SELECT award_id FROM $DBNAME_OP.award WHERE award_group_id = ?)"; 
+   $query_params = array($award_group_id);
 }
 $recipient_query .= " ORDER BY " . $order_by;
 
 /* Performing SQL query */
-$award_result = mysql_query($award_query) 
-   or die("Award Query failed : " . mysql_error());
-$num_award_result = mysql_num_rows($award_result);
+$award_result = mysqli_prepared_query($mysqli, $award_query, "i", $query_params)
+   or die("Award Query failed : " . mysqli_error());
+$num_award_result = count($award_result);
 
 if ($num_award_result > 0)
 {
-   $award_data = mysql_fetch_array($award_result, MYSQL_BOTH);
+   $award_data = $award_result[0];
    $award_name = clean($award_data['collective_name']);
    $award_blurb = clean($award_data['award_blurb']);
    $website = clean($award_data['website']);
@@ -127,9 +129,9 @@ if ($num_award_result > 0)
    if ($num_award_result > 1 && $award_group_id > 0)
    {
       /* Performing SQL query */
-      $award_group_result = mysql_query($award_group_query) 
-         or die("Award Group Query failed : " . mysql_error());
-      $award_group_data = mysql_fetch_array($award_group_result, MYSQL_BOTH);
+      $award_group_result = mysqli_prepared_query($mysqli, $award_group_query, "i", $query_params)
+         or die("Award Group Query failed : " . mysqli_error());
+      $award_group_data = $award_group_result[0];
       $award_name2 = clean($award_group_data['collective_name']);
       $award_blurb = clean($award_group_data['award_blurb']);
       $award_image2 = clean($award_group_data['award_file_name2']);
@@ -187,9 +189,9 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 </p>
 <?php 
    /* Performing SQL query */
-   $recipient_result = mysql_query($recipient_query) 
-      or die("Recipient Query failed : " . mysql_error());
-   $num_recipient_result = mysql_num_rows($recipient_result);
+   $recipient_result = mysqli_prepared_query($mysqli, $recipient_query, "i", $query_params)
+      or die("Recipient Query failed : " . mysqli_error());
+   $num_recipient_result = count($recipient_result);
 
    if ($num_recipient_result > 0)
    {
@@ -227,7 +229,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 ?>
    </tr>
 <?php 
-      while ($recipient_data = mysql_fetch_array($recipient_result, MYSQL_BOTH))
+      foreach ($recipient_result as $recipient_data)
       {
          $atlantian_id = $recipient_data['atlantian_id'];
          $sca_name = clean($recipient_data['sca_name']);
@@ -333,7 +335,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 		  * now, we'll neuter it. Later, reintroduce it as a single mass query instead. -- JduCoeur, 3/4/13 */
          /*$preferred_sca_name = get_preferred_sca_name($atlantian_id, $sca_name);*/
          $preferred_sca_name = "";
-         $link = db_connect();
 
          if ($private == 0 || ($private == 1 && ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$BACKLOG_ADMIN]) && $_SESSION[$BACKLOG_ADMIN]))))
          {
@@ -380,12 +381,10 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <p align="center">There are no recipients for this award.</p>
 <?php 
    }
-   /* Free resultset */
-   mysql_free_result($award_result);
 }
 
 /* Closing connection */
-db_disconnect($link);
+$mysqli->close();
 
 include("footer.php");
 ?>
