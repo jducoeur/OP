@@ -5,7 +5,12 @@ require_once('admin/session.php');
 if (isset($_GET['ids']))
 {
   $ids = explode(',',$_GET['ids']);
-  // TODO: validate $ids! They should all be numeric.
+  // Validate $ids -- they should all be numeric.
+  foreach ($ids as $anid) {
+    if (!is_numeric($anid)) {
+	  die ("IDs for op_march must be numbers; " . $anid . " is not allowed.");
+	}
+  }
   $where = "atlantian.atlantian_id IN (" . implode(',', $ids) . ") ";
   $title = "Order of March for selected individuals";
 }
