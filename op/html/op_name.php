@@ -7,6 +7,14 @@ if (isset($_GET['letter']))
 {
    $letter = $_GET['letter'];
 }
+
+// Validate the input, which must be a single letter.
+// We would prefer to restrict this to 1, and to enforce ctype_alpha, but AE violates
+// both, because PHP is stupid.
+if (strlen($letter) > 2) {
+  die("Parameter letter must be one single letter, no more -- " . $letter . " is length " . strlen($letter));
+}
+
 $title = "Award Listing - $letter";
 
 // Default sort
