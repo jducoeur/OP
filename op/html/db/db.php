@@ -145,6 +145,7 @@ function generate_password($uname)
 /**
  * Determine the title of a given person on the given date
  * NOTE: YOU MUST BE CONNECTED TO THE DB ALREADY TO RUN THIS FUNCTION
+ * DEPRECATED: use get_title_new instead
  * @param atlantian_id The ID of the Pontoon
  * @param checkdate The date for which the title should be retrieved
  * @return String The title of the Pontoon on the given date
@@ -242,6 +243,97 @@ function get_title($atlantian_id, $checkdate)
 
    return $title;
 }
+function get_title_new($mysqli, $atlantian_id, $checkdate)
+{
+   global $DBNAME_AUTH, $DBNAME_OP, $DBNAME_BRANCH, $DBNAME_ORDER;
+   global $MALE, $FEMALE, $RETIRED_BARONAGE_ID, $LANDED_BARONAGE_ID, $FOUNDING_BARON, $FOUNDING_BARONESS, $LORD, $LADY, $ORDER_MERIT_P, $ORDER_HIGH_MERIT, $ORDER_HIGH_MERIT_P, $ATLANTIA_NAME, /*$GOA_DATE,*/ $COURT_BARONAGE_AOA, $COURT_BARONAGE_GOA, $GOA;
+
+   $title = NULL;
+   /* Performing SQL query */
+   $titlequery = 
+      "SELECT atlantian.gender, title.title_male, title.title_female, award.award_id, award.type_id, atlantian_award.branch_id, atlantian_award.award_date, atlantian_award.sequence, atlantian_award.premier, precedence.precedence ".
+      "FROM $DBNAME_AUTH.atlantian JOIN $DBNAME_OP.atlantian_award ON atlantian.atlantian_id = atlantian_award.atlantian_id ".
+      "JOIN $DBNAME_OP.award ON atlantian_award.award_id = award.award_id ".
+      "JOIN $DBNAME_OP.precedence ON award.type_id = precedence.type_id ".
+      "LEFT OUTER JOIN $DBNAME_OP.title ON award.title_id = title.title_id ".
+      "WHERE atlantian.atlantian_id = ? ".
+      "AND atlantian_award.award_date <= ? ".
+      "AND atlantian_award.resigned_date IS NULL ".
+      "AND atlantian_award.revoked_date IS NULL ".
+      "ORDER BY precedence, award_date, sequence";
+
+   $titleresult = mysqli_prepared_query($mysqli, $titlequery, "is", array($atlantian_id, $checkdate))
+      or die("Title Query failed : " . $mysqli->error);
+
+   $titledata = $titleresult[0];
+
+   $award_id = $titledata['award_id'];
+   $premier = $titledata['premier'];
+   $gender = $titledata['gender'];
+
+   // Retired B&B is highest award
+   if ($award_id == $RETIRED_BARONAGE_ID || $award_id == $LANDED_BARONAGE_ID)
+   {
+      // If Founding B&B, use Founding B&B title
+      if ($premier == 1)
+      {
+         $branch_id = $titledata['branch_id'];
+         if ($gender == $MALE)
+         {
+            $title = $FOUNDING_BARON . get_branch_name($branch_id);
+         }
+         else if ($gender == $FEMALE)
+         {
+            $title = $FOUNDING_BARONESS . get_branch_name($branch_id);
+         }
+      }
+      // Otherwise, for non-founding retired B&Bs, move on to next highest award for a title
+      else if ($award_id == $RETIRED_BARONAGE_ID && $premier == 0)
+      {
+         $titledata = $titleresult[1];
+         $award_id = $titledata['award_id'];
+         $premier = $titledata['premier'];
+      }
+   }
+
+   // If founding B&B is not highest award, move on.
+   if ($title == NULL)
+   {
+      if ($gender == $MALE)
+      {
+         $title_field = "title_male";
+      }
+      else if ($gender == $FEMALE)
+      {
+         $title_field = "title_female";
+      }
+      else // unknown gender - return empty string
+      {
+         $title = "";
+         return $title;
+      }
+      $title = clean($titledata[$title_field]);
+      $type_id = $titledata['type_id'];
+      $precedence = $titledata['precedence'];
+      $award_date = $titledata['award_date'];
+
+      // If less than a Peerage, check if there is a Court Baronage after it, as that title tends to override
+      if ($precedence >= $ORDER_HIGH_MERIT_P)
+      {
+         $titledata3 = mysql_fetch_array($titleresult, MYSQL_BOTH);
+         while ($titledata3 != NULL && $titledata3['type_id'] != $COURT_BARONAGE_AOA && $titledata3['type_id'] != $COURT_BARONAGE_GOA)
+         {
+            $titledata3 = mysql_fetch_array($titleresult, MYSQL_BOTH);
+         }
+         if ($titledata3['type_id'] == $COURT_BARONAGE_AOA || $titledata3['type_id'] == $COURT_BARONAGE_GOA)
+         {
+            $title = clean($titledata3[$title_field]);
+         }
+      }
+   }
+
+   return $title;
+}
 
 /**
  * Determine the current title of a given person
@@ -253,6 +345,11 @@ function get_current_title($atlantian_id)
 {
    $checkdate = date('Y-m-d');
    return get_title($atlantian_id, $checkdate);
+}
+function get_current_title_new($mysqli, $atlantian_id)
+{
+   $checkdate = date('Y-m-d');
+   return get_title_new($mysqli, $atlantian_id, $checkdate);
 }
 
 /**

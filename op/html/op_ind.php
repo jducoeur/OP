@@ -81,20 +81,20 @@ if (isset($_GET['list_type']))
 }
 
 /* Connecting, selecting database */
-$link = db_connect();
+$mysqli = db_new_connect();
 
 /* Performing SQL query */
 $query = 
       "SELECT atlantian.atlantian_id, atlantian.sca_name, atlantian.alternate_names, atlantian.name_reg_date, atlantian.blazon, atlantian.device_reg_date, atlantian.device_file_name, atlantian.device_file_credit, atlantian.gender, " .
       "atlantian.deceased, atlantian.deceased_date, atlantian.revoked, atlantian.revoked_date, atlantian.branch_id, branch.branch ".
       "FROM $DBNAME_AUTH.atlantian LEFT OUTER JOIN $DBNAME_BRANCH.branch ON atlantian.branch_id = branch.branch_id ".
-      "WHERE atlantian_id = ". $atlantian_id;
+      "WHERE atlantian_id = ?";
 
-$result = mysql_query($query) 
-   or die("Individual Query failed : " . mysql_error());
+$result = mysqli_prepared_query($mysqli, $query, "i", array($atlantian_id))
+   or die("Individual Query failed : " . mysqli_error());
 
 /* Printing results in HTML */
-while ($data = mysql_fetch_array($result, MYSQL_BOTH)) 
+foreach ($result as $data)
 {
    $atlantian_id = $data['atlantian_id'];
    $sca_name = clean($data['sca_name']);
@@ -105,7 +105,7 @@ while ($data = mysql_fetch_array($result, MYSQL_BOTH))
    $device_file_name = clean($data['device_file_name']);
    $device_file_credit = clean($data['device_file_credit']);
    $gender = clean($data['gender']);
-   $title = get_current_title($atlantian_id);
+   $title = get_current_title_new($mysqli, $atlantian_id);
    $deceased = clean($data['deceased']);
    $deceased_date = clean($data['deceased_date']);
    $deceased_display = "";
@@ -133,7 +133,7 @@ while ($data = mysql_fetch_array($result, MYSQL_BOTH))
    $local_group_id = $data['branch_id'];
    if ($local_group_id != "" && $local_group_id > 0)
    {
-      $kingdom = get_kingdom($local_group_id);
+      $kingdom = get_kingdom_new($mysqli, $local_group_id);
       if ($kingdom != $local_group)
       {
          $local_group .= ", $kingdom";
@@ -141,7 +141,6 @@ while ($data = mysql_fetch_array($result, MYSQL_BOTH))
    }
 
    $preferred_sca_name = get_preferred_sca_name($atlantian_id, $sca_name);
-   $link = db_connect();
 ?>
 <p class="title2" align="center">Individual <?php echo $KINGDOM_ADJ; ?> Award Information</p>
 <p class="title3" align="center">
@@ -229,7 +228,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       "LEFT OUTER JOIN $DBNAME_OP.reign ON court_report.reign_id = reign.reign_id " .
       "LEFT OUTER JOIN $DBNAME_OP.principality ON court_report.principality_id = principality.principality_id " .
       "LEFT OUTER JOIN $DBNAME_OP.baronage ON court_report.baronage_id = baronage.baronage_id " .
-      "WHERE atlantian_award.atlantian_id = ". $atlantian_id . ") ".
+      "WHERE atlantian_award.atlantian_id = ?) ".
       "UNION DISTINCT ".
       "(SELECT DISTINCT award.award_id, award.award_name, award.award_name_male, award.award_name_female, award.type_id, award.award_group_id, " .
       "atlantian_award.award_date, atlantian_award.sequence, atlantian_award.premier, atlantian_award.retired_date, atlantian_award.resigned_date, atlantian_award.revoked_date, atlantian_award.comments, atlantian_award.private, atlantian_award.gender, " .
@@ -246,13 +245,13 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       "LEFT OUTER JOIN $DBNAME_OP.baronage ON court_report.baronage_id = baronage.baronage_id " .
       "WHERE atlantian_award.branch_id IS NULL " .
       "AND award.branch_id IS NULL " .
-      "AND atlantian_award.atlantian_id = " . $atlantian_id . ") ";
+      "AND atlantian_award.atlantian_id = ?) ";
    $ind_query .= "ORDER BY " . $order_by;
 
-   $ind_result = mysql_query($ind_query) 
-      or die("Individual award query failed : " . mysql_error());
+   $ind_result = mysqli_prepared_query($mysqli, $ind_query, "ii", array($atlantian_id, $atlantian_id))
+      or die("Individual award query failed : " . mysqli_error());
 
-   $num_ind_results = mysql_num_rows($ind_result);
+   $num_ind_results = count($ind_result);
    if ($num_ind_results > 0)
    {
 ?>
@@ -273,7 +272,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       <th scope="col" class="title" nowrap="nowrap">Bestowed By</th>
    </tr>
 <?php
-      while ($ind_data = mysql_fetch_array($ind_result, MYSQL_BOTH)) 
+      foreach ($ind_result as $ind_data)
       {
          $award_id = $ind_data['award_id'];
          $award_group_id = $ind_data['award_group_id'];
@@ -327,7 +326,7 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
          $kingdom = "";
          if ($branch_id != "" && $branch_id > 0)
          {
-            $kingdom = get_kingdom($branch_id);
+            $kingdom = get_kingdom_new($mysqli, $branch_id);
             if ($kingdom == $branch)
             {
                $branch = "&nbsp;";
@@ -471,8 +470,6 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
 <p align="center">There are no awards to display.</p>
 <?php 
    }
-   /* Free individual resultset */
-   mysql_free_result($ind_result);
 }
 if (trim($device_file_name) != "")
 {
@@ -493,11 +490,9 @@ who will assist you in contacting the original creator of the piece. Please resp
 </p>
 <?php 
 }
-/* Free resultset */
-mysql_free_result($result);
 
 /* Closing connection */
-db_disconnect($link);
+$mysqli->close();
 } // atlantian_id set
 include('footer.php'); 
 ?>
