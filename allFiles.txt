@@ -52,5 +52,5 @@ These are the files that look dangerous from a SQL injection POV:
 08/28/2013  07:26 PM            11,809 op_event.php -- SEVERE -- DONE
 08/24/2013  03:49 PM            21,152 op_ind.php  -- SEVERE -- DONE
 04/25/2013  06:54 PM            19,704 op_march.php -- just the $where clause up top -- DONE
-08/24/2013  03:43 PM            18,726 op_name.php
-08/24/2013  04:43 PM            23,279 search.php -- SEVERE: reduce functionality
+08/24/2013  03:43 PM            18,726 op_name.php -- DONE
+08/24/2013  04:43 PM            23,279 search.php -- SEVERE: reduce functionality -- DONE

@@ -5,8 +5,8 @@ require_once('admin/session.php');
 $title = "Search";
 include("header.php");
 
-$link = db_connect();
-
+$mysqli = db_new_connect();
+/* All commented out until and unless we re-add all the search criteria in a secure way:
 // Pick Lists
 // Awards
 $award_pl_query = "SELECT award.award_id, award.award_name, award.branch_id, branch.branch " .
@@ -15,19 +15,19 @@ $award_pl_query = "SELECT award.award_id, award.award_name, award.branch_id, bra
                   "WHERE precedence.precedence >= $DUCAL " .
                   "ORDER BY award.award_name";
 
-/* Performing SQL query */
-$award_pl_result = mysql_query($award_pl_query) 
-   or die("Award List Query failed : " . mysql_error());
+// Performing SQL query
+$award_pl_result = $mysqli->query($award_pl_query) 
+   or die("Award List Query failed : " . $mysqli->error);
 
 // Home Branchs
 $group_pl_query = "SELECT branch.branch_id, branch.branch, branch.incipient, branch_type.branch_type " .
                   "FROM $DBNAME_BRANCH.branch JOIN $DBNAME_BRANCH.branch_type ON branch.branch_type_id = branch_type.branch_type_id " .
                   "ORDER BY branch.branch";
 
-/* Performing SQL query */
-$group_pl_result = mysql_query($group_pl_query) 
-   or die("Group List Query failed : " . mysql_error());
-
+// Performing SQL query
+$group_pl_result = $mysqli->query($group_pl_query) 
+   or die("Group List Query failed : " . $mysqli->error);
+*/
 $SUBMIT_SEARCH = "Search $KINGDOM_ADJ OP";
 
 $list_type = "A";
@@ -41,6 +41,8 @@ $order_display = "Recipients are listed in alphabetical order by SCA Name.";
 // Data submitted
 if (isset($_POST['submit']) && $_POST['submit'] == $SUBMIT_SEARCH)
 {
+   $form_sca_name = clean($_POST['form_sca_name']);
+/*
    $form_award_id = "";
    if (isset($_POST['form_award_id']))
    {
@@ -53,16 +55,15 @@ if (isset($_POST['submit']) && $_POST['submit'] == $SUBMIT_SEARCH)
    }
    $form_date_start = clean($_POST['form_date_start']);
    $form_date_end = clean($_POST['form_date_end']);
-   $form_sca_name = clean($_POST['form_sca_name']);
    $form_event_name = clean($_POST['form_event_name']);
-
+*/
    $errmsg = "";
 
-   if ($form_sca_name == '' && $form_branch_id == '' && $form_date_start == '' && $form_date_end == '' && $form_award_id == '' && $form_event_name == '')
+   if ($form_sca_name == ''/* && $form_branch_id == '' && $form_date_start == '' && $form_date_end == '' && $form_award_id == '' && $form_event_name == ''*/)
    {
-      $errmsg = "Please enter at least one search parameter.<br/>";
+      $errmsg = "Please enter an SCA name to search for"; //"Please enter at least one search parameter.<br/>";
    }
-
+/*
    // Valid dates
    if (($form_date_start != '') && (strtotime($form_date_start) === FALSE))
    {
@@ -72,7 +73,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == $SUBMIT_SEARCH)
    {
       $errmsg .= "Please enter a valid date for the End Date.<br/>";
    }
-
+*/
    if (isset($_POST['list_type']))
    {
       $dir_title = "";
@@ -111,12 +112,12 @@ if (isset($_POST['submit']) && $_POST['submit'] == $SUBMIT_SEARCH)
          }
       }
    }
-
+/*
    if (isset($_POST['award_type']))
    {
       $award_type = clean($_POST['award_type']);
    }
-
+*/
    if (strlen($errmsg) == 0)
    {
       $query = "SELECT atlantian.atlantian_id, atlantian.sca_name, atlantian.alternate_names, atlantian.first_name, atlantian.last_name, atlantian.gender, atlantian.deceased, atlantian.deceased_date, " . 
@@ -135,8 +136,10 @@ if (isset($_POST['submit']) && $_POST['submit'] == $SUBMIT_SEARCH)
          $wc = "WHERE ";
          if ($form_sca_name != '')
          {
-            $wc .= "(atlantian.sca_name LIKE '%" . mysql_real_escape_string($form_sca_name) . "%' OR atlantian.alternate_names LIKE '%" . mysql_real_escape_string($form_sca_name) . "%')";
+            $wc .= "(atlantian.sca_name LIKE ? OR atlantian.alternate_names LIKE ?)";
+			$query_sca_name = "%" . $form_sca_name . "%";
          }
+/*
          if ($form_branch_id != '')
          {
             if (strlen($wc) > strlen("WHERE "))
@@ -201,15 +204,19 @@ if (isset($_POST['submit']) && $_POST['submit'] == $SUBMIT_SEARCH)
             }
             $wc .= "(event.event_name LIKE '%" . mysql_real_escape_string($form_event_name) . "%')";
          }
-
+*/
       $query .= $wc . " ORDER BY " . $order_by;
       /* Performing SQL query */
-      $result = mysql_query($query) 
-         or die("Search Query failed : " . mysql_error());
+      $result = mysqli_prepared_query($mysqli, $query, "ss", array($query_sca_name, $query_sca_name))
+	     // If nothing is returned, don't die, just produce no results:
+         or array();
    }
 }
 ?>
 <p class="title2" align="center">Search the Order of Precedence</p>
+<p>Provide as much of the name as you are confident of. It is usually better to search on a partial
+name like "Justin" (which may produce some extra results but will usually show the person you want),
+rather than a misspelled full name like "Justin du Couer" and get nothing.</p>
 <?php
 if (isset($errmsg) && strlen($errmsg) > 0)
 {
@@ -225,12 +232,14 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       <th class="titleright"><label for="form_sca_name">SCA Name</label></th>
       <td class="data"><input type="text" name="form_sca_name" id="form_sca_name" size="50"<?php if (isset($form_sca_name) && $form_sca_name != '') { echo " value=\"$form_sca_name\"";} ?>/></td>
    </tr>
+<!--
    <tr>
       <th class="titleright"><label for="form_branch_id">Home Branch</label></th>
       <td class="data">
       <select name="form_branch_id" id="form_branch_id">
          <option></option>
          <?php
+/*
             while ($group_data = mysql_fetch_array($group_pl_result, MYSQL_BOTH))
             {
                $branch_id = $group_data['branch_id'];
@@ -255,6 +264,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
                }
                echo '>' . $group_display . '</option>';
             }
+*/
          ?>
       </select>
       </td>
@@ -273,6 +283,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       <select name="form_award_id" id="form_award_id">
          <option></option>
          <?php
+/*
             while ($award_data = mysql_fetch_array($award_pl_result, MYSQL_BOTH))
             {
                $award_display = clean($award_data['award_name']);
@@ -295,6 +306,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
                }
                echo '>' . $award_display . '</option>';
             }
+*/
          ?>
       </select>
       </td>
@@ -325,6 +337,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
       <input type="radio" name="award_type" id="award_type" value="B"<?php if (isset($award_type) && $award_type == "B") { echo ' checked="checked"';} ?>/><span style="font-weight:bold">Baronial Awards</span>
       </td>
    </tr>
+-->
    <tr>
       <th colspan="2" class="title"><input type="submit" name="submit" value="<?php echo $SUBMIT_SEARCH; ?>"/></th>
    </tr>
@@ -334,7 +347,7 @@ if (isset($errmsg) && strlen($errmsg) > 0)
 <img src="<?php echo $IMAGES_DIR; ?>op-divider.gif" width="648" height="41" border="0" alt="OP Line"/>
 </p>
 <?php 
-if (isset($result) && mysql_num_rows($result) > 0)
+if (isset($result) && count($result) > 0)
 {
    echo '<p align="center">' . $order_display . '</p>';
 ?>
@@ -368,7 +381,7 @@ if (isset($result) && mysql_num_rows($result) > 0)
       <th class="title">Event</th>
    </tr>
 <?php 
-      while ($data = mysql_fetch_array($result, MYSQL_BOTH))
+      foreach ($result as $data)
       {
          $atlantian_id = $data['atlantian_id'];
          $sca_name = clean($data['sca_name']);
@@ -441,7 +454,7 @@ if (isset($result) && mysql_num_rows($result) > 0)
          $group_display = "";
          if ($branch_id != "" && $branch_id > 0)
          {
-            $kingdom = get_kingdom($branch_id);
+            $kingdom = get_kingdom_new($mysqli, $branch_id);
             if ($kingdom == $branch)
             {
                $branch = "";
@@ -453,7 +466,7 @@ if (isset($result) && mysql_num_rows($result) > 0)
          }
          else if ($award_branch != "" && $award_branch_id > 0)
          {
-            $kingdom = get_kingdom($award_branch_id);
+            $kingdom = get_kingdom_new($mysqli, $award_branch_id);
             if ($kingdom == $award_branch)
             {
                $award_branch = "";
@@ -562,23 +575,18 @@ if ((isset($_SESSION[$OP_ADMIN]) && $_SESSION[$OP_ADMIN]) || (isset($_SESSION[$B
       }
 ?>
 </table>
-<p align="center"><?php echo mysql_num_rows($result); ?> records matched your search criteria.</p>
+<p align="center"><?php echo count($result); ?> records matched your search criteria.</p>
 <?php 
-   /* Free resultset */
-   mysql_free_result($result);
 }
 // Nothing matched search criteria
-else if (isset($errmsg) && $errmsg == '' && isset($result) && mysql_num_rows($result) == 0)
+else if (isset($errmsg) && $errmsg == '' && isset($result) && count($result) == 0)
 {
 ?>
 <p align="center">No records matched your search criteria.</p>
 <?php 
 }
-/* Free resultset */
-mysql_free_result($award_pl_result);
-
 /* Closing connection */
-db_disconnect($link);
+$mysqli->close();
 
 include("footer.php");
 ?>
