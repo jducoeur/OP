@@ -4,17 +4,17 @@ $SESSION_DOMAIN = ".atlantia.sca.org";
 
 $HOME_DIR = "/";
 $OP_FILE_DIR = "/home/atlantia_op/op.atlantia.sca.org/";
-$TMP = '/tmp';
-$TMP_DIR = '/tmp/';
+$TMP = '/apps/tmp';
+$TMP_DIR = '/apps/tmp/';
 
-$DBHOST = 'mysql.database.atlantia.sca.org';
+$DBHOST = '127.0.0.1:3307';
 */
 $SESSION_DOMAIN = "localhost";
 
 $HOME_DIR = "/";
-$OP_FILE_DIR = "C:\\Users\kjordan\Documents\webpage\\Atlantia\\op\\East\\html";
-$TMP = $OP_FILE_DIR . "html\\functions\\tmp";
-$TMP_DIR = $TMP . "\\";
-
-$DBHOST = 'localhost';
+$OP_FILE_DIR = "/apps/op/East/html";
+$TMP = $OP_FILE_DIR . "html/functions/tmp";
+$TMP_DIR = $TMP . "/";
+$DBHOST = '127.0.0.1';
+$DBPORT=3307;
 ?>

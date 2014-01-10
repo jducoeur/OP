@@ -31,14 +31,14 @@ function db_connect()
 
 function db_new_connect()
 {
-   global $DBHOST, $DBNAME, $DBUSER, $DBPASS;
+   global $DBHOST, $DBNAME, $DBUSER, $DBPASS, $DBPORT;
 
    $mysqli = mysqli_init();
    if (!$mysqli) {
      die('mysqli_init failed');
    }
 
-   if (!$mysqli->real_connect($DBHOST, $DBUSER, $DBPASS, $DBNAME)) {
+   if (!$mysqli->real_connect($DBHOST, $DBUSER, $DBPASS, $DBNAME, $DBPORT)) {
       die('Connect Error (' . mysqli_connect_errno() . ') '
             . mysqli_connect_error());
    }
