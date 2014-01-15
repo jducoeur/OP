@@ -34,9 +34,10 @@ $query = "SELECT king.sca_name AS king, queen.sca_name AS queen, reign.king_id, 
          "AND reign.reign_id = ?";
 
 /* Performing SQL query */
-$data = mysqli_prepared_query($mysqli, $query, "i", array($reign_id))[0]
+$dataRaw = mysqli_prepared_query($mysqli, $query, "i", array($reign_id))
    or die ("Reign Query failed: " . mysqli_error());
 
+$data = $dataRaw[0];
 $king = $data['king'];
 $queen = $data['queen'];
 $king_id = $data['king_id'];
