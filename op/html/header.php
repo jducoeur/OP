@@ -62,8 +62,6 @@ if (!$printable)
       <a class="menu" href="<?php echo $HOME_DIR; ?>baronies.php"><?php echo $KINGDOM_ADJ; ?> Baronies</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
 -->
-      <a class="menu" href="<?php echo $HOME_DIR; ?>kingdom_op.php"><?php echo $KINGDOM_ADJ; ?> OP</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
-      <br/>
 <!--
       <a class="menu" href="<?php echo $HOME_DIR; ?>roa.php">Roll of Arms</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
       <br/>
@@ -167,6 +165,8 @@ if (!$printable)
 <!--        &nbsp;&nbsp;&nbsp;<b style="color:<?php echo $accent_color; ?>">Kingdom Honors</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/> -->
         &nbsp;&nbsp;&nbsp;<b style="color:<?php echo $accent_color; ?>">Closed Orders</b><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>
            </p>
+      <a class="menu" href="<?php echo $HOME_DIR; ?>kingdom_op.php">Full <?php echo $KINGDOM_ADJ; ?> OP</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/> (long!)<br/>
+      <br/>
       <p class="t_menu_header">Links</p>
       <p class="t_menu">
       <a class="menu" href="http://herald.east.sca.org/">Eastern College of Heralds</a><img src="<?php echo $IMAGES_DIR; ?>spacer.gif" width="0" height="0" alt="W3C Compliant Link Spacer" border="0"/><br/>

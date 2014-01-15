@@ -63,6 +63,10 @@ if (isset($_POST['submit']) && $_POST['submit'] == $SUBMIT_SEARCH)
    {
       $errmsg = "Please enter an SCA name to search for"; //"Please enter at least one search parameter.<br/>";
    }
+   if (strpos($form_sca_name, '%') !== FALSE)
+   {
+      $errmsg = "Search terms may not include %";
+   }
 /*
    // Valid dates
    if (($form_date_start != '') && (strtotime($form_date_start) === FALSE))
