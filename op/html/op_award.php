@@ -135,7 +135,7 @@ if ($num_award_result > 0)
       $award_group_data = $award_group_result[0];
       $award_name = clean($award_group_data['collective_name']);
       $award_blurb = clean($award_group_data['award_blurb']);
-      $award_image = clean($award_group_data['award_file_name']);
+      $award_image2 = clean($award_group_data['award_file_name2']);
       $website = clean($award_group_data['website']);
    }
    $closed_display = "";
