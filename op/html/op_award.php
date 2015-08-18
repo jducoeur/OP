@@ -131,10 +131,11 @@ if ($num_award_result > 0)
       /* Performing SQL query */
       $award_group_result = mysqli_prepared_query($mysqli, $award_group_query, "i", $query_params)
          or die("Award Group Query failed : " . mysqli_error());
+      // If we are a group, overwrite the award info with the group info
       $award_group_data = $award_group_result[0];
-      $award_name2 = clean($award_group_data['collective_name']);
+      $award_name = clean($award_group_data['collective_name']);
       $award_blurb = clean($award_group_data['award_blurb']);
-      $award_image2 = clean($award_group_data['award_file_name2']);
+      $award_image = clean($award_group_data['award_file_name']);
       $website = clean($award_group_data['website']);
    }
    $closed_display = "";
