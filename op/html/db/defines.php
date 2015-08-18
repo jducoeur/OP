@@ -73,8 +73,9 @@ $DUCAL_ID               =  $DUKE_ID;
 $COUNTY_ID              =  $COUNT_ID;
 $VISCOUNTY_ID           =  $VISCOUNT_ID;
 // TODO: these need to be fixed!
-$LANDED_BARONAGE_ID     =  18;
-$RETIRED_BARONAGE_ID    =  19;
+//Updated by Amacks to match the DB - 2015-08-17
+$LANDED_BARONAGE_ID     =  10;
+$RETIRED_BARONAGE_ID    =  9;
 //$COURT_BARONAGE_AOA_ID  =  33;
 // TODO: this is meaningless in the East, and should be removed:
 $RETIRED_BARONAGE_NA_ID = $BAD_AWARD_ID;
