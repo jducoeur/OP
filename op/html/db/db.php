@@ -18,10 +18,10 @@ include_once("db_conn.php");
 // DEPRECATED: switch to db_new_connect:
 function db_connect()
 {
-   global $DBHOST, $DBNAME, $DBUSER, $DBPASS;
+   global $DBHOST, $DBNAME, $DBUSER, $DBPASS, $DBPORT;
 
    /* Connecting, selecting database */
-   $link = mysql_connect($DBHOST, $DBUSER, $DBPASS)
+   $link = mysql_connect("$DBHOST:$DBPORT", $DBUSER, $DBPASS)
       or die("Could not connect: " . mysql_error());
    mysql_select_db($DBNAME) 
       or die("Could not select database");
@@ -116,10 +116,10 @@ function mysqli_prepared_query($link,$sql,$typeDef = FALSE,$params = FALSE){
 
 function db_admin_connect()
 {
-   global $DBHOST, $DBNAME, $DBUSER_ADMIN, $DBUSER_PASS;
+   global $DBHOST, $DBNAME, $DBUSER_ADMIN, $DBUSER_PASS, $DBPORT;
 
    /* Connecting, selecting database */
-   $link = mysql_connect($DBHOST, $DBUSER_ADMIN, $DBUSER_PASS)
+   $link = mysql_connect("$DBHOST:$DBPORT", $DBUSER_ADMIN, $DBUSER_PASS)
       or die("Could not connect: " . mysql_error());
    mysql_select_db($DBNAME) 
       or die("Could not select database");
