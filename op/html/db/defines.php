@@ -89,6 +89,7 @@ $M_AT_ARMS          = $MASTER_AT_ARMS_ID;
 $ROSE_AOA           = $ROSE_ID;
 // TODO: the East historically doesn't distinguish this way:
 $ROSE_NO_ARMS       = $BAD_AWARD_ID;
+$MOD                = $MOD_ID;
 
 /*
 $WHITE_SCARF_ID     = 20;
